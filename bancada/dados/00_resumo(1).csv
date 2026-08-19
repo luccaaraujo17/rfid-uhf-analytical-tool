@@ -1,0 +1,11 @@
+﻿indicador,valor,observacao
+tags_internas_lidas,92,de 92
+tags_internas_confiaveis,83,margem >= 6.0 dB
+probes_externos_lidos_vazamento,0,de 3
+EIRP_dbm,36.0,potência irradiada efetiva
+P_leitor_dbm,28.0,potência conduzida
+sensibilidade_leitor_dbm,-90.0,reverse link
+ativacao_tag_dbm,-18.0,forward link
+backscatter_loss_db,28.0,calibrar com RSSI real
+bottlenecks,"{""LEITURA_CONFIAVEL"": 83, ""LEITURA_MARGINAL_SEM_FOLGA"": 9, ""FALHA_FORWARD_E_REVERSE"": 3}",contagem por gargalo
+ablacoes_que_resolveram,{},quais mudanças fizeram tag falha passar

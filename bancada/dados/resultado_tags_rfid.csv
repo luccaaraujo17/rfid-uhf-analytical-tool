@@ -1,0 +1,9 @@
+Tag/Probe,Esperada interna?,Melhor antena,Distância (m),Ângulo (°),P_tag dBm,Margem ida dB,P_rx dBm,Margem volta dB,Margem final dB,Perda tecido dB,Perda gaiola dB,Perda cabine dB,Campo próximo?,Status
+TAG_01,Sim,ESQ,0.613,60.2,-20.8,-2.8,-96.5,-26.5,-26.5,2.0,2.1,0.0,Não,ZONA MORTA
+TAG_02,Sim,DIR,0.461,46.9,-14.0,4.0,-82.9,-12.9,-12.9,1.7,2.1,0.0,Não,ZONA MORTA
+TAG_03,Sim,ESQ,0.451,19.7,-10.3,7.7,-75.6,-5.6,-5.6,3.3,2.1,0.0,Não,ZONA MORTA
+TAG_04,Sim,DIR,0.478,36.3,-13.1,4.9,-81.2,-11.2,-11.2,3.0,2.1,0.0,Não,ZONA MORTA
+TAG_05,Sim,TOPO,0.516,4.0,-7.4,10.6,-69.8,0.2,0.2,0.4,2.1,0.0,Não,LEITURA MARGINAL
+PROBE_LATERAL,Não,TOPO,1.77,55.0,-108.4,-90.4,-271.7,-201.7,-201.7,0.0,4.1,80.0,Não,ZONA MORTA
+PROBE_FRENTE,Não,TOPO,2.084,60.9,-31.7,-13.7,-118.4,-48.4,-48.4,0.0,4.1,0.0,Não,ZONA MORTA
+PROBE_PRATELEIRA,Não,TOPO,1.617,55.5,-107.7,-89.7,-270.5,-200.5,-200.5,0.0,4.1,80.0,Não,ZONA MORTA

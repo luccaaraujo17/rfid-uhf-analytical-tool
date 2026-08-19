@@ -1,0 +1,35 @@
+{
+  "coordinate_system": "x=propagação/profundidade, y=largura, z=altura",
+  "frequency_hz": 915000000,
+  "eps_panel": {
+    "size_m": [0.030, 0.335, 0.295],
+    "epsilon_r_initial": 1.05,
+    "conductivity_s_m_initial": 0.0,
+    "note": "EPS tratado como material de baixa permissividade, próximo do ar; realizar varredura 1.02-1.10."
+  },
+  "tags": [
+    {
+      "name": "TAG_1",
+      "external_size_m": [0.0002, 0.075, 0.020],
+      "center_height_from_panel_base_m": 0.100,
+      "horizontal_offset_m": 0.0,
+      "orientation": "frontal",
+      "dipole_axis": [0, 1, 0]
+    },
+    {
+      "name": "TAG_2",
+      "external_size_m": [0.0002, 0.075, 0.020],
+      "center_height_from_panel_base_m": 0.155,
+      "horizontal_offset_m": 0.0,
+      "orientation": "frontal",
+      "dipole_axis": [0, 1, 0]
+    }
+  ],
+  "center_spacing_m": 0.055,
+  "antenna": {
+    "profile": "antena_laird_pal90209h.json",
+    "bench_count": 1,
+    "solver_excitation": "onda plana linear normalizada; correção CP-LP de 3 dB aplicada no app",
+    "reason": "geometria interna comercial não disponível"
+  }
+}

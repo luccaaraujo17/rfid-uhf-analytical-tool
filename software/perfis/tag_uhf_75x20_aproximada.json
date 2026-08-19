@@ -1,0 +1,22 @@
+{
+  "description": "Etiqueta RFID UHF passiva adesiva aproximada",
+  "identification_status": "fabricante, modelo e chip não identificados",
+  "external_size_m": [0.075, 0.020, 0.0002],
+  "nominal_frequency_hz": 915000000,
+  "frequency_assumption_hz": [902000000, 928000000],
+  "polarization": "linear",
+  "gain_dbi_initial": 0.0,
+  "activation_threshold_dbm_initial": -18.0,
+  "chip_load_sweep": {
+    "resistance_ohm": [10, 20, 30, 40],
+    "capacitance_pf": [0.7, 1.0, 1.3, 1.7]
+  },
+  "substrate": {
+    "type": "filme plástico/adesivo aproximado",
+    "epsilon_r_initial": 2.5,
+    "loss_tangent_initial": 0.02,
+    "thickness_m": 0.0002
+  },
+  "conductor": "alumínio ou cobre equivalente; usar PEC na primeira simulação relativa",
+  "warning": "O perfil é paramétrico. Não usar como identificação comercial ou constante universal."
+}

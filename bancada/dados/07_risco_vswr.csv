@@ -1,0 +1,4 @@
+﻿antena,x_m,y_m,z_m,painel_refletivo_mais_proximo,distancia_ao_metal_m,distancia_em_lambdas,lambda_m,lambda_quarto_m,risco_vswr_s11,observacao,importante
+ESQ,-0.525,-0.03,1.08,left_wall,0.085,0.259,0.3276,0.0819,MÉDIO,metal no campo próximo relativo; validar com VNA se possível,Este é só um indicador geométrico. VSWR real exige VNA/medidor de potência refletida.
+DIR,0.525,-0.03,1.08,right_wall,0.085,0.259,0.3276,0.0819,MÉDIO,metal no campo próximo relativo; validar com VNA se possível,Este é só um indicador geométrico. VSWR real exige VNA/medidor de potência refletida.
+TOPO,0.0,-0.03,2.015,ceiling,0.085,0.259,0.3276,0.0819,MÉDIO,metal no campo próximo relativo; validar com VNA se possível,Este é só um indicador geométrico. VSWR real exige VNA/medidor de potência refletida.

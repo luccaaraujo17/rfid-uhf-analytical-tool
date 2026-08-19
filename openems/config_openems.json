@@ -1,0 +1,185 @@
+{
+  "frequency_hz": 915000000,
+  "frequency_span_hz": 26000000,
+  "simulation_box_mm": [
+    500,
+    560,
+    500
+  ],
+  "plane_wave_box_mm": [
+    420,
+    480,
+    420
+  ],
+  "boundary": [
+    "PML_8",
+    "PML_8",
+    "PML_8",
+    "PML_8",
+    "PML_8",
+    "PML_8"
+  ],
+  "end_criteria": 1e-05,
+  "max_timesteps": 60000,
+  "mesh_presets": {
+    "rapida": {
+      "air_mm": 16.0,
+      "local_mm": 2.0,
+      "gap_mm": 0.5
+    },
+    "media": {
+      "air_mm": 12.0,
+      "local_mm": 1.0,
+      "gap_mm": 0.25
+    },
+    "fina": {
+      "air_mm": 8.0,
+      "local_mm": 0.5,
+      "gap_mm": 0.2
+    }
+  },
+  "eps": {
+    "size_mm": [
+      30.0,
+      335.0,
+      295.0
+    ],
+    "epsilon_r": 1.05,
+    "kappa_s_m": 0.0
+  },
+  "tag": {
+    "size_mm": [
+      0.2,
+      75.0,
+      20.0
+    ],
+    "metal_strip_mm": 0.8,
+    "chip_gap_mm": 1.0,
+    "chip_r_ohm": 20.0,
+    "chip_c_pf": 1.0,
+    "substrate_epsilon_r": 2.5,
+    "substrate_kappa_s_m": 0.002,
+    "substrate_thickness_mm": 0.2
+  },
+  "plane_wave": {
+    "propagation_direction": [
+      1,
+      0,
+      0
+    ],
+    "electric_field_direction": [
+      0,
+      1,
+      0
+    ],
+    "amplitude_normalized_v_per_m": 1.0,
+    "note": "Excitação linear alinhada ao eixo longo da tag. A perda CP-LP de 3 dB é aplicada no app analítico."
+  },
+  "scenarios": [
+    {
+      "name": "S0_tag_unica_ar_frontal",
+      "eps": false,
+      "tags": [
+        {
+          "height_mm": 147.5,
+          "orientation": "frontal"
+        }
+      ]
+    },
+    {
+      "name": "S1_tag_unica_eps_frontal",
+      "eps": true,
+      "tags": [
+        {
+          "height_mm": 100.0,
+          "orientation": "frontal"
+        }
+      ]
+    },
+    {
+      "name": "S2_duas_tags_eps_frontal",
+      "eps": true,
+      "tags": [
+        {
+          "height_mm": 100.0,
+          "orientation": "frontal"
+        },
+        {
+          "height_mm": 155.0,
+          "orientation": "frontal"
+        }
+      ]
+    },
+    {
+      "name": "S3_duas_tags_horizontal",
+      "eps": false,
+      "tags": [
+        {
+          "offset_y_mm": -27.5,
+          "offset_z_mm": 0.0,
+          "orientation": "horizontal"
+        },
+        {
+          "offset_y_mm": 27.5,
+          "offset_z_mm": 0.0,
+          "orientation": "horizontal"
+        }
+      ]
+    },
+    {
+      "name": "S4_duas_tags_lateral",
+      "eps": false,
+      "tags": [
+        {
+          "offset_z_mm": -27.5,
+          "orientation": "lateral"
+        },
+        {
+          "offset_z_mm": 27.5,
+          "orientation": "lateral"
+        }
+      ]
+    },
+    {
+      "name": "S5_tag_unica_toalha_parametrica",
+      "eps": false,
+      "towel": true,
+      "tags": [
+        {
+          "offset_z_mm": 0.0,
+          "orientation": "frontal"
+        }
+      ]
+    }
+  ],
+  "local_dump_box_mm": [
+    180.0,
+    260.0,
+    260.0
+  ],
+  "towel": {
+    "size_mm": [
+      20.0,
+      250.0,
+      250.0
+    ],
+    "epsilon_r": 1.6,
+    "kappa_s_m": 0.02,
+    "status": "paramétrico; propriedades e espessura não caracterizadas",
+    "thickness_sweep_mm": [
+      10.0,
+      20.0,
+      30.0
+    ],
+    "epsilon_r_sweep": [
+      1.2,
+      1.6,
+      2.0
+    ],
+    "kappa_s_m_sweep": [
+      0.005,
+      0.02,
+      0.05
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "manufacturer": "Laird Technologies",
+  "model": "PAL90209H",
+  "source_part_number": "PAL90209H",
+  "frequency_min_hz": 902000000,
+  "frequency_max_hz": 928000000,
+  "nominal_frequency_hz": 915000000,
+  "peak_gain_dbic": 9.0,
+  "hpbw_azimuth_deg": 70.0,
+  "front_to_back_db": 20.0,
+  "polarization": "LHCP",
+  "axial_ratio_typical_db": 1.0,
+  "max_vswr": 1.3,
+  "impedance_ohm": 50.0,
+  "max_input_power_w": 10.0,
+  "connector": "N-female fixed",
+  "size_m": [0.2591, 0.2591, 0.0335],
+  "largest_dimension_m": 0.2591,
+  "radome": "High-strength polycarbonate",
+  "environmental_rating": "IP67",
+  "notes": "Perfil confirmado pelos datasheets Laird e RFMAX/Arcadian para o mesmo part number. PAL = circular esquerda."
+}

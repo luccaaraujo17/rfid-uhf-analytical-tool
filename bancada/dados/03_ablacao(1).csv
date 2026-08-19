@@ -1,0 +1,1046 @@
+﻿tag,esperada_interna,variante,descricao,antena,margem_final_baseline_db,margem_final_variante_db,delta_margem_db,margem_ida_db,margem_volta_db,passou_baseline,passou_variante,resolveu_falha,classificacao
+PILHA_001,True,baseline,sem alteração,ESQ,13.783,13.783,0.0,13.783,25.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,sem_tecido,desliga atenuação do tecido,ESQ,13.783,17.071,3.288,17.071,32.142,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,13.783,15.427,1.644,15.427,28.854,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,sem_gaiola,desliga perda equivalente da grade,ESQ,13.783,15.843,2.06,15.843,29.686,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,sem_polarizacao,remove perda de polarização,ESQ,13.783,16.783,3.0,16.783,31.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,13.783,16.783,3.0,16.783,31.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,13.783,13.783,0.0,13.783,28.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,13.783,13.783,0.0,13.783,27.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,13.783,15.783,2.0,15.783,29.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,beamwidth_90graus,abre HPBW para 90°,ESQ,13.783,13.783,0.0,13.783,25.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_001,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,13.783,13.783,0.0,13.783,25.567,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,baseline,sem alteração,ESQ,15.673,15.673,0.0,15.673,29.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,sem_tecido,desliga atenuação do tecido,ESQ,15.673,18.055,2.382,18.055,34.11,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,15.673,16.864,1.191,16.864,31.728,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,sem_gaiola,desliga perda equivalente da grade,ESQ,15.673,17.733,2.06,17.733,33.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,sem_polarizacao,remove perda de polarização,ESQ,15.673,18.673,3.0,18.673,35.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,15.673,18.673,3.0,18.673,35.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,15.673,15.673,0.0,15.673,32.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,15.673,15.673,0.0,15.673,31.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,15.673,17.673,2.0,17.673,33.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,beamwidth_90graus,abre HPBW para 90°,ESQ,15.673,15.673,0.0,15.673,29.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_002,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,15.673,15.673,0.0,15.673,29.346,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,baseline,sem alteração,ESQ,17.7,17.7,0.0,17.7,33.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,sem_tecido,desliga atenuação do tecido,ESQ,17.7,20.268,2.568,20.268,38.536,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.7,18.984,1.284,18.984,35.968,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.7,19.76,2.06,19.76,37.519,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,sem_polarizacao,remove perda de polarização,ESQ,17.7,20.7,3.0,20.7,39.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.7,20.7,3.0,20.7,39.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.7,17.7,0.0,17.7,36.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.7,17.7,0.0,17.7,35.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.7,19.7,2.0,19.7,37.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.7,17.7,0.0,17.7,33.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_003,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.7,17.7,0.0,17.7,33.4,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,baseline,sem alteração,DIR,11.472,11.472,0.0,11.472,20.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,sem_tecido,desliga atenuação do tecido,DIR,11.472,14.416,2.943,14.416,26.831,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,11.472,12.944,1.472,12.944,23.888,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,sem_gaiola,desliga perda equivalente da grade,DIR,11.472,13.532,2.06,13.532,25.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,sem_polarizacao,remove perda de polarização,DIR,11.472,14.472,3.0,14.472,26.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,11.472,14.472,3.0,14.472,26.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,11.472,11.472,0.0,11.472,23.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,11.472,11.472,0.0,11.472,22.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,11.472,13.472,2.0,13.472,24.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,beamwidth_90graus,abre HPBW para 90°,DIR,11.472,11.472,0.0,11.472,20.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_004,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,11.472,11.472,0.0,11.472,20.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,baseline,sem alteração,ESQ,16.094,16.094,0.0,16.094,30.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,sem_tecido,desliga atenuação do tecido,ESQ,16.094,18.723,2.629,18.723,35.445,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.094,17.408,1.314,17.408,32.816,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.094,18.153,2.06,18.153,34.307,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,sem_polarizacao,remove perda de polarização,ESQ,16.094,19.094,3.0,19.094,36.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.094,19.094,3.0,19.094,36.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.094,16.094,0.0,16.094,33.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.094,16.094,0.0,16.094,32.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.094,18.094,2.0,18.094,34.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.094,16.094,0.0,16.094,30.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_005,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.094,16.094,0.0,16.094,30.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,baseline,sem alteração,TOPO,13.313,13.313,0.0,13.313,24.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,sem_tecido,desliga atenuação do tecido,TOPO,13.313,15.057,1.743,15.057,28.113,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,13.313,14.185,0.872,14.185,26.37,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,sem_gaiola,desliga perda equivalente da grade,TOPO,13.313,15.373,2.06,15.373,28.745,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,sem_polarizacao,remove perda de polarização,TOPO,13.313,16.313,3.0,16.313,30.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,13.313,16.313,3.0,16.313,30.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,13.313,13.313,0.0,13.313,27.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,13.313,13.313,0.0,13.313,26.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,13.313,15.313,2.0,15.313,28.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,beamwidth_90graus,abre HPBW para 90°,TOPO,13.313,13.313,0.0,13.313,24.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_006,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,13.313,13.313,0.0,13.313,24.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_007,True,baseline,sem alteração,ESQ,1.525,1.525,0.0,1.762,1.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,sem_tecido,desliga atenuação do tecido,TOPO,1.525,9.494,7.969,9.494,16.987,True,True,False,LEITURA_CONFIAVEL
+PILHA_007,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,1.525,4.327,2.803,4.327,6.655,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,sem_gaiola,desliga perda equivalente da grade,ESQ,1.525,3.822,2.297,3.822,5.644,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,sem_polarizacao,remove perda de polarização,ESQ,1.525,4.762,3.238,4.762,7.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,1.525,4.762,3.238,4.762,7.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,1.525,1.762,0.238,1.762,4.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,1.525,1.762,0.238,1.762,3.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,1.525,3.762,2.238,3.762,5.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,beamwidth_90graus,abre HPBW para 90°,ESQ,1.525,1.525,0.0,1.762,1.525,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_007,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,1.525,2.079,0.554,2.079,2.157,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_008,True,baseline,sem alteração,DIR,11.84,11.84,0.0,11.84,21.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,sem_tecido,desliga atenuação do tecido,DIR,11.84,15.354,3.515,15.354,28.709,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,11.84,13.597,1.757,13.597,25.194,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,sem_gaiola,desliga perda equivalente da grade,DIR,11.84,13.899,2.06,13.899,25.799,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,sem_polarizacao,remove perda de polarização,DIR,11.84,14.84,3.0,14.84,27.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,11.84,14.84,3.0,14.84,27.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,11.84,11.84,0.0,11.84,24.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,11.84,11.84,0.0,11.84,23.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,11.84,13.84,2.0,13.84,25.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,beamwidth_90graus,abre HPBW para 90°,DIR,11.84,11.84,0.0,11.84,21.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_008,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,11.84,11.84,0.0,11.84,21.68,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,baseline,sem alteração,ESQ,17.155,17.155,0.0,17.155,32.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,sem_tecido,desliga atenuação do tecido,ESQ,17.155,19.802,2.646,19.802,37.603,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.155,18.478,1.323,18.478,34.957,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.155,19.215,2.06,19.215,36.43,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,sem_polarizacao,remove perda de polarização,ESQ,17.155,20.155,3.0,20.155,38.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.155,20.155,3.0,20.155,38.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.155,17.155,0.0,17.155,35.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.155,17.155,0.0,17.155,34.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.155,19.155,2.0,19.155,36.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.155,17.155,0.0,17.155,32.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_009,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.155,17.155,0.0,17.155,32.311,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,baseline,sem alteração,ESQ,18.387,18.387,0.0,18.387,34.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,sem_tecido,desliga atenuação do tecido,ESQ,18.387,20.906,2.519,20.906,39.811,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,18.387,19.646,1.259,19.646,37.292,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,sem_gaiola,desliga perda equivalente da grade,ESQ,18.387,20.446,2.06,20.446,38.892,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,sem_polarizacao,remove perda de polarização,ESQ,18.387,21.387,3.0,21.387,40.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,18.387,21.387,3.0,21.387,40.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,18.387,18.387,0.0,18.387,37.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,18.387,18.387,0.0,18.387,36.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,18.387,20.387,2.0,20.387,38.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,beamwidth_90graus,abre HPBW para 90°,ESQ,18.387,18.387,0.0,18.387,34.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_010,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,18.387,18.387,0.0,18.387,34.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,baseline,sem alteração,DIR,17.07,17.07,0.0,17.07,32.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,sem_tecido,desliga atenuação do tecido,DIR,17.07,19.928,2.857,19.928,37.855,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,17.07,18.499,1.429,18.499,34.998,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,sem_gaiola,desliga perda equivalente da grade,DIR,17.07,19.13,2.06,19.13,36.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,sem_polarizacao,remove perda de polarização,DIR,17.07,20.07,3.0,20.07,38.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,17.07,20.07,3.0,20.07,38.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,17.07,17.07,0.0,17.07,35.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,17.07,17.07,0.0,17.07,34.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,17.07,19.07,2.0,19.07,36.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,beamwidth_90graus,abre HPBW para 90°,DIR,17.07,17.07,0.0,17.07,32.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_011,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,17.07,17.07,0.0,17.07,32.141,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,baseline,sem alteração,DIR,15.774,15.774,0.0,15.774,29.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,sem_tecido,desliga atenuação do tecido,DIR,15.774,19.001,3.228,19.001,36.003,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.774,17.387,1.614,17.387,32.775,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.774,17.833,2.06,17.833,33.666,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,sem_polarizacao,remove perda de polarização,DIR,15.774,18.774,3.0,18.774,35.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.774,18.774,3.0,18.774,35.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.774,15.774,0.0,15.774,32.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.774,15.774,0.0,15.774,31.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.774,17.774,2.0,17.774,33.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.774,15.774,0.0,15.774,29.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_012,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.774,15.774,0.0,15.774,29.547,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,baseline,sem alteração,DIR,16.533,16.533,0.0,16.533,31.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,sem_tecido,desliga atenuação do tecido,DIR,16.533,19.788,3.255,19.788,37.576,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.533,18.161,1.628,18.161,34.321,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.533,18.593,2.06,18.593,35.185,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,sem_polarizacao,remove perda de polarização,DIR,16.533,19.533,3.0,19.533,37.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.533,19.533,3.0,19.533,37.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.533,16.533,0.0,16.533,34.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.533,16.533,0.0,16.533,33.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.533,18.533,2.0,18.533,35.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.533,16.533,0.0,16.533,31.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_013,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.533,16.533,0.0,16.533,31.066,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,baseline,sem alteração,DIR,20.074,20.074,0.0,20.074,38.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,sem_tecido,desliga atenuação do tecido,DIR,20.074,21.553,1.479,21.553,41.106,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,20.074,20.814,0.739,20.814,39.627,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,sem_gaiola,desliga perda equivalente da grade,DIR,20.074,22.134,2.06,22.134,42.268,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,sem_polarizacao,remove perda de polarização,DIR,20.074,23.074,3.0,23.074,44.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,20.074,23.074,3.0,23.074,44.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,20.074,20.074,0.0,20.074,41.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,20.074,20.074,0.0,20.074,40.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,20.074,22.074,2.0,22.074,42.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,beamwidth_90graus,abre HPBW para 90°,DIR,20.074,20.074,0.0,20.074,38.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_014,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,20.074,20.074,0.0,20.074,38.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,baseline,sem alteração,DIR,19.532,19.532,0.0,19.532,37.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,sem_tecido,desliga atenuação do tecido,DIR,19.532,21.464,1.932,21.464,40.929,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,19.532,20.498,0.966,20.498,38.996,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,sem_gaiola,desliga perda equivalente da grade,DIR,19.532,21.592,2.06,21.592,41.183,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,sem_polarizacao,remove perda de polarização,DIR,19.532,22.532,3.0,22.532,43.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,19.532,22.532,3.0,22.532,43.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,19.532,19.532,0.0,19.532,40.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,19.532,19.532,0.0,19.532,39.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,19.532,21.532,2.0,21.532,41.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,beamwidth_90graus,abre HPBW para 90°,DIR,19.532,19.532,0.0,19.532,37.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_015,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,19.532,19.532,0.0,19.532,37.064,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,baseline,sem alteração,ESQ,17.179,17.179,0.0,17.179,32.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,sem_tecido,desliga atenuação do tecido,ESQ,17.179,20.177,2.998,20.177,38.355,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.179,18.678,1.499,18.678,35.356,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.179,19.239,2.06,19.239,36.477,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,sem_polarizacao,remove perda de polarização,ESQ,17.179,20.179,3.0,20.179,38.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.179,20.179,3.0,20.179,38.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.179,17.179,0.0,17.179,35.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.179,17.179,0.0,17.179,34.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.179,19.179,2.0,19.179,36.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.179,17.179,0.0,17.179,32.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_016,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.179,17.179,0.0,17.179,32.358,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,baseline,sem alteração,DIR,14.101,14.101,0.0,14.101,26.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,sem_tecido,desliga atenuação do tecido,DIR,14.101,17.059,2.957,17.059,32.117,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,14.101,15.58,1.479,15.58,29.16,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,sem_gaiola,desliga perda equivalente da grade,DIR,14.101,16.161,2.06,16.161,30.322,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,sem_polarizacao,remove perda de polarização,DIR,14.101,17.101,3.0,17.101,32.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,14.101,17.101,3.0,17.101,32.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,14.101,14.101,0.0,14.101,29.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,14.101,14.101,0.0,14.101,28.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,14.101,16.101,2.0,16.101,30.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,beamwidth_90graus,abre HPBW para 90°,DIR,14.101,14.101,0.0,14.101,26.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_017,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,14.101,14.101,0.0,14.101,26.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,baseline,sem alteração,ESQ,8.852,8.852,0.0,8.852,15.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,sem_tecido,desliga atenuação do tecido,DIR,8.852,13.047,4.194,13.047,24.094,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,8.852,10.912,2.06,10.912,19.824,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,sem_gaiola,desliga perda equivalente da grade,ESQ,8.852,10.912,2.06,10.912,19.824,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,sem_polarizacao,remove perda de polarização,ESQ,8.852,11.852,3.0,11.852,21.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,8.852,11.852,3.0,11.852,21.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,8.852,8.852,0.0,8.852,18.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,8.852,8.852,0.0,8.852,17.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,8.852,10.852,2.0,10.852,19.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,beamwidth_90graus,abre HPBW para 90°,ESQ,8.852,8.852,0.0,8.852,15.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_018,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,8.852,8.852,0.0,8.852,15.705,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,baseline,sem alteração,DIR,17.582,17.582,0.0,17.582,33.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,sem_tecido,desliga atenuação do tecido,DIR,17.582,20.424,2.842,20.424,38.848,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,17.582,19.003,1.421,19.003,36.006,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,sem_gaiola,desliga perda equivalente da grade,DIR,17.582,19.641,2.06,19.641,37.282,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,sem_polarizacao,remove perda de polarização,DIR,17.582,20.582,3.0,20.582,39.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,17.582,20.582,3.0,20.582,39.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,17.582,17.582,0.0,17.582,36.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,17.582,17.582,0.0,17.582,35.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,17.582,19.582,2.0,19.582,37.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,beamwidth_90graus,abre HPBW para 90°,DIR,17.582,17.582,0.0,17.582,33.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_019,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,17.582,17.582,0.0,17.582,33.163,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,baseline,sem alteração,DIR,13.73,13.73,0.0,13.73,25.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,sem_tecido,desliga atenuação do tecido,DIR,13.73,17.234,3.504,17.234,32.467,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,13.73,15.482,1.752,15.482,28.964,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,sem_gaiola,desliga perda equivalente da grade,DIR,13.73,15.79,2.06,15.79,29.58,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,sem_polarizacao,remove perda de polarização,DIR,13.73,16.73,3.0,16.73,31.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,13.73,16.73,3.0,16.73,31.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,13.73,13.73,0.0,13.73,28.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,13.73,13.73,0.0,13.73,27.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,13.73,15.73,2.0,15.73,29.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,beamwidth_90graus,abre HPBW para 90°,DIR,13.73,13.73,0.0,13.73,25.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_020,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,13.73,13.73,0.0,13.73,25.46,True,True,False,LEITURA_CONFIAVEL
+PILHA_021,True,baseline,sem alteração,ESQ,2.196,2.196,0.0,2.196,2.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,sem_tecido,desliga atenuação do tecido,TOPO,2.196,9.699,7.503,9.699,17.398,True,True,False,LEITURA_CONFIAVEL
+PILHA_021,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,2.196,4.688,2.492,4.688,7.376,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,sem_gaiola,desliga perda equivalente da grade,ESQ,2.196,4.255,2.06,4.255,6.511,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,sem_polarizacao,remove perda de polarização,ESQ,2.196,5.196,3.0,5.196,8.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,2.196,5.196,3.0,5.196,8.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,2.196,2.196,0.0,2.196,5.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,2.196,2.196,0.0,2.196,4.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,2.196,4.196,2.0,4.196,6.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,beamwidth_90graus,abre HPBW para 90°,ESQ,2.196,2.196,0.0,2.196,2.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_021,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,2.196,2.196,0.0,2.196,2.392,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_022,True,baseline,sem alteração,ESQ,14.107,14.107,0.0,14.107,26.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,sem_tecido,desliga atenuação do tecido,ESQ,14.107,17.484,3.376,17.484,32.968,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,14.107,15.796,1.688,15.796,29.591,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,sem_gaiola,desliga perda equivalente da grade,ESQ,14.107,16.167,2.06,16.167,30.334,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,sem_polarizacao,remove perda de polarização,ESQ,14.107,17.107,3.0,17.107,32.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,14.107,17.107,3.0,17.107,32.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,14.107,14.107,0.0,14.107,29.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,14.107,14.107,0.0,14.107,28.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,14.107,16.107,2.0,16.107,30.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,beamwidth_90graus,abre HPBW para 90°,ESQ,14.107,14.107,0.0,14.107,26.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_022,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,14.107,14.107,0.0,14.107,26.215,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,baseline,sem alteração,DIR,15.194,15.194,0.0,15.194,28.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,sem_tecido,desliga atenuação do tecido,DIR,15.194,18.313,3.119,18.313,34.626,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.194,16.754,1.559,16.754,31.507,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.194,17.254,2.06,17.254,32.508,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,sem_polarizacao,remove perda de polarização,DIR,15.194,18.194,3.0,18.194,34.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.194,18.194,3.0,18.194,34.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.194,15.194,0.0,15.194,31.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.194,15.194,0.0,15.194,30.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.194,17.194,2.0,17.194,32.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.194,15.194,0.0,15.194,28.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_023,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.194,15.194,0.0,15.194,28.388,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,baseline,sem alteração,ESQ,6.575,6.575,0.0,6.575,11.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,sem_tecido,desliga atenuação do tecido,DIR,6.575,11.216,4.641,11.216,20.432,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,6.575,8.861,2.286,8.861,15.721,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,sem_gaiola,desliga perda equivalente da grade,ESQ,6.575,8.635,2.06,8.635,15.269,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,sem_polarizacao,remove perda de polarização,ESQ,6.575,9.575,3.0,9.575,17.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,6.575,9.575,3.0,9.575,17.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,6.575,6.575,0.0,6.575,14.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,6.575,6.575,0.0,6.575,13.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,6.575,8.575,2.0,8.575,15.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,beamwidth_90graus,abre HPBW para 90°,ESQ,6.575,6.575,0.0,6.575,11.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_024,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,6.575,6.575,0.0,6.575,11.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,baseline,sem alteração,ESQ,11.077,11.077,0.0,11.077,20.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,sem_tecido,desliga atenuação do tecido,DIR,11.077,14.198,3.121,14.198,26.397,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,11.077,12.632,1.554,12.632,23.263,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,sem_gaiola,desliga perda equivalente da grade,ESQ,11.077,13.137,2.06,13.137,24.274,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,sem_polarizacao,remove perda de polarização,ESQ,11.077,14.077,3.0,14.077,26.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,11.077,14.077,3.0,14.077,26.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,11.077,11.077,0.0,11.077,23.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,11.077,11.077,0.0,11.077,22.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,11.077,13.077,2.0,13.077,24.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,beamwidth_90graus,abre HPBW para 90°,ESQ,11.077,11.077,0.0,11.077,20.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_025,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,11.077,11.077,0.0,11.077,20.155,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,baseline,sem alteração,DIR,19.638,19.638,0.0,19.638,37.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,sem_tecido,desliga atenuação do tecido,DIR,19.638,21.715,2.077,21.715,41.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,19.638,20.676,1.038,20.676,39.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,sem_gaiola,desliga perda equivalente da grade,DIR,19.638,21.698,2.06,21.698,41.395,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,sem_polarizacao,remove perda de polarização,DIR,19.638,22.638,3.0,22.638,43.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,19.638,22.638,3.0,22.638,43.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,19.638,19.638,0.0,19.638,40.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,19.638,19.638,0.0,19.638,39.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,19.638,21.638,2.0,21.638,41.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,beamwidth_90graus,abre HPBW para 90°,DIR,19.638,19.638,0.0,19.638,37.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_026,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,19.638,19.638,0.0,19.638,37.276,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,baseline,sem alteração,ESQ,13.846,13.846,0.0,13.846,25.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,sem_tecido,desliga atenuação do tecido,ESQ,13.846,17.3,3.454,17.3,32.6,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,13.846,15.573,1.727,15.573,29.146,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,sem_gaiola,desliga perda equivalente da grade,ESQ,13.846,15.905,2.06,15.905,29.811,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,sem_polarizacao,remove perda de polarização,ESQ,13.846,16.846,3.0,16.846,31.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,13.846,16.846,3.0,16.846,31.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,13.846,13.846,0.0,13.846,28.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,13.846,13.846,0.0,13.846,27.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,13.846,15.846,2.0,15.846,29.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,beamwidth_90graus,abre HPBW para 90°,ESQ,13.846,13.846,0.0,13.846,25.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_027,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,13.846,13.846,0.0,13.846,25.692,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,baseline,sem alteração,ESQ,19.315,19.315,0.0,19.315,36.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,sem_tecido,desliga atenuação do tecido,ESQ,19.315,21.069,1.754,21.069,40.137,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,19.315,20.192,0.877,20.192,38.384,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,sem_gaiola,desliga perda equivalente da grade,ESQ,19.315,21.375,2.06,21.375,40.749,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,sem_polarizacao,remove perda de polarização,ESQ,19.315,22.315,3.0,22.315,42.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,19.315,22.315,3.0,22.315,42.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,19.315,19.315,0.0,19.315,39.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,19.315,19.315,0.0,19.315,38.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,19.315,21.315,2.0,21.315,40.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,beamwidth_90graus,abre HPBW para 90°,ESQ,19.315,19.315,0.0,19.315,36.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_028,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,19.315,19.315,0.0,19.315,36.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,baseline,sem alteração,ESQ,14.36,14.36,0.0,14.36,26.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,sem_tecido,desliga atenuação do tecido,ESQ,14.36,16.727,2.368,16.727,31.455,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,14.36,15.544,1.184,15.544,29.087,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,sem_gaiola,desliga perda equivalente da grade,ESQ,14.36,16.419,2.06,16.419,30.839,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,sem_polarizacao,remove perda de polarização,ESQ,14.36,17.36,3.0,17.36,32.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,14.36,17.36,3.0,17.36,32.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,14.36,14.36,0.0,14.36,29.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,14.36,14.36,0.0,14.36,28.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,14.36,16.36,2.0,16.36,30.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,beamwidth_90graus,abre HPBW para 90°,ESQ,14.36,14.36,0.0,14.36,26.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_029,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,14.36,14.36,0.0,14.36,26.719,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,baseline,sem alteração,DIR,12.89,12.89,0.0,12.89,23.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,sem_tecido,desliga atenuação do tecido,DIR,12.89,16.601,3.711,16.601,31.202,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,12.89,14.746,1.856,14.746,27.491,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,sem_gaiola,desliga perda equivalente da grade,DIR,12.89,14.95,2.06,14.95,27.899,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,sem_polarizacao,remove perda de polarização,DIR,12.89,15.89,3.0,15.89,29.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,12.89,15.89,3.0,15.89,29.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,12.89,12.89,0.0,12.89,26.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,12.89,12.89,0.0,12.89,25.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,12.89,14.89,2.0,14.89,27.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,beamwidth_90graus,abre HPBW para 90°,DIR,12.89,12.89,0.0,12.89,23.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_030,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,12.89,12.89,0.0,12.89,23.78,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,baseline,sem alteração,DIR,15.317,15.317,0.0,15.317,28.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,sem_tecido,desliga atenuação do tecido,DIR,15.317,18.623,3.306,18.623,35.246,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.317,16.97,1.653,16.97,31.94,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.317,17.376,2.06,17.376,32.753,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,sem_polarizacao,remove perda de polarização,DIR,15.317,18.317,3.0,18.317,34.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.317,18.317,3.0,18.317,34.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.317,15.317,0.0,15.317,31.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.317,15.317,0.0,15.317,30.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.317,17.317,2.0,17.317,32.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.317,15.317,0.0,15.317,28.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_031,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.317,15.317,0.0,15.317,28.634,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,baseline,sem alteração,DIR,8.047,8.047,0.0,8.047,14.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,sem_tecido,desliga atenuação do tecido,ESQ,8.047,12.354,4.307,12.354,22.708,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,8.047,10.092,2.046,10.092,18.185,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,sem_gaiola,desliga perda equivalente da grade,DIR,8.047,10.106,2.06,10.106,18.212,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,sem_polarizacao,remove perda de polarização,DIR,8.047,11.047,3.0,11.047,20.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,8.047,11.047,3.0,11.047,20.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,8.047,8.047,0.0,8.047,17.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,8.047,8.047,0.0,8.047,16.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,8.047,10.047,2.0,10.047,18.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,beamwidth_90graus,abre HPBW para 90°,DIR,8.047,8.047,0.0,8.047,14.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_032,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,8.047,8.047,0.0,8.047,14.093,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,baseline,sem alteração,ESQ,7.839,7.839,0.0,7.839,13.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,sem_tecido,desliga atenuação do tecido,DIR,7.839,12.095,4.256,12.095,22.189,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,7.839,9.628,1.79,9.628,17.257,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,sem_gaiola,desliga perda equivalente da grade,ESQ,7.839,9.898,2.06,9.898,17.796,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,sem_polarizacao,remove perda de polarização,ESQ,7.839,10.839,3.0,10.839,19.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,7.839,10.839,3.0,10.839,19.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,7.839,7.839,0.0,7.839,16.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,7.839,7.839,0.0,7.839,15.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,7.839,9.839,2.0,9.839,17.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,beamwidth_90graus,abre HPBW para 90°,ESQ,7.839,7.839,0.0,7.839,13.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_033,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,7.839,7.839,0.0,7.839,13.677,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,baseline,sem alteração,ESQ,9.529,9.529,0.0,9.529,17.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,sem_tecido,desliga atenuação do tecido,DIR,9.529,13.575,4.046,13.575,25.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,9.529,11.527,1.998,11.527,21.054,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,sem_gaiola,desliga perda equivalente da grade,ESQ,9.529,11.589,2.06,11.589,21.177,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,sem_polarizacao,remove perda de polarização,ESQ,9.529,12.529,3.0,12.529,23.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,9.529,12.529,3.0,12.529,23.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,9.529,9.529,0.0,9.529,20.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,9.529,9.529,0.0,9.529,19.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,9.529,11.529,2.0,11.529,21.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,beamwidth_90graus,abre HPBW para 90°,ESQ,9.529,9.529,0.0,9.529,17.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_034,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,9.529,9.529,0.0,9.529,17.058,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,baseline,sem alteração,ESQ,18.714,18.714,0.0,18.714,35.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,sem_tecido,desliga atenuação do tecido,ESQ,18.714,19.347,0.632,19.347,36.693,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,18.714,19.031,0.316,19.031,36.061,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,sem_gaiola,desliga perda equivalente da grade,ESQ,18.714,20.774,2.06,20.774,39.548,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,sem_polarizacao,remove perda de polarização,ESQ,18.714,21.714,3.0,21.714,41.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,18.714,21.714,3.0,21.714,41.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,18.714,18.714,0.0,18.714,38.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,18.714,18.714,0.0,18.714,37.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,18.714,20.714,2.0,20.714,39.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,beamwidth_90graus,abre HPBW para 90°,ESQ,18.714,18.714,0.0,18.714,35.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_035,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,18.714,18.714,0.0,18.714,35.429,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,baseline,sem alteração,DIR,9.07,9.07,0.0,9.07,16.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,sem_tecido,desliga atenuação do tecido,ESQ,9.07,13.083,4.013,13.083,24.167,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,9.07,10.977,1.907,10.977,19.954,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,sem_gaiola,desliga perda equivalente da grade,DIR,9.07,11.13,2.06,11.13,20.259,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,sem_polarizacao,remove perda de polarização,DIR,9.07,12.07,3.0,12.07,22.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,9.07,12.07,3.0,12.07,22.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,9.07,9.07,0.0,9.07,19.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,9.07,9.07,0.0,9.07,18.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,9.07,11.07,2.0,11.07,20.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,beamwidth_90graus,abre HPBW para 90°,DIR,9.07,9.07,0.0,9.07,16.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_036,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,9.07,9.07,0.0,9.07,16.14,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,baseline,sem alteração,ESQ,15.323,15.323,0.0,15.323,28.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,sem_tecido,desliga atenuação do tecido,ESQ,15.323,18.452,3.129,18.452,34.904,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,15.323,16.888,1.564,16.888,31.776,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,sem_gaiola,desliga perda equivalente da grade,ESQ,15.323,17.383,2.06,17.383,32.766,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,sem_polarizacao,remove perda de polarização,ESQ,15.323,18.323,3.0,18.323,34.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,15.323,18.323,3.0,18.323,34.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,15.323,15.323,0.0,15.323,31.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,15.323,15.323,0.0,15.323,30.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,15.323,17.323,2.0,17.323,32.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,beamwidth_90graus,abre HPBW para 90°,ESQ,15.323,15.323,0.0,15.323,28.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_037,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,15.323,15.323,0.0,15.323,28.647,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,baseline,sem alteração,DIR,17.63,17.63,0.0,17.63,33.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,sem_tecido,desliga atenuação do tecido,DIR,17.63,18.467,0.837,18.467,34.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,17.63,18.048,0.418,18.048,34.096,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,sem_gaiola,desliga perda equivalente da grade,DIR,17.63,19.689,2.06,19.689,37.379,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,sem_polarizacao,remove perda de polarização,DIR,17.63,20.63,3.0,20.63,39.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,17.63,20.63,3.0,20.63,39.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,17.63,17.63,0.0,17.63,36.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,17.63,17.63,0.0,17.63,35.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,17.63,19.63,2.0,19.63,37.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,beamwidth_90graus,abre HPBW para 90°,DIR,17.63,17.63,0.0,17.63,33.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_038,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,17.63,17.63,0.0,17.63,33.26,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,baseline,sem alteração,TOPO,15.555,15.555,0.0,15.555,29.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,sem_tecido,desliga atenuação do tecido,TOPO,15.555,17.668,2.113,17.668,33.336,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,15.555,16.611,1.057,16.611,31.223,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,sem_gaiola,desliga perda equivalente da grade,TOPO,15.555,17.614,2.06,17.614,33.229,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,sem_polarizacao,remove perda de polarização,TOPO,15.555,18.555,3.0,18.555,35.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,15.555,18.555,3.0,18.555,35.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,15.555,15.555,0.0,15.555,32.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,15.555,15.555,0.0,15.555,31.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,15.555,17.555,2.0,17.555,33.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,beamwidth_90graus,abre HPBW para 90°,TOPO,15.555,15.555,0.0,15.555,29.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_039,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,15.555,15.555,0.0,15.555,29.109,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,baseline,sem alteração,ESQ,5.986,5.986,0.0,5.986,9.973,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_040,True,sem_tecido,desliga atenuação do tecido,DIR,5.986,10.951,4.965,10.951,19.902,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,5.986,7.253,1.267,7.253,12.506,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,sem_gaiola,desliga perda equivalente da grade,ESQ,5.986,8.046,2.06,8.046,14.092,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,sem_polarizacao,remove perda de polarização,ESQ,5.986,8.986,3.0,8.986,15.973,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,5.986,8.986,3.0,8.986,15.973,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,5.986,5.986,0.0,5.986,12.973,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_040,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,5.986,5.986,0.0,5.986,11.973,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_040,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,5.986,7.986,2.0,7.986,13.973,True,True,False,LEITURA_CONFIAVEL
+PILHA_040,True,beamwidth_90graus,abre HPBW para 90°,ESQ,5.986,5.986,0.0,5.986,9.973,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_040,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,5.986,5.986,0.0,5.986,9.973,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_041,True,baseline,sem alteração,ESQ,9.827,9.827,0.0,9.827,17.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,sem_tecido,desliga atenuação do tecido,DIR,9.827,13.526,3.699,13.526,25.052,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,9.827,11.582,1.755,11.582,21.164,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,sem_gaiola,desliga perda equivalente da grade,ESQ,9.827,11.886,2.06,11.886,21.773,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,sem_polarizacao,remove perda de polarização,ESQ,9.827,12.827,3.0,12.827,23.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,9.827,12.827,3.0,12.827,23.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,9.827,9.827,0.0,9.827,20.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,9.827,9.827,0.0,9.827,19.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,9.827,11.827,2.0,11.827,21.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,beamwidth_90graus,abre HPBW para 90°,ESQ,9.827,9.827,0.0,9.827,17.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_041,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,9.827,9.827,0.0,9.827,17.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,baseline,sem alteração,ESQ,7.232,7.232,0.0,7.232,12.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,sem_tecido,desliga atenuação do tecido,DIR,7.232,11.662,4.43,11.662,21.325,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,7.232,8.878,1.646,8.878,15.757,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,sem_gaiola,desliga perda equivalente da grade,ESQ,7.232,9.292,2.06,9.292,16.584,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,sem_polarizacao,remove perda de polarização,ESQ,7.232,10.232,3.0,10.232,18.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,7.232,10.232,3.0,10.232,18.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,7.232,7.232,0.0,7.232,15.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,7.232,7.232,0.0,7.232,14.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,7.232,9.232,2.0,9.232,16.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,beamwidth_90graus,abre HPBW para 90°,ESQ,7.232,7.232,0.0,7.232,12.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_042,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,7.232,7.232,0.0,7.232,12.465,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,baseline,sem alteração,ESQ,16.45,16.45,0.0,16.45,30.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,sem_tecido,desliga atenuação do tecido,ESQ,16.45,19.733,3.283,19.733,37.467,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.45,18.092,1.641,18.092,34.184,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.45,18.51,2.06,18.51,35.02,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,sem_polarizacao,remove perda de polarização,ESQ,16.45,19.45,3.0,19.45,36.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.45,19.45,3.0,19.45,36.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.45,16.45,0.0,16.45,33.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.45,16.45,0.0,16.45,32.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.45,18.45,2.0,18.45,34.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.45,16.45,0.0,16.45,30.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_043,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.45,16.45,0.0,16.45,30.901,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,baseline,sem alteração,ESQ,17.896,17.896,0.0,17.896,33.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,sem_tecido,desliga atenuação do tecido,ESQ,17.896,20.16,2.264,20.16,38.319,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.896,19.028,1.132,19.028,36.055,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.896,19.956,2.06,19.956,37.911,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,sem_polarizacao,remove perda de polarização,ESQ,17.896,20.896,3.0,20.896,39.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.896,20.896,3.0,20.896,39.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.896,17.896,0.0,17.896,36.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.896,17.896,0.0,17.896,35.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.896,19.896,2.0,19.896,37.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.896,17.896,0.0,17.896,33.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_044,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.896,17.896,0.0,17.896,33.792,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,baseline,sem alteração,DIR,14.794,14.794,0.0,14.794,27.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,sem_tecido,desliga atenuação do tecido,DIR,14.794,15.807,1.013,15.807,29.615,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,14.794,15.301,0.507,15.301,28.601,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,sem_gaiola,desliga perda equivalente da grade,DIR,14.794,16.854,2.06,16.854,31.707,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,sem_polarizacao,remove perda de polarização,DIR,14.794,17.794,3.0,17.794,33.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,14.794,17.794,3.0,17.794,33.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,14.794,14.794,0.0,14.794,30.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,14.794,14.794,0.0,14.794,29.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,14.794,16.794,2.0,16.794,31.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,beamwidth_90graus,abre HPBW para 90°,DIR,14.794,14.794,0.0,14.794,27.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_045,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,14.794,14.794,0.0,14.794,27.588,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,baseline,sem alteração,DIR,16.412,16.412,0.0,16.412,30.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,sem_tecido,desliga atenuação do tecido,DIR,16.412,19.572,3.159,19.572,37.144,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.412,17.992,1.58,17.992,33.984,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.412,18.472,2.06,18.472,34.944,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,sem_polarizacao,remove perda de polarização,DIR,16.412,19.412,3.0,19.412,36.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.412,19.412,3.0,19.412,36.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.412,16.412,0.0,16.412,33.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.412,16.412,0.0,16.412,32.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.412,18.412,2.0,18.412,34.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.412,16.412,0.0,16.412,30.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_046,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.412,16.412,0.0,16.412,30.825,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,baseline,sem alteração,DIR,9.101,9.101,0.0,9.101,16.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,sem_tecido,desliga atenuação do tecido,ESQ,9.101,12.775,3.674,12.775,23.55,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,9.101,10.498,1.396,10.498,18.995,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,sem_gaiola,desliga perda equivalente da grade,DIR,9.101,11.161,2.06,11.161,20.322,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,sem_polarizacao,remove perda de polarização,DIR,9.101,12.101,3.0,12.101,22.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,9.101,12.101,3.0,12.101,22.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,9.101,9.101,0.0,9.101,19.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,9.101,9.101,0.0,9.101,18.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,9.101,11.101,2.0,11.101,20.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,beamwidth_90graus,abre HPBW para 90°,DIR,9.101,9.101,0.0,9.101,16.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_047,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,9.101,9.101,0.0,9.101,16.203,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,baseline,sem alteração,DIR,15.1,15.1,0.0,15.1,28.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,sem_tecido,desliga atenuação do tecido,DIR,15.1,17.219,2.119,17.219,32.439,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.1,16.16,1.06,16.16,30.32,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.1,17.16,2.06,17.16,32.32,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,sem_polarizacao,remove perda de polarização,DIR,15.1,18.1,3.0,18.1,34.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.1,18.1,3.0,18.1,34.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.1,15.1,0.0,15.1,31.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.1,15.1,0.0,15.1,30.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.1,17.1,2.0,17.1,32.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.1,15.1,0.0,15.1,28.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_048,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.1,15.1,0.0,15.1,28.2,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,baseline,sem alteração,DIR,11.458,11.458,0.0,11.458,20.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,sem_tecido,desliga atenuação do tecido,ESQ,11.458,14.135,2.678,14.135,26.271,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,11.458,12.769,1.311,12.769,23.538,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,sem_gaiola,desliga perda equivalente da grade,DIR,11.458,13.517,2.06,13.517,25.034,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,sem_polarizacao,remove perda de polarização,DIR,11.458,14.458,3.0,14.458,26.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,11.458,14.458,3.0,14.458,26.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,11.458,11.458,0.0,11.458,23.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,11.458,11.458,0.0,11.458,22.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,11.458,13.458,2.0,13.458,24.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,beamwidth_90graus,abre HPBW para 90°,DIR,11.458,11.458,0.0,11.458,20.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_049,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,11.458,11.458,0.0,11.458,20.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,baseline,sem alteração,DIR,5.354,5.354,0.0,5.354,8.708,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_050,True,sem_tecido,desliga atenuação do tecido,ESQ,5.354,10.575,5.221,10.575,19.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,5.354,6.567,1.213,6.567,11.134,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,sem_gaiola,desliga perda equivalente da grade,DIR,5.354,7.414,2.06,7.414,12.827,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,sem_polarizacao,remove perda de polarização,DIR,5.354,8.354,3.0,8.354,14.708,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,5.354,8.354,3.0,8.354,14.708,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,5.354,5.354,0.0,5.354,11.708,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_050,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,5.354,5.354,0.0,5.354,10.708,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_050,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,5.354,7.354,2.0,7.354,12.708,True,True,False,LEITURA_CONFIAVEL
+PILHA_050,True,beamwidth_90graus,abre HPBW para 90°,DIR,5.354,5.354,0.0,5.354,8.708,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_050,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,5.354,5.354,0.0,5.354,8.708,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_051,True,baseline,sem alteração,DIR,19.815,19.815,0.0,19.815,37.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,sem_tecido,desliga atenuação do tecido,DIR,19.815,21.797,1.981,21.797,41.593,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,19.815,20.806,0.991,20.806,39.612,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,sem_gaiola,desliga perda equivalente da grade,DIR,19.815,21.875,2.06,21.875,41.749,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,sem_polarizacao,remove perda de polarização,DIR,19.815,22.815,3.0,22.815,43.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,19.815,22.815,3.0,22.815,43.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,19.815,19.815,0.0,19.815,40.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,19.815,19.815,0.0,19.815,39.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,19.815,21.815,2.0,21.815,41.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,beamwidth_90graus,abre HPBW para 90°,DIR,19.815,19.815,0.0,19.815,37.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_051,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,19.815,19.815,0.0,19.815,37.63,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,baseline,sem alteração,ESQ,8.347,8.347,0.0,8.347,14.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,sem_tecido,desliga atenuação do tecido,DIR,8.347,12.689,4.342,12.689,23.378,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,8.347,10.506,2.159,10.506,19.012,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,sem_gaiola,desliga perda equivalente da grade,ESQ,8.347,10.407,2.06,10.407,18.813,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,sem_polarizacao,remove perda de polarização,ESQ,8.347,11.347,3.0,11.347,20.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,8.347,11.347,3.0,11.347,20.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,8.347,8.347,0.0,8.347,17.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,8.347,8.347,0.0,8.347,16.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,8.347,10.347,2.0,10.347,18.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,beamwidth_90graus,abre HPBW para 90°,ESQ,8.347,8.347,0.0,8.347,14.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_052,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,8.347,8.347,0.0,8.347,14.694,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,baseline,sem alteração,ESQ,7.533,7.533,0.0,7.533,13.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,sem_tecido,desliga atenuação do tecido,DIR,7.533,11.96,4.427,11.96,21.92,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,7.533,9.628,2.095,9.628,17.256,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,sem_gaiola,desliga perda equivalente da grade,ESQ,7.533,9.593,2.06,9.593,17.186,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,sem_polarizacao,remove perda de polarização,ESQ,7.533,10.533,3.0,10.533,19.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,7.533,10.533,3.0,10.533,19.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,7.533,7.533,0.0,7.533,16.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,7.533,7.533,0.0,7.533,15.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,7.533,9.533,2.0,9.533,17.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,beamwidth_90graus,abre HPBW para 90°,ESQ,7.533,7.533,0.0,7.533,13.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_053,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,7.533,7.533,0.0,7.533,13.067,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,baseline,sem alteração,ESQ,17.261,17.261,0.0,17.261,32.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,sem_tecido,desliga atenuação do tecido,ESQ,17.261,20.143,2.882,20.143,38.287,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.261,18.702,1.441,18.702,35.404,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.261,19.321,2.06,19.321,36.641,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,sem_polarizacao,remove perda de polarização,ESQ,17.261,20.261,3.0,20.261,38.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.261,20.261,3.0,20.261,38.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.261,17.261,0.0,17.261,35.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.261,17.261,0.0,17.261,34.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.261,19.261,2.0,19.261,36.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.261,17.261,0.0,17.261,32.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_054,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.261,17.261,0.0,17.261,32.522,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,baseline,sem alteração,DIR,13.061,13.061,0.0,13.061,24.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,sem_tecido,desliga atenuação do tecido,DIR,13.061,15.646,2.586,15.646,29.293,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,13.061,14.353,1.293,14.353,26.707,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,sem_gaiola,desliga perda equivalente da grade,DIR,13.061,15.12,2.06,15.12,28.24,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,sem_polarizacao,remove perda de polarização,DIR,13.061,16.061,3.0,16.061,30.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,13.061,16.061,3.0,16.061,30.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,13.061,13.061,0.0,13.061,27.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,13.061,13.061,0.0,13.061,26.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,13.061,15.061,2.0,15.061,28.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,beamwidth_90graus,abre HPBW para 90°,DIR,13.061,13.061,0.0,13.061,24.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_055,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,13.061,13.061,0.0,13.061,24.121,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,baseline,sem alteração,DIR,9.361,9.361,0.0,9.361,16.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,sem_tecido,desliga atenuação do tecido,ESQ,9.361,13.43,4.069,13.43,24.859,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,9.361,11.362,2.001,11.362,20.724,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,sem_gaiola,desliga perda equivalente da grade,DIR,9.361,11.421,2.06,11.421,20.841,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,sem_polarizacao,remove perda de polarização,DIR,9.361,12.361,3.0,12.361,22.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,9.361,12.361,3.0,12.361,22.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,9.361,9.361,0.0,9.361,19.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,9.361,9.361,0.0,9.361,18.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,9.361,11.361,2.0,11.361,20.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,beamwidth_90graus,abre HPBW para 90°,DIR,9.361,9.361,0.0,9.361,16.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_056,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,9.361,9.361,0.0,9.361,16.722,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,baseline,sem alteração,TOPO,14.213,14.213,0.0,14.213,26.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,sem_tecido,desliga atenuação do tecido,TOPO,14.213,16.141,1.929,16.141,30.283,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,14.213,15.177,0.964,15.177,28.354,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,sem_gaiola,desliga perda equivalente da grade,TOPO,14.213,16.272,2.06,16.272,30.545,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,sem_polarizacao,remove perda de polarização,TOPO,14.213,17.213,3.0,17.213,32.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,14.213,17.213,3.0,17.213,32.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,14.213,14.213,0.0,14.213,29.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,14.213,14.213,0.0,14.213,28.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,14.213,16.213,2.0,16.213,30.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,beamwidth_90graus,abre HPBW para 90°,TOPO,14.213,14.213,0.0,14.213,26.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_057,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,14.213,14.213,0.0,14.213,26.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,baseline,sem alteração,DIR,18.436,18.436,0.0,18.436,34.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,sem_tecido,desliga atenuação do tecido,DIR,18.436,19.884,1.449,19.884,37.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,18.436,19.16,0.724,19.16,36.32,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,sem_gaiola,desliga perda equivalente da grade,DIR,18.436,20.495,2.06,20.495,38.99,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,sem_polarizacao,remove perda de polarização,DIR,18.436,21.436,3.0,21.436,40.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,18.436,21.436,3.0,21.436,40.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,18.436,18.436,0.0,18.436,37.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,18.436,18.436,0.0,18.436,36.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,18.436,20.436,2.0,20.436,38.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,beamwidth_90graus,abre HPBW para 90°,DIR,18.436,18.436,0.0,18.436,34.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_058,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,18.436,18.436,0.0,18.436,34.871,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,baseline,sem alteração,DIR,13.201,13.201,0.0,13.201,24.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,sem_tecido,desliga atenuação do tecido,DIR,13.201,15.893,2.692,15.893,29.787,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,13.201,14.547,1.346,14.547,27.094,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,sem_gaiola,desliga perda equivalente da grade,DIR,13.201,15.261,2.06,15.261,28.521,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,sem_polarizacao,remove perda de polarização,DIR,13.201,16.201,3.0,16.201,30.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,13.201,16.201,3.0,16.201,30.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,13.201,13.201,0.0,13.201,27.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,13.201,13.201,0.0,13.201,26.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,13.201,15.201,2.0,15.201,28.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,beamwidth_90graus,abre HPBW para 90°,DIR,13.201,13.201,0.0,13.201,24.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_059,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,13.201,13.201,0.0,13.201,24.402,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,baseline,sem alteração,ESQ,12.673,12.673,0.0,12.673,23.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,sem_tecido,desliga atenuação do tecido,ESQ,12.673,16.302,3.629,16.302,30.604,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,12.673,14.488,1.814,14.488,26.975,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,sem_gaiola,desliga perda equivalente da grade,ESQ,12.673,14.733,2.06,14.733,27.466,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,sem_polarizacao,remove perda de polarização,ESQ,12.673,15.673,3.0,15.673,29.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,12.673,15.673,3.0,15.673,29.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,12.673,12.673,0.0,12.673,26.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,12.673,12.673,0.0,12.673,25.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,12.673,14.673,2.0,14.673,27.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,beamwidth_90graus,abre HPBW para 90°,ESQ,12.673,12.673,0.0,12.673,23.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_060,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,12.673,12.673,0.0,12.673,23.347,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,baseline,sem alteração,DIR,5.27,5.27,0.0,5.27,8.54,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_061,True,sem_tecido,desliga atenuação do tecido,TOPO,5.27,10.594,5.324,10.594,19.188,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,5.27,7.335,2.065,7.335,12.669,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,sem_gaiola,desliga perda equivalente da grade,DIR,5.27,7.33,2.06,7.33,12.66,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,sem_polarizacao,remove perda de polarização,DIR,5.27,8.27,3.0,8.27,14.54,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,5.27,8.27,3.0,8.27,14.54,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,5.27,5.27,0.0,5.27,11.54,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_061,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,5.27,5.27,0.0,5.27,10.54,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_061,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,5.27,7.27,2.0,7.27,12.54,True,True,False,LEITURA_CONFIAVEL
+PILHA_061,True,beamwidth_90graus,abre HPBW para 90°,DIR,5.27,5.27,0.0,5.27,8.54,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_061,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,5.27,5.27,0.0,5.27,8.54,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_062,True,baseline,sem alteração,DIR,10.068,10.068,0.0,10.068,18.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,sem_tecido,desliga atenuação do tecido,ESQ,10.068,13.134,3.066,13.134,24.269,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,10.068,11.08,1.013,11.08,20.161,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,sem_gaiola,desliga perda equivalente da grade,DIR,10.068,12.127,2.06,12.127,22.255,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,sem_polarizacao,remove perda de polarização,DIR,10.068,13.068,3.0,13.068,24.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,10.068,13.068,3.0,13.068,24.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,10.068,10.068,0.0,10.068,21.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,10.068,10.068,0.0,10.068,20.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,10.068,12.068,2.0,12.068,22.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,beamwidth_90graus,abre HPBW para 90°,DIR,10.068,10.068,0.0,10.068,18.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_062,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,10.068,10.068,0.0,10.068,18.136,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,baseline,sem alteração,ESQ,16.896,16.896,0.0,16.896,31.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,sem_tecido,desliga atenuação do tecido,ESQ,16.896,17.782,0.886,17.782,33.564,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.896,17.339,0.443,17.339,32.678,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.896,18.956,2.06,18.956,35.912,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,sem_polarizacao,remove perda de polarização,ESQ,16.896,19.896,3.0,19.896,37.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.896,19.896,3.0,19.896,37.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.896,16.896,0.0,16.896,34.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.896,16.896,0.0,16.896,33.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.896,18.896,2.0,18.896,35.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.896,16.896,0.0,16.896,31.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_063,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.896,16.896,0.0,16.896,31.793,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,baseline,sem alteração,DIR,16.677,16.677,0.0,16.677,31.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,sem_tecido,desliga atenuação do tecido,DIR,16.677,18.608,1.932,18.608,35.217,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.677,17.643,0.966,17.643,33.285,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.677,18.736,2.06,18.736,35.472,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,sem_polarizacao,remove perda de polarização,DIR,16.677,19.677,3.0,19.677,37.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.677,19.677,3.0,19.677,37.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.677,16.677,0.0,16.677,34.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.677,16.677,0.0,16.677,33.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.677,18.677,2.0,18.677,35.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.677,16.677,0.0,16.677,31.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_064,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.677,16.677,0.0,16.677,31.353,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,baseline,sem alteração,ESQ,5.339,5.339,0.0,5.339,8.679,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_065,True,sem_tecido,desliga atenuação do tecido,DIR,5.339,10.558,5.219,10.558,19.117,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,5.339,6.988,1.649,6.988,11.977,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,sem_gaiola,desliga perda equivalente da grade,ESQ,5.339,7.399,2.06,7.399,12.798,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,sem_polarizacao,remove perda de polarização,ESQ,5.339,8.339,3.0,8.339,14.679,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,5.339,8.339,3.0,8.339,14.679,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,5.339,5.339,0.0,5.339,11.679,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_065,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,5.339,5.339,0.0,5.339,10.679,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_065,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,5.339,7.339,2.0,7.339,12.679,True,True,False,LEITURA_CONFIAVEL
+PILHA_065,True,beamwidth_90graus,abre HPBW para 90°,ESQ,5.339,5.339,0.0,5.339,8.679,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_065,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,5.339,5.339,0.0,5.339,8.679,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_066,True,baseline,sem alteração,ESQ,16.467,16.467,0.0,16.467,30.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,sem_tecido,desliga atenuação do tecido,ESQ,16.467,19.607,3.14,19.607,37.214,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.467,18.037,1.57,18.037,34.073,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.467,18.526,2.06,18.526,35.052,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,sem_polarizacao,remove perda de polarização,ESQ,16.467,19.467,3.0,19.467,36.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.467,19.467,3.0,19.467,36.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.467,16.467,0.0,16.467,33.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.467,16.467,0.0,16.467,32.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.467,18.467,2.0,18.467,34.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.467,16.467,0.0,16.467,30.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_066,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.467,16.467,0.0,16.467,30.933,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,baseline,sem alteração,DIR,15.899,15.899,0.0,15.899,29.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,sem_tecido,desliga atenuação do tecido,DIR,15.899,18.925,3.026,18.925,35.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.899,17.412,1.513,17.412,32.824,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.899,17.958,2.06,17.958,33.916,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,sem_polarizacao,remove perda de polarização,DIR,15.899,18.899,3.0,18.899,35.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.899,18.899,3.0,18.899,35.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.899,15.899,0.0,15.899,32.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.899,15.899,0.0,15.899,31.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.899,17.899,2.0,17.899,33.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.899,15.899,0.0,15.899,29.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_067,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.899,15.899,0.0,15.899,29.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,baseline,sem alteração,DIR,11.526,11.526,0.0,11.526,21.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,sem_tecido,desliga atenuação do tecido,DIR,11.526,15.389,3.863,15.389,28.778,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,11.526,13.458,1.931,13.458,24.915,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,sem_gaiola,desliga perda equivalente da grade,DIR,11.526,13.586,2.06,13.586,25.172,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,sem_polarizacao,remove perda de polarização,DIR,11.526,14.526,3.0,14.526,27.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,11.526,14.526,3.0,14.526,27.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,11.526,11.526,0.0,11.526,24.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,11.526,11.526,0.0,11.526,23.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,11.526,13.526,2.0,13.526,25.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,beamwidth_90graus,abre HPBW para 90°,DIR,11.526,11.526,0.0,11.526,21.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_068,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,11.526,11.526,0.0,11.526,21.053,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,baseline,sem alteração,TOPO,13.191,13.191,0.0,13.191,24.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,sem_tecido,desliga atenuação do tecido,ESQ,13.191,16.019,2.829,16.019,30.039,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,13.191,14.584,1.393,14.584,27.168,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,sem_gaiola,desliga perda equivalente da grade,TOPO,13.191,15.25,2.06,15.25,28.501,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,sem_polarizacao,remove perda de polarização,TOPO,13.191,16.191,3.0,16.191,30.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,13.191,16.191,3.0,16.191,30.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,13.191,13.191,0.0,13.191,27.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,13.191,13.191,0.0,13.191,26.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,13.191,15.191,2.0,15.191,28.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,beamwidth_90graus,abre HPBW para 90°,TOPO,13.191,13.191,0.0,13.191,24.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_069,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,13.191,13.191,0.0,13.191,24.382,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,baseline,sem alteração,ESQ,16.984,16.984,0.0,16.984,31.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,sem_tecido,desliga atenuação do tecido,ESQ,16.984,19.685,2.7,19.685,37.37,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.984,18.335,1.35,18.335,34.669,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.984,19.044,2.06,19.044,36.088,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,sem_polarizacao,remove perda de polarização,ESQ,16.984,19.984,3.0,19.984,37.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.984,19.984,3.0,19.984,37.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.984,16.984,0.0,16.984,34.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.984,16.984,0.0,16.984,33.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.984,18.984,2.0,18.984,35.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.984,16.984,0.0,16.984,31.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_070,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.984,16.984,0.0,16.984,31.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,baseline,sem alteração,DIR,16.48,16.48,0.0,16.48,30.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,sem_tecido,desliga atenuação do tecido,DIR,16.48,19.442,2.961,19.442,36.883,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.48,17.961,1.481,17.961,33.922,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.48,18.54,2.06,18.54,35.079,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,sem_polarizacao,remove perda de polarização,DIR,16.48,19.48,3.0,19.48,36.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.48,19.48,3.0,19.48,36.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.48,16.48,0.0,16.48,33.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.48,16.48,0.0,16.48,32.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.48,18.48,2.0,18.48,34.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.48,16.48,0.0,16.48,30.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_071,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.48,16.48,0.0,16.48,30.96,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,baseline,sem alteração,DIR,15.505,15.505,0.0,15.505,29.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,sem_tecido,desliga atenuação do tecido,DIR,15.505,15.702,0.197,15.702,29.404,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,15.505,15.603,0.099,15.603,29.206,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,sem_gaiola,desliga perda equivalente da grade,DIR,15.505,17.564,2.06,17.564,33.128,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,sem_polarizacao,remove perda de polarização,DIR,15.505,18.505,3.0,18.505,35.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,15.505,18.505,3.0,18.505,35.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,15.505,15.505,0.0,15.505,32.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,15.505,15.505,0.0,15.505,31.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,15.505,17.505,2.0,17.505,33.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,beamwidth_90graus,abre HPBW para 90°,DIR,15.505,15.505,0.0,15.505,29.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_072,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,15.505,15.505,0.0,15.505,29.009,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,baseline,sem alteração,ESQ,14.56,14.56,0.0,14.56,27.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,sem_tecido,desliga atenuação do tecido,ESQ,14.56,17.866,3.306,17.866,33.732,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,14.56,16.213,1.653,16.213,30.426,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,sem_gaiola,desliga perda equivalente da grade,ESQ,14.56,16.62,2.06,16.62,31.239,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,sem_polarizacao,remove perda de polarização,ESQ,14.56,17.56,3.0,17.56,33.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,14.56,17.56,3.0,17.56,33.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,14.56,14.56,0.0,14.56,30.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,14.56,14.56,0.0,14.56,29.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,14.56,16.56,2.0,16.56,31.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,beamwidth_90graus,abre HPBW para 90°,ESQ,14.56,14.56,0.0,14.56,27.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_073,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,14.56,14.56,0.0,14.56,27.12,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,baseline,sem alteração,DIR,14.267,14.267,0.0,14.267,26.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,sem_tecido,desliga atenuação do tecido,DIR,14.267,16.62,2.353,16.62,31.24,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,14.267,15.444,1.176,15.444,28.887,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,sem_gaiola,desliga perda equivalente da grade,DIR,14.267,16.327,2.06,16.327,30.654,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,sem_polarizacao,remove perda de polarização,DIR,14.267,17.267,3.0,17.267,32.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,14.267,17.267,3.0,17.267,32.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,14.267,14.267,0.0,14.267,29.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,14.267,14.267,0.0,14.267,28.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,14.267,16.267,2.0,16.267,30.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,beamwidth_90graus,abre HPBW para 90°,DIR,14.267,14.267,0.0,14.267,26.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_074,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,14.267,14.267,0.0,14.267,26.535,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,baseline,sem alteração,DIR,5.049,5.049,0.0,5.049,8.097,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_075,True,sem_tecido,desliga atenuação do tecido,TOPO,5.049,10.641,5.593,10.641,19.283,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,5.049,7.407,2.358,7.407,12.814,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,sem_gaiola,desliga perda equivalente da grade,DIR,5.049,7.108,2.06,7.108,12.216,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,sem_polarizacao,remove perda de polarização,DIR,5.049,8.049,3.0,8.049,14.097,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,5.049,8.049,3.0,8.049,14.097,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,5.049,5.049,0.0,5.049,11.097,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_075,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,5.049,5.049,0.0,5.049,10.097,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_075,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,5.049,7.049,2.0,7.049,12.097,True,True,False,LEITURA_CONFIAVEL
+PILHA_075,True,beamwidth_90graus,abre HPBW para 90°,DIR,5.049,5.049,0.0,5.049,8.097,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_075,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,5.049,5.049,0.0,5.049,8.097,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+PILHA_076,True,baseline,sem alteração,DIR,19.425,19.425,0.0,19.425,36.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,sem_tecido,desliga atenuação do tecido,DIR,19.425,21.169,1.744,21.169,40.338,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,19.425,20.297,0.872,20.297,38.594,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,sem_gaiola,desliga perda equivalente da grade,DIR,19.425,21.485,2.06,21.485,40.969,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,sem_polarizacao,remove perda de polarização,DIR,19.425,22.425,3.0,22.425,42.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,19.425,22.425,3.0,22.425,42.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,19.425,19.425,0.0,19.425,39.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,19.425,19.425,0.0,19.425,38.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,19.425,21.425,2.0,21.425,40.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,beamwidth_90graus,abre HPBW para 90°,DIR,19.425,19.425,0.0,19.425,36.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_076,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,19.425,19.425,0.0,19.425,36.85,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,baseline,sem alteração,ESQ,13.602,13.602,0.0,13.602,25.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,sem_tecido,desliga atenuação do tecido,ESQ,13.602,17.195,3.593,17.195,32.39,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,13.602,15.399,1.797,15.399,28.797,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,sem_gaiola,desliga perda equivalente da grade,ESQ,13.602,15.662,2.06,15.662,29.323,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,sem_polarizacao,remove perda de polarização,ESQ,13.602,16.602,3.0,16.602,31.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,13.602,16.602,3.0,16.602,31.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,13.602,13.602,0.0,13.602,28.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,13.602,13.602,0.0,13.602,27.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,13.602,15.602,2.0,15.602,29.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,beamwidth_90graus,abre HPBW para 90°,ESQ,13.602,13.602,0.0,13.602,25.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_077,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,13.602,13.602,0.0,13.602,25.204,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,baseline,sem alteração,DIR,12.515,12.515,0.0,12.515,23.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,sem_tecido,desliga atenuação do tecido,ESQ,12.515,13.886,1.371,13.886,25.772,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,12.515,12.955,0.439,12.955,23.909,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,sem_gaiola,desliga perda equivalente da grade,DIR,12.515,14.575,2.06,14.575,27.15,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,sem_polarizacao,remove perda de polarização,DIR,12.515,15.515,3.0,15.515,29.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,12.515,15.515,3.0,15.515,29.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,12.515,12.515,0.0,12.515,26.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,12.515,12.515,0.0,12.515,25.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,12.515,14.515,2.0,14.515,27.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,beamwidth_90graus,abre HPBW para 90°,DIR,12.515,12.515,0.0,12.515,23.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_078,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,12.515,12.515,0.0,12.515,23.031,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,baseline,sem alteração,DIR,19.884,19.884,0.0,19.884,37.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,sem_tecido,desliga atenuação do tecido,DIR,19.884,21.574,1.69,21.574,41.148,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,19.884,20.729,0.845,20.729,39.458,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,sem_gaiola,desliga perda equivalente da grade,DIR,19.884,21.944,2.06,21.944,41.888,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,sem_polarizacao,remove perda de polarização,DIR,19.884,22.884,3.0,22.884,43.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,19.884,22.884,3.0,22.884,43.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,19.884,19.884,0.0,19.884,40.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,19.884,19.884,0.0,19.884,39.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,19.884,21.884,2.0,21.884,41.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,beamwidth_90graus,abre HPBW para 90°,DIR,19.884,19.884,0.0,19.884,37.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_079,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,19.884,19.884,0.0,19.884,37.769,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,baseline,sem alteração,DIR,16.317,16.317,0.0,16.317,30.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,sem_tecido,desliga atenuação do tecido,DIR,16.317,19.596,3.279,19.596,37.193,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.317,17.957,1.64,17.957,33.914,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.317,18.377,2.06,18.377,34.754,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,sem_polarizacao,remove perda de polarização,DIR,16.317,19.317,3.0,19.317,36.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.317,19.317,3.0,19.317,36.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.317,16.317,0.0,16.317,33.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.317,16.317,0.0,16.317,32.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.317,18.317,2.0,18.317,34.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.317,16.317,0.0,16.317,30.635,True,True,False,LEITURA_CONFIAVEL
+PILHA_080,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.317,16.317,0.0,16.317,30.635,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_01,True,baseline,sem alteração,ESQ,0.721,0.721,0.0,1.36,0.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,sem_tecido,desliga atenuação do tecido,TOPO,0.721,9.59,8.869,9.59,17.179,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_01,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,0.721,4.138,3.417,4.138,6.275,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,sem_gaiola,desliga perda equivalente da grade,ESQ,0.721,3.42,2.699,3.42,4.84,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,sem_polarizacao,remove perda de polarização,ESQ,0.721,4.36,3.64,4.36,6.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,0.721,4.36,3.64,4.36,6.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,0.721,1.36,0.64,1.36,3.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,0.721,1.36,0.64,1.36,2.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,0.721,3.36,2.64,3.36,4.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,beamwidth_90graus,abre HPBW para 90°,ESQ,0.721,0.721,0.0,1.36,0.721,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_01,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,0.721,1.387,0.667,1.694,1.387,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_02,True,baseline,sem alteração,ESQ,4.137,4.137,0.0,4.137,6.273,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_02,True,sem_tecido,desliga atenuação do tecido,TOPO,4.137,10.463,6.327,10.463,18.927,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,4.137,6.66,2.523,6.66,11.32,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,sem_gaiola,desliga perda equivalente da grade,ESQ,4.137,6.196,2.06,6.196,10.392,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,sem_polarizacao,remove perda de polarização,ESQ,4.137,7.137,3.0,7.137,12.273,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,4.137,7.137,3.0,7.137,12.273,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,4.137,4.137,0.0,4.137,9.273,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_02,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,4.137,4.137,0.0,4.137,8.273,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_02,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,4.137,6.137,2.0,6.137,10.273,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_02,True,beamwidth_90graus,abre HPBW para 90°,ESQ,4.137,4.137,0.0,4.137,6.273,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_02,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,4.137,4.137,0.0,4.137,6.273,True,True,False,LEITURA_MARGINAL_SEM_FOLGA
+SOTERRADA_CENTRO_03,True,baseline,sem alteração,DIR,6.797,6.797,0.0,6.797,11.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,sem_tecido,desliga atenuação do tecido,ESQ,6.797,11.391,4.594,11.391,20.782,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,6.797,9.005,2.208,9.005,16.011,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,sem_gaiola,desliga perda equivalente da grade,DIR,6.797,8.856,2.06,8.856,15.713,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,sem_polarizacao,remove perda de polarização,DIR,6.797,9.797,3.0,9.797,17.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,6.797,9.797,3.0,9.797,17.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,6.797,6.797,0.0,6.797,14.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,6.797,6.797,0.0,6.797,13.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,6.797,8.797,2.0,8.797,15.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,beamwidth_90graus,abre HPBW para 90°,DIR,6.797,6.797,0.0,6.797,11.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_03,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,6.797,6.797,0.0,6.797,11.594,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,baseline,sem alteração,DIR,9.676,9.676,0.0,9.676,17.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,sem_tecido,desliga atenuação do tecido,ESQ,9.676,13.704,4.028,13.704,25.407,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,9.676,11.671,1.995,11.671,21.342,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,sem_gaiola,desliga perda equivalente da grade,DIR,9.676,11.736,2.06,11.736,21.471,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,sem_polarizacao,remove perda de polarização,DIR,9.676,12.676,3.0,12.676,23.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,9.676,12.676,3.0,12.676,23.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,9.676,9.676,0.0,9.676,20.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,9.676,9.676,0.0,9.676,19.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,9.676,11.676,2.0,11.676,21.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,beamwidth_90graus,abre HPBW para 90°,DIR,9.676,9.676,0.0,9.676,17.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_04,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,9.676,9.676,0.0,9.676,17.352,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,baseline,sem alteração,ESQ,12.098,12.098,0.0,12.098,22.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,sem_tecido,desliga atenuação do tecido,ESQ,12.098,15.913,3.815,15.913,29.826,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,12.098,14.006,1.907,14.006,26.011,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,sem_gaiola,desliga perda equivalente da grade,ESQ,12.098,14.158,2.06,14.158,26.316,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,sem_polarizacao,remove perda de polarização,ESQ,12.098,15.098,3.0,15.098,28.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,12.098,15.098,3.0,15.098,28.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,12.098,12.098,0.0,12.098,25.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,12.098,12.098,0.0,12.098,24.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,12.098,14.098,2.0,14.098,26.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,beamwidth_90graus,abre HPBW para 90°,ESQ,12.098,12.098,0.0,12.098,22.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_05,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,12.098,12.098,0.0,12.098,22.197,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,baseline,sem alteração,ESQ,14.338,14.338,0.0,14.338,26.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,sem_tecido,desliga atenuação do tecido,ESQ,14.338,17.78,3.443,17.78,33.56,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,14.338,16.059,1.721,16.059,30.118,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,sem_gaiola,desliga perda equivalente da grade,ESQ,14.338,16.397,2.06,16.397,30.794,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,sem_polarizacao,remove perda de polarização,ESQ,14.338,17.338,3.0,17.338,32.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,14.338,17.338,3.0,17.338,32.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,14.338,14.338,0.0,14.338,29.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,14.338,14.338,0.0,14.338,28.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,14.338,16.338,2.0,16.338,30.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,beamwidth_90graus,abre HPBW para 90°,ESQ,14.338,14.338,0.0,14.338,26.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_06,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,14.338,14.338,0.0,14.338,26.675,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,baseline,sem alteração,DIR,16.266,16.266,0.0,16.266,30.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,sem_tecido,desliga atenuação do tecido,DIR,16.266,19.47,3.204,19.47,36.94,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,16.266,17.868,1.602,17.868,33.736,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,sem_gaiola,desliga perda equivalente da grade,DIR,16.266,18.325,2.06,18.325,34.651,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,sem_polarizacao,remove perda de polarização,DIR,16.266,19.266,3.0,19.266,36.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,16.266,19.266,3.0,19.266,36.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,16.266,16.266,0.0,16.266,33.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,16.266,16.266,0.0,16.266,32.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,16.266,18.266,2.0,18.266,34.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,beamwidth_90graus,abre HPBW para 90°,DIR,16.266,16.266,0.0,16.266,30.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_07,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,16.266,16.266,0.0,16.266,30.532,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,baseline,sem alteração,ESQ,17.141,17.141,0.0,17.141,32.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,sem_tecido,desliga atenuação do tecido,ESQ,17.141,20.179,3.039,20.179,38.359,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,17.141,18.66,1.519,18.66,35.32,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,sem_gaiola,desliga perda equivalente da grade,ESQ,17.141,19.2,2.06,19.2,36.4,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,sem_polarizacao,remove perda de polarização,ESQ,17.141,20.141,3.0,20.141,38.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,17.141,20.141,3.0,20.141,38.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,17.141,17.141,0.0,17.141,35.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,17.141,17.141,0.0,17.141,34.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,17.141,19.141,2.0,19.141,36.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,beamwidth_90graus,abre HPBW para 90°,ESQ,17.141,17.141,0.0,17.141,32.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_08,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,17.141,17.141,0.0,17.141,32.281,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,baseline,sem alteração,ESQ,16.839,16.839,0.0,16.839,31.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,sem_tecido,desliga atenuação do tecido,ESQ,16.839,19.867,3.028,19.867,37.733,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,16.839,18.353,1.514,18.353,34.705,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,sem_gaiola,desliga perda equivalente da grade,ESQ,16.839,18.898,2.06,18.898,35.796,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,sem_polarizacao,remove perda de polarização,ESQ,16.839,19.839,3.0,19.839,37.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,sem_orientacao,remove perda extra de orientação/dobra,ESQ,16.839,19.839,3.0,19.839,37.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,16.839,16.839,0.0,16.839,34.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,16.839,16.839,0.0,16.839,33.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,16.839,18.839,2.0,18.839,35.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,beamwidth_90graus,abre HPBW para 90°,ESQ,16.839,16.839,0.0,16.839,31.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_09,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,16.839,16.839,0.0,16.839,31.677,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,baseline,sem alteração,DIR,14.678,14.678,0.0,14.678,27.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,sem_tecido,desliga atenuação do tecido,DIR,14.678,18.124,3.446,18.124,34.249,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,tecido_50pct,reduz atenuação do tecido pela metade,DIR,14.678,16.401,1.723,16.401,30.802,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,sem_gaiola,desliga perda equivalente da grade,DIR,14.678,16.738,2.06,16.738,31.475,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,sem_polarizacao,remove perda de polarização,DIR,14.678,17.678,3.0,17.678,33.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,sem_orientacao,remove perda extra de orientação/dobra,DIR,14.678,17.678,3.0,17.678,33.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,DIR,14.678,14.678,0.0,14.678,30.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,DIR,14.678,14.678,0.0,14.678,29.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,DIR,14.678,16.678,2.0,16.678,31.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,beamwidth_90graus,abre HPBW para 90°,DIR,14.678,14.678,0.0,14.678,27.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_10,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,DIR,14.678,14.678,0.0,14.678,27.356,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,baseline,sem alteração,TOPO,16.251,16.251,0.0,16.251,30.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,sem_tecido,desliga atenuação do tecido,TOPO,16.251,18.052,1.801,18.052,34.105,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,16.251,17.152,0.901,17.152,32.303,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,sem_gaiola,desliga perda equivalente da grade,TOPO,16.251,18.311,2.06,18.311,34.621,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,sem_polarizacao,remove perda de polarização,TOPO,16.251,19.251,3.0,19.251,36.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,16.251,19.251,3.0,19.251,36.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,16.251,16.251,0.0,16.251,33.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,16.251,16.251,0.0,16.251,32.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,16.251,18.251,2.0,18.251,34.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,beamwidth_90graus,abre HPBW para 90°,TOPO,16.251,16.251,0.0,16.251,30.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_11,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,16.251,16.251,0.0,16.251,30.502,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,baseline,sem alteração,TOPO,18.885,18.885,0.0,18.885,35.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,sem_tecido,desliga atenuação do tecido,TOPO,18.885,19.486,0.601,19.486,36.971,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,18.885,19.185,0.301,19.185,36.37,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,sem_gaiola,desliga perda equivalente da grade,TOPO,18.885,20.944,2.06,20.944,39.888,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,sem_polarizacao,remove perda de polarização,TOPO,18.885,21.885,3.0,21.885,41.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,sem_orientacao,remove perda extra de orientação/dobra,TOPO,18.885,21.885,3.0,21.885,41.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,18.885,18.885,0.0,18.885,38.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,18.885,18.885,0.0,18.885,37.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,18.885,20.885,2.0,20.885,39.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,beamwidth_90graus,abre HPBW para 90°,TOPO,18.885,18.885,0.0,18.885,35.769,True,True,False,LEITURA_CONFIAVEL
+SOTERRADA_CENTRO_12,True,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,18.885,18.885,0.0,18.885,35.769,True,True,False,LEITURA_CONFIAVEL
+PROBE_LATERAL,False,baseline,sem alteração,ESQ,-162.681,-162.681,0.0,-80.341,-162.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,sem_tecido,desliga atenuação do tecido,ESQ,-162.681,-149.469,13.212,-73.734,-149.469,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,-162.681,-156.075,6.606,-77.038,-156.075,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,sem_gaiola,desliga perda equivalente da grade,ESQ,-162.681,-154.443,8.238,-76.221,-154.443,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,sem_polarizacao,remove perda de polarização,ESQ,-162.681,-156.681,6.0,-77.341,-156.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,sem_orientacao,remove perda extra de orientação/dobra,ESQ,-162.681,-156.681,6.0,-77.341,-156.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,ESQ,-162.681,-159.681,3.0,-80.341,-159.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,ESQ,-162.681,-160.681,2.0,-80.341,-160.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,ESQ,-162.681,-158.681,4.0,-78.341,-158.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,beamwidth_90graus,abre HPBW para 90°,ESQ,-162.681,-162.681,0.0,-80.341,-162.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_LATERAL,False,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,ESQ,-162.681,-162.681,0.0,-80.341,-162.681,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,baseline,sem alteração,TOPO,-11.385,-11.385,0.0,-4.692,-11.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,sem_tecido,desliga atenuação do tecido,TOPO,-11.385,-11.385,0.0,-4.692,-11.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,tecido_50pct,reduz atenuação do tecido pela metade,TOPO,-11.385,-11.385,0.0,-4.692,-11.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,sem_gaiola,desliga perda equivalente da grade,TOPO,-11.385,-3.146,8.238,-0.573,-3.146,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,sem_polarizacao,remove perda de polarização,TOPO,-11.385,-5.385,6.0,-1.692,-5.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,sem_orientacao,remove perda extra de orientação/dobra,TOPO,-11.385,-5.385,6.0,-1.692,-5.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,-11.385,-8.385,3.0,-4.692,-8.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,-11.385,-9.385,2.0,-4.692,-9.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,-11.385,-7.385,4.0,-2.692,-7.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,beamwidth_90graus,abre HPBW para 90°,TOPO,-11.385,-11.385,0.0,-4.692,-11.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_FRENTE,False,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,-11.385,-11.385,0.0,-4.692,-11.385,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,baseline,sem alteração,TOPO,-163.456,-163.456,0.0,-80.728,-163.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,sem_tecido,desliga atenuação do tecido,ESQ,-163.456,-149.962,13.494,-73.981,-149.962,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,tecido_50pct,reduz atenuação do tecido pela metade,ESQ,-163.456,-156.926,6.53,-77.463,-156.926,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,sem_gaiola,desliga perda equivalente da grade,TOPO,-163.456,-155.218,8.238,-76.609,-155.218,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,sem_polarizacao,remove perda de polarização,TOPO,-163.456,-157.456,6.0,-77.728,-157.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,sem_orientacao,remove perda extra de orientação/dobra,TOPO,-163.456,-157.456,6.0,-77.728,-157.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,backscatter_menos_3dB,reduz perda de backscatter em 3 dB,TOPO,-163.456,-160.456,3.0,-80.728,-160.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,leitor_2dB_mais_sensivel,melhora sensibilidade do leitor em 2 dB,TOPO,-163.456,-161.456,2.0,-80.728,-161.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,tag_mais_2dB,aumenta ganho efetivo da tag em 2 dB,TOPO,-163.456,-159.456,4.0,-78.728,-159.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,beamwidth_90graus,abre HPBW para 90°,TOPO,-163.456,-163.456,0.0,-80.728,-163.456,False,False,False,FALHA_FORWARD_E_REVERSE
+PROBE_PRATELEIRA,False,sem_multipercurso_balanca,remove penalidade de multipercurso da balança,TOPO,-163.456,-163.456,0.0,-80.728,-163.456,False,False,False,FALHA_FORWARD_E_REVERSE

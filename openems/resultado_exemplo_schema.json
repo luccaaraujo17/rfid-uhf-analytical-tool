@@ -1,0 +1,16 @@
+{
+  "scenario": "S1_tag_unica_eps_frontal",
+  "frequency_hz": 915000000,
+  "chip_r_ohm": 20.0,
+  "chip_c_pf": 1.0,
+  "backscatter_rcs_m2": "valor calculado pelo solver",
+  "tags": [
+    {
+      "tag": "tag1",
+      "voltage_v_complex": ["real", "imag"],
+      "current_a_complex": ["real", "imag"],
+      "load_power_w": "valor calculado pelo solver"
+    }
+  ],
+  "interpretation": "Resultados normalizados para onda linear de 1 V/m; escalar/interpretar no app."
+}

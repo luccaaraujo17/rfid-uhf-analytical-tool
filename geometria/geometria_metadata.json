@@ -1,0 +1,43 @@
+{
+  "units_convention": "m (STL is unitless)",
+  "coordinate_system": {
+    "x": "depth and propagation direction",
+    "y": "width / long axis of frontal tag",
+    "z": "height",
+    "incident_wave_direction": "+X",
+    "front_incident_face": "x = -0.015 m"
+  },
+  "eps_size_m": [
+    0.03,
+    0.335,
+    0.295
+  ],
+  "tag_size_m": [
+    0.0002,
+    0.075,
+    0.02
+  ],
+  "tag_centers_m": [
+    [
+      -0.0151,
+      0,
+      -0.0475
+    ],
+    [
+      -0.0151,
+      0,
+      0.0075
+    ]
+  ],
+  "tag_heights_from_base_m": [
+    0.1,
+    0.155
+  ],
+  "center_spacing_m": 0.055,
+  "antenna_envelope_size_m": [
+    0.0335,
+    0.2591,
+    0.2591
+  ],
+  "warning": "STL expresses geometry only. Material and RF properties are assigned in the analytical app/openEMS. The openEMS solver creates the RF inlay separately; the STL tag block is for audit/visualization."
+}

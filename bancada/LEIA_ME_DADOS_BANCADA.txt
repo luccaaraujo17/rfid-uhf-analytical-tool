@@ -1,0 +1,72 @@
+DADOS DE BANCADA RFID UHF
+
+Os CSVs foram deduplicados por conteúdo. Arquivos vazios foram excluídos do pacote principal.
+A potência correta é a indicada no nome do arquivo, conforme regra do experimento.
+
+Convenções:
+- 1ant = uma antena
+- 2tags = duas tags
+- 0gr = orientação frontal nominal
+- deitada = 90 graus horizontal/pitch
+- 90gr = 90 graus lateral/yaw
+- toalha/tolha = toalha seca dobrada
+
+Arquivos incluídos:
+- 00_resumo(1).csv
+- 01_tags_diagnostico(1).csv
+- 01_tags_diagnostico.csv
+- 02_tag_por_antena(1).csv
+- 02_tag_por_antena.csv
+- 03_ablacao(1).csv
+- 04_parametros(1).csv
+- 04_parametros(2).csv
+- 05_multipercurso_inox.csv
+- 06_robustez_posicao.csv
+- 07_risco_vswr.csv
+- 100cm15db1ant0gr(1).csv
+- 100cm20db1ant0gr(1).csv
+- 100cm20db2tags1ant0gr(1).csv
+- 100cm25db1ant0gr.csv
+- 100cm30db1ant0gr(1).csv
+- 100cm30db2tags1ant0gr.csv
+- 100cm30db2tags1ant90gr.csv
+- 100cm30db2tags1antdeitada.csv
+- 150cm15db1ant0gr(1).csv
+- 150cm20db1ant0gr(1).csv
+- 150cm25db1ant0gr.csv
+- 150cm30db1ant0gr(1).csv
+- 200cm20db1ant0gr(1).csv
+- 200cm25db1ant0gr.csv
+- 200cm30db1ant0gr(1).csv
+- 50cm10db1ant0gr(1).csv
+- 50cm15db1ant0gr(1).csv
+- 50cm20db1ant0gr(1).csv
+- 50cm25db1ant0gr.csv
+- 50cm30db1ant0gr(1).csv
+- mapa_margem_rfid (1).csv
+- mapa_margem_rfid.csv
+- medicao2_100cm15dbtoalha0gr.csv
+- medicao2_100cm20dbtoalha0gr.csv
+- medicao2_100cm25dbtoalha0gr.csv
+- medicao2_100cm30dbtolha0gr.csv
+- resultado_tags_rfid (1).csv
+- resultado_tags_rfid (3).csv
+- resultado_tags_rfid.csv
+
+Arquivos ignorados:
+- 00_resumo.csv: duplicado exato
+- 03_ablacao.csv: duplicado exato
+- 100cm15db1ant0gr.csv: vazio/sem dados
+- 100cm20db1ant0gr.csv: duplicado exato
+- 100cm20db2tags1ant0gr.csv: duplicado exato
+- 100cm30db1ant0gr.csv: duplicado exato
+- 150cm15db1ant0gr.csv: duplicado exato
+- 150cm20db1ant0gr.csv: duplicado exato
+- 150cm30db1ant0gr.csv: duplicado exato
+- 200cm20db1ant0gr.csv: duplicado exato
+- 200cm30db1ant0gr.csv: duplicado exato
+- 50cm10db1ant0gr.csv: duplicado exato
+- 50cm15db1ant0gr.csv: duplicado exato
+- 50cm20db1ant0gr.csv: duplicado exato
+- 50cm30db1ant0gr.csv: duplicado exato
+- 55cm30db1ant0gr.csv: duplicado exato

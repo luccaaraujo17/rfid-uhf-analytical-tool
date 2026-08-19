@@ -1,0 +1,18 @@
+REFERÊNCIAS INCLUÍDAS NO PACOTE
+
+1. DATASHEET_ORIGINAL_LAIRD_PAL90209H_PAR90209H.pdf
+   Folha técnica original da Laird Technologies. Fonte principal das características elétricas.
+
+2. DATASHEET_COMPLEMENTAR_RFMAX_ARCADIAN_PAL90209H_PAR90209H.pdf
+   Folha complementar do mesmo part number, utilizada para desenho mecânico, fotografias e conferência dimensional.
+
+3. Reader_to_reader_anticollision_protocols_in_dense_and_passive_RFID_environment.pdf
+   Referência para ambientes RFID densos, protocolo e colisões entre leitores.
+
+4. A_Survey_of_RFID_Readers_Anticollision_Protocols.pdf
+   Revisão de protocolos de anticolisão entre leitores RFID.
+
+5. Design_and_Experiment_Wideband_CP_UHF_RFID_Reader_Antenna.pdf
+   Referência acadêmica para antena leitora UHF circularmente polarizada.
+
+As demais referências bibliográficas citadas no documento técnico estão listadas na seção de referências do próprio documento, ainda que o PDF integral não esteja incluído neste pacote.

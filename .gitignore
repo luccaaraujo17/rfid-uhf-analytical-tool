@@ -1,0 +1,101 @@
+﻿# ============================================================
+# RFID UHF Analytical Tool
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs / editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Resultados pesados de simulação openEMS
+openems/results/
+openems/resultados/
+openems/output/
+openems/outputs/
+openems/simulations/
+openems/simulacoes/
+*.h5
+*.vtk
+*.vtr
+*.vts
+*.vtu
+
+# Instalador/binários de terceiros
+instalador/*.zip
+instalador/*.exe
+instalador/*.msi
+
+# Referências bibliográficas de terceiros
+referencias/*.pdf
+
+# Fontes editáveis de documentos
+documentos/*.docx
+
+# Pacotes ZIP redundantes
+bancada/*.zip
+
+# Arquivos de ambiente / segredos
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+secrets.*
+credentials.*
+
+# Logs
+*.log
+
+# Instalador local do pacote original
+# Depende de binários openEMS não distribuídos neste repositório
+instalador/
+
+# Documentos binários da pesquisa
+documentos/*.pdf
+documentos/**/*.docx
+documentos/**/*.pdf
+
+# Figuras provenientes de documentação comercial/datasheets
+documentos/figuras/laird-*.png
+documentos/figuras/rfmax-*.png
+documentos/figuras/antena_desenho_mecanico.png
+documentos/figuras/antena_diagrama_radiacao_915mhz.png
+
+# Arquivos de controle do pacote local completo
+ARVORE_DE_ARQUIVOS.txt
+VALIDACAO_DO_PACOTE.txt
+
+# Documentação interna do pacote completo
+00_LEIA_ME_PRIMEIRO.md
+MANIFESTO_SHA256.txt

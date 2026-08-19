@@ -99,3 +99,7 @@ VALIDACAO_DO_PACOTE.txt
 # Documentação interna do pacote completo
 00_LEIA_ME_PRIMEIRO.md
 MANIFESTO_SHA256.txt
+# Arquivos internos que nunca devem ser publicados
+MANIFESTO_SHA256.txt
+*MANIFESTO*
+*manifesto*

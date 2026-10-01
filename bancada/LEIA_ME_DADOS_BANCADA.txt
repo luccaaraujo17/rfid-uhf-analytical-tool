@@ -1,11 +1,11 @@
 DADOS DE BANCADA RFID UHF
 
 Os CSVs foram deduplicados por conteúdo. Arquivos vazios foram excluídos do pacote principal.
-A potência correta é a indicada no nome do arquivo, conforme regra do experimento.
+O nível nominal usado em cada ensaio é o indicado no nome do arquivo.
 
 Convenções:
 - 1ant = uma antena
-- 2tags = duas tags
+- 2tags = duas etiquetas
 - 0gr = orientação frontal nominal
 - deitada = 90 graus horizontal/pitch
 - 90gr = 90 graus lateral/yaw

@@ -257,13 +257,13 @@ def generate_stack_tags(
 
     for i in range(n_random):
         if distribution == 'Camadas verticais':
-            # Distribui em camadas Z para evitar buracos estatísticos no empilhamento.
+            # Distribuição em camadas
             z_frac = ((i % max(n_random, 1)) + 0.5) / max(n_random, 1)
             z = c[2] - s[2] / 2.0 + z_frac * s[2]
             x = rng.uniform(c[0] - s[0] / 2.0, c[0] + s[0] / 2.0)
             y = rng.uniform(c[1] - s[1] / 2.0, c[1] + s[1] / 2.0)
         elif distribution == 'Centro mais denso':
-            # Mistura uniforme + normal concentrada no centro.
+            # Distribuição mais concentrada no centro
             if rng.random() < center_concentration:
                 x = rng.normal(c[0], max(s[0] / 7.0, 1e-3))
                 y = rng.normal(c[1], max(s[1] / 7.0, 1e-3))
@@ -286,7 +286,7 @@ def generate_stack_tags(
             'inside_expected': True,
         })
 
-    # Tags centrais soterradas: coluna quase no eixo da pilha, útil para ver o miolo.
+    # Etiquetas no centro da pilha
     for j in range(n_buried_center):
         z_frac = (j + 0.5) / max(n_buried_center, 1)
         z = c[2] - s[2] / 2.0 + z_frac * s[2]
@@ -420,7 +420,7 @@ def count_aabb_surface_crossings(p0: np.ndarray, p1: np.ndarray, center: np.ndar
         return 0
     if inside0 != inside1:
         return 1
-    # fora-fora; só conta se atravessou o interior entre 0 e 1
+    # Conta somente quando o caminho atravessa o volume
     if 0.0 <= t0 <= 1.0 or 0.0 <= t1 <= 1.0:
         return 2
     return 0
@@ -526,7 +526,7 @@ def compute_path_effects(
     d_far = fraunhofer_distance(controls["frequency_hz"], controls["antenna_largest_dimension_m"])
     fspl, near_field = fspl_db(d, controls["frequency_hz"], d_far)
 
-    # Perda por parede da cabine/painéis. A abertura frontal não é painel.
+    # Perdas nos painéis da cabine
     cabin_loss, crossed_panels = plane_crossing_loss(
         p_ant,
         point,
@@ -535,7 +535,7 @@ def compute_path_effects(
         override_loss_db=controls.get("override_wall_loss_db"),
     )
 
-    # Perda equivalente da gaiola metálica.
+    # Perda equivalente da gaiola
     cage_loss = 0.0
     cage_crossings = 0
     cage = scene.get("cage", {})
@@ -552,7 +552,7 @@ def compute_path_effects(
         )
         cage_loss = cage_crossings * grid_loss
 
-    # Perda por tecido/enxoval como volume atenuador.
+    # Atenuação pelo enxoval
     textile_loss = 0.0
     textile_len = 0.0
     textile = scene.get("textile_volume", {})
@@ -562,14 +562,13 @@ def compute_path_effects(
         textile_len = segment_aabb_length(p_ant, point, textile_center, textile_size)
         textile_loss = textile_len * controls["textile_attenuation_db_per_m"]
 
-    # Penalidade determinística perto da balança metálica: não bloqueia, mas reduz margem
-    # para representar risco de multipercurso destrutivo / campo não uniforme.
+    # Penalidade próxima à balança metálica
     multipath_penalty = 0.0
     scale = scene.get("scale", {})
     if scale.get("enabled", True) and controls["use_scale_multipath"] > 0.5:
         scale_center = arr(scale.get("center", [0, 0, 0.06]))
         scale_size = arr(scale.get("size", [1.0, 1.0, 0.12]))
-        # Penaliza mais em até 30 cm acima da balança e dentro da projeção XY.
+        # Região próxima à balança
         inside_xy = (
             abs(point[0] - scale_center[0]) <= scale_size[0] / 2.0
             and abs(point[1] - scale_center[1]) <= scale_size[1] / 2.0
@@ -579,9 +578,7 @@ def compute_path_effects(
             factor = 1.0 - height_above / 0.30
             multipath_penalty = controls["scale_multipath_penalty_db"] * factor
 
-    # Correção/diagnóstico opcional de multipercurso em cabine metálica (Inox).
-    # Por padrão, fica apenas como verificação; só entra no link budget se o usuário habilitar
-    # "Aplicar correção aproximada".
+    # Correção opcional de multipercurso no inox
     inox_mp = inox_first_order_multipath_delta_db(
         ant=ant,
         point=point,
@@ -711,8 +708,7 @@ def inox_first_order_multipath_delta_db(
         p_ref = line_intersection_with_panel_plane(p_img, point, panel)
         if p_ref is None or not point_inside_panel_span(p_ref, panel):
             continue
-        # Direção que sai da antena real até o ponto de reflexão. Isso aproxima
-        # se a reflexão está dentro do lóbulo irradiado pela antena.
+        # Direção até o ponto de reflexão
         v_ref = p_ref - p_ant
         d_ref_from_ant = float(np.linalg.norm(v_ref))
         if d_ref_from_ant < 1e-5:
@@ -736,8 +732,7 @@ def inox_first_order_multipath_delta_db(
     ratio = abs(e_sum) / max(abs(e_direct), EPS)
     delta_db = 20.0 * math.log10(max(ratio, EPS))
     delta_db = max(-max_null, min(max_boost, delta_db))
-    # Para o link budget, um delta positivo é ganho por soma construtiva;
-    # um delta negativo vira perda adicional por cancelamento.
+    # Delta positivo soma; delta negativo reduz a margem
     loss_db = -delta_db if controls.get("apply_inox_multipath_to_link", 0.0) > 0.5 else 0.0
     note = "aplicado_no_link" if controls.get("apply_inox_multipath_to_link", 0.0) > 0.5 else "diagnostico_sem_aplicar"
     return {
@@ -756,7 +751,7 @@ def min_distance_to_reflective_panel(point: np.ndarray, scene: Dict[str, Any], c
         plane = panel.get("plane")
         coord = float(panel.get("coord", 0.0))
         idx = {"x": 0, "y": 1, "z": 2}.get(plane, 0)
-        # distância perpendicular; só marca painel se a projeção cair no span
+        # Distância perpendicular ao painel
         proj = np.array(point, dtype=float).copy(); proj[idx] = coord
         if point_inside_panel_span(proj, panel):
             d = abs(float(point[idx] - coord))
@@ -809,7 +804,7 @@ def vswr_risk_rows(scene: Dict[str, Any], controls: Dict[str, float]) -> pd.Data
 
 def multipath_tag_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     rows = []
-    # Calcula duas vezes: sem aplicar e aplicando, para mostrar o impacto estimado.
+    # Compara o resultado com e sem a correção
     c_diag = dict(controls); c_diag["use_inox_multipath"] = 1.0; c_diag["apply_inox_multipath_to_link"] = 0.0
     c_apply = dict(controls); c_apply["use_inox_multipath"] = 1.0; c_apply["apply_inox_multipath_to_link"] = 1.0
     for tag in scene.get("tags", []):
@@ -857,7 +852,7 @@ def robustness_jitter_rows(scene: Dict[str, Any], controls: Dict[str, float], re
         antennas = []
         for off in offsets:
             p = p0 + off
-            # Evita pontos negativos abaixo da balança/piso.
+            # Limite inferior do volume
             if p[2] < 0.02:
                 continue
             r = compute_best_link(p, scene, controls)
@@ -917,7 +912,7 @@ def compute_link_for_antenna(
         + orient_loss
     )
 
-    # Forward link: leitor -> tag. A tag precisa ligar.
+    # Enlace direto: leitor -> etiqueta
     p_tag_dbm = (
         p_tx
         - cable
@@ -926,8 +921,7 @@ def compute_link_for_antenna(
         - path_one_way
     )
 
-    # Reverse link: tag -> leitor por backscatter. Sofre ida e volta.
-    # Modelo analítico simplificado de radar/backscatter monostático.
+    # Enlace reverso por backscatter
     p_rx_dbm = (
         p_tx
         - 2.0 * cable
@@ -998,7 +992,7 @@ def dominant_loss_terms(link: Dict[str, Any], controls: Dict[str, float], top_n:
         "orientação/dobra": float(controls.get("tag_orientation_extra_loss_db", 0.0)),
         "backscatter": float(controls.get("backscatter_link_loss_db", 0.0)),
     }
-    # FSPL e backscatter quase sempre aparecem grandes; a intenção é mostrar peso, não culpar isoladamente.
+    # Mantém os principais termos de perda separados
     items = sorted(terms.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
     return "; ".join([f"{k}: {v:.1f} dB" for k, v in items])
 
@@ -1254,7 +1248,7 @@ def build_diagnostic_workbook_bytes(scene: Dict[str, Any], controls: Dict[str, f
                 ws.write(0, col_num, value, header_fmt)
                 width = min(max(12, len(str(value)) + 2), 42)
                 ws.set_column(col_num, col_num, width)
-            # formatação de colunas de margem quando presentes
+            # Formatação das colunas de margem
             for col_name in df.columns:
                 if "margem" in col_name or col_name.endswith("_db") or "dbm" in col_name:
                     idx = list(df.columns).index(col_name)
@@ -1373,7 +1367,7 @@ with st.sidebar:
             return float(preset[key])
         return float(rf.get(key, fallback))
 
-    # Valores base: no modo Normal ficam fixos/calculados; no Avançado ficam editáveis.
+    # Valores base
 
     freq_mhz = float(rf.get("frequency_hz", 915e6)) / 1e6
     power_mode = "Limite por EIRP (recomendado)"
@@ -1392,7 +1386,7 @@ with st.sidebar:
     antenna_front_to_back_db = float(rf.get("antenna_front_to_back_db", 20.0))
     antenna_largest_dimension_m = float(rf.get("antenna_largest_dimension_m", 0.2591))
 
-    # Antenas: no modo Normal, usa a geometria que veio do Blender/JSON.
+    # Geometria das antenas
     edit_antennas_in_app = False
     ant_by_name = {a.get("name"): a for a in scene.get("antennas", [])}
     esq0 = ant_by_name.get("ESQ", {"position": [-0.525, -0.03, 1.08]})["position"]
@@ -1409,7 +1403,7 @@ with st.sidebar:
     lower_lateral_z = 0.70
     lower_lateral_tilt_deg = -10.0
 
-    # Pilha/tags.
+    # Pilha e etiquetas
     tv0 = scene.get("textile_volume", {})
     tv_center0 = tv0.get("center", [0.0, 0.0, 0.92])
     tv_size0 = tv0.get("size", [0.55, 0.62, 1.20])
@@ -1426,7 +1420,7 @@ with st.sidebar:
     stack_size_y = float(tv_size0[1])
     stack_size_z = float(tv_size0[2])
 
-    # Materiais/perdas.
+    # Materiais e perdas
     material_names = list(materials.keys())
     default_mat = scene.get("cabin", {}).get("default_wall_material", material_names[0])
     default_idx = material_names.index(default_mat) if default_mat in material_names else 0
@@ -1443,7 +1437,7 @@ with st.sidebar:
     use_scale_multipath = True
     scale_multipath_penalty_db = float(scene.get("scale", {}).get("metal_reflection_penalty_db", 2.0))
 
-    # Inox/multipercurso/robustez.
+    # Multipercurso e robustez
     use_inox_multipath = True
     apply_inox_multipath_to_link = False
     inox_reflection_coeff_mag = 0.90
@@ -1453,7 +1447,7 @@ with st.sidebar:
     robustness_jitter_radius_cm = 5.0
     robustness_grid_per_axis = 3
 
-    # Mapa.
+    # Mapa
     z_slice = 1.00
     grid_n = 55
     x_extent = 1.8
@@ -1467,7 +1461,7 @@ with st.sidebar:
     z_max_map = 1.95
     reliable_margin_db = float(preset.get("reliable_margin_db", rf.get("reliable_margin_db", 6.0)))
 
-    # Controles essenciais — visíveis no modo Normal.
+    # Controles principais
 
     st.subheader("Essenciais")
     selected_wall_material = st.selectbox(
@@ -1534,7 +1528,7 @@ with st.sidebar:
             """
         )
 
-    # Modo avançado — parâmetros de calibração e auditoria.
+    # Parâmetros avançados
 
     if show_advanced:
         st.markdown("---")
@@ -1674,15 +1668,15 @@ controls = {
     "robustness_grid_per_axis": float(robustness_grid_per_axis),
 }
 
-# Atualiza materiais de painéis conforme seleção global da interface.
+# Atualiza os materiais dos painéis
 for p in scene.get("cabin", {}).get("panels", []):
     p["material"] = selected_wall_material
 
-# Atualiza volume físico do enxoval conforme os controles do app.
+# Atualiza o volume do enxoval
 scene.setdefault("textile_volume", {})["center"] = [float(stack_center_x), float(stack_center_y), float(stack_center_z)]
 scene.setdefault("textile_volume", {})["size"] = [float(stack_size_x), float(stack_size_y), float(stack_size_z)]
 
-# Ajusta antenas no app sem depender de novo JSON do Blender.
+# Ajusta a posição das antenas
 if edit_antennas_in_app:
     cabin = scene.get("cabin", {})
     cab_size = cabin.get("size", [1.22, 1.18, 2.10])
@@ -1698,7 +1692,7 @@ if edit_antennas_in_app:
     update_named_antenna(scene, "DIR", [x_right, lateral_y, lateral_z], n_dir)
     update_named_antenna(scene, "TOPO", [0.0, float(top0[1]), top_z], n_top)
 
-    # Remove pares baixos antigos se o usuário desligar o recurso.
+    # Remove pares inferiores quando desativados
     scene["antennas"] = [a for a in scene.get("antennas", []) if a.get("name") not in ("ESQ_BAIXA", "DIR_BAIXA")]
     if add_lower_side_antennas:
         n_esq_b = lateral_normal("ESQ", lower_lateral_tilt_deg, lateral_yaw_deg)
@@ -1706,12 +1700,12 @@ if edit_antennas_in_app:
         scene["antennas"].append({"name": "ESQ_BAIXA", "position": [x_left, lateral_y, lower_lateral_z], "normal": n_esq_b, "gain_dbi": reader_antenna_gain_dbi, "hpbw_deg": antenna_hpbw_deg, "polarization": "LHCP"})
         scene["antennas"].append({"name": "DIR_BAIXA", "position": [x_right, lateral_y, lower_lateral_z], "normal": n_dir_b, "gain_dbi": reader_antenna_gain_dbi, "hpbw_deg": antenna_hpbw_deg, "polarization": "LHCP"})
 
-# Aplica ganho/abertura global a todas as antenas ativas.
+# Aplica ganho e abertura às antenas ativas
 for a in scene.get("antennas", []):
     a["gain_dbi"] = reader_antenna_gain_dbi
     a["hpbw_deg"] = antenna_hpbw_deg
 
-# Gera tags empilhadas dentro do volume de enxoval, preservando probes externos.
+# Gera etiquetas no volume do enxoval
 if use_generated_stack_tags:
     external_tags = [t for t in scene.get("tags", []) if not bool(t.get("inside_expected", True))]
     stack_tags = generate_stack_tags(
@@ -1725,7 +1719,7 @@ if use_generated_stack_tags:
     )
     scene["tags"] = stack_tags + external_tags
 
-# Métricas principais
+# Métricas
 lam = wavelength(controls["frequency_hz"])
 d_far = fraunhofer_distance(controls["frequency_hz"], controls["antenna_largest_dimension_m"])
 eirp_dbm = reader_tx_power_dbm - cable_loss_db + reader_antenna_gain_dbi
@@ -1796,7 +1790,7 @@ st.dataframe(df_tags, use_container_width=True, height=300)
 if near_count:
     st.caption(f"{near_count} ponto(s) caíram na região de campo próximo aproximada. O resultado é útil para triagem, mas deve ser calibrado em protótipo.")
 
-# Métricas de tags internas e vazamento
+# Métricas internas e externas
 internal = df_tags[df_tags["Esperada interna?"] == "Sim"]
 external = df_tags[df_tags["Esperada interna?"] == "Não"]
 read_internal = internal[internal["Margem final dB"] >= 0.0]
@@ -1854,7 +1848,7 @@ heat.add_trace(go.Heatmap(
     hovertemplate="X=%{x:.2f} m<br>Y=%{y:.2f} m<br>Margem=%{z:.1f} dB<extra></extra>",
 ))
 
-# Desenha cabine e gaiola no corte como retângulos.
+# Cabine e gaiola no corte
 def add_rect(fig, center, size, name, line_color):
     cx, cy, _ = center
     sx, sy, _ = size
@@ -1879,7 +1873,7 @@ cage = scene.get("cage", {})
 if cage:
     add_rect(heat, arr(cage.get("center", [0,0,0.9])), arr(cage.get("size", [0.67,0.80,1.6])), "Gaiola", "orange")
 
-# Antenas no mapa
+# Antenas
 for ant in scene.get("antennas", []):
     p = arr(ant["position"])
     if abs(p[2] - z_slice) < 0.35 or ant.get("name") == "TOPO":
@@ -1895,7 +1889,7 @@ heat.update_layout(
 )
 st.plotly_chart(heat, use_container_width=True)
 
-# Corte vertical do miolo da pilha: útil para encontrar tags soterradas no centro.
+# Corte vertical da pilha
 if show_vertical_map:
     st.subheader("🧬 Corte vertical do miolo — tags soterradas")
     with st.spinner("Calculando mapa vertical de margem..."):
@@ -1948,7 +1942,7 @@ if show_vertical_map:
             hoverinfo="skip",
         ))
 
-    # Desenha seções de cabine, gaiola, volume de tecido e zona válida.
+    # Seções dos volumes
     def box_section(bounds_center, bounds_size, fixed_axis_value, plane_kind, name, color):
         c = arr(bounds_center); s = arr(bounds_size) / 2.0
         if plane_kind == "XZ":
@@ -1965,7 +1959,7 @@ if show_vertical_map:
     if cage: box_section(cage.get("center", [0,0,0.9]), cage.get("size", [0.67,0.8,1.6]), fixed_val, plane_kind, "Gaiola", "orange")
     if textile and textile.get("enabled", True): box_section(textile.get("center", [0,0,0.8]), textile.get("size", [0.55,0.62,1.2]), fixed_val, plane_kind, "Volume enxoval", "purple")
 
-    # Tags próximas ao corte vertical
+    # Etiquetas próximas ao corte
     tol = 0.04
     tag_h, tag_zv, tag_txt, tag_col = [], [], [], []
     for row, tag in zip(rows, scene.get("tags", [])):
@@ -1998,12 +1992,12 @@ if show_vertical_map:
     )
     st.plotly_chart(vheat, use_container_width=True)
 
-# MAPA 3D SIMPLIFICADO DE TAGS, ANTENAS E VOLUMES
+# MAPA 3D
 
 st.subheader("📦 Cena física simplificada")
 fig3d = go.Figure()
 
-# Tags/probes
+# Etiquetas e pontos externos
 if scene.get("tags"):
     tag_x, tag_y, tag_z, tag_color, tag_text = [], [], [], [], []
     for row, tag in zip(rows, scene.get("tags", [])):
@@ -2020,7 +2014,7 @@ if scene.get("tags"):
         tag_text.append(f"{row['Tag/Probe']}<br>{row['Status']}<br>Margem={row['Margem final dB']} dB")
     fig3d.add_trace(go.Scatter3d(x=tag_x, y=tag_y, z=tag_z, mode="markers", marker=dict(size=5, color=tag_color), text=tag_text, hoverinfo="text", name="Tags/Probes"))
 
-# Antenas e vetores de apontamento
+# Antenas
 for ant in scene.get("antennas", []):
     p = arr(ant["position"])
     n = norm_vec(ant["normal"])
@@ -2028,7 +2022,7 @@ for ant in scene.get("antennas", []):
     fig3d.add_trace(go.Scatter3d(x=[p[0]], y=[p[1]], z=[p[2]], mode="markers+text", marker=dict(size=6, symbol="square", color="blue"), text=[ant.get("name", "ANT")], textposition="top center", name=f"Antena {ant.get('name','')}"))
     fig3d.add_trace(go.Scatter3d(x=[p[0], q[0]], y=[p[1], q[1]], z=[p[2], q[2]], mode="lines", line=dict(width=5, color="cyan"), showlegend=False))
 
-# Função para desenhar caixa 3D por arestas
+# Caixa 3D
 BOX_EDGES = [(0,1),(1,2),(2,3),(3,0),(4,5),(5,6),(6,7),(7,4),(0,4),(1,5),(2,6),(3,7)]
 def add_box3d(fig, center, size, name, color):
     c = arr(center); s = arr(size) / 2.0
@@ -2054,7 +2048,7 @@ fig3d.update_layout(
 )
 st.plotly_chart(fig3d, use_container_width=True)
 
-# VERIFICAÇÕES ESPECÍFICAS PARA CABINE METÁLICA / INOX
+# MULTIPERCURSO E VSWR
 
 st.subheader("🧲 Verificação de multipercurso no Inox e risco de VSWR")
 st.caption(
@@ -2146,8 +2140,7 @@ with colB:
 
 st.markdown("### 📦 Central de exportação de dados")
 st.caption(
-    "Área organizada para reunião, auditoria e bancada. Use o XLSX completo como arquivo principal; "
-    "os CSVs individuais servem para importar no Blender ou conferir etapas específicas."
+    "Exportação dos resultados em planilha e CSV. "
 )
 
 tab_xlsx, tab_csv, tab_mapas, tab_blender = st.tabs([
@@ -2158,7 +2151,7 @@ tab_xlsx, tab_csv, tab_mapas, tab_blender = st.tabs([
 ])
 
 with tab_xlsx:
-    st.markdown("**Arquivo recomendado para enviar e analisar depois da reunião.**")
+    st.markdown("**Planilha com os principais resultados do diagnóstico.**")
     try:
         diag_xlsx = build_diagnostic_workbook_bytes(scene, controls, reliable_margin_db, scene_source)
         st.download_button(
@@ -2210,7 +2203,7 @@ with tab_blender:
         """
     )
     st.download_button(
-        "⬇️ Pacote CSV para visualização/auditoria",
+        "⬇️ Pacote CSV para visualização",
         data=build_diagnostic_csv_zip_bytes(scene, controls, reliable_margin_db, scene_source),
         file_name="diagnostico_para_blender_rfid_v7.zip",
         mime="application/zip",
@@ -2222,7 +2215,7 @@ st.caption(
     "Modelo analítico calibrável. Para validação final, medir RSSI/taxa de leitura no protótipo e ajustar: perda de tecido, perda da grade, ganho efetivo da tag, perda de orientação e parâmetros de material."
 )
 
-# REFERÊNCIAS TÉCNICAS PARA DOCUMENTAÇÃO DO MODELO
+# REFERÊNCIAS TÉCNICAS
 
 with st.expander("📚 Referências técnicas que justificam os parâmetros"):
     st.markdown(

@@ -59,3 +59,9 @@ Os resultados de bancada são a principal referência quantitativa. O modelo ana
 ## Continuidade
 
 Veja `ENTREGA_TECNICA.md` para um resumo dos arquivos e da organização final do projeto.
+
+## Material complementar
+
+Os relatórios, apresentações e cópias organizadas dos resultados estão na pasta institucional de entrega:
+
+https://drive.google.com/drive/folders/13PTJLqikqikfHxQULtfidLRT134GHbn1

@@ -1,49 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-SIMULADOR ANALÍTICO RFID UHF HOSPITALAR — MODELO FÍSICO POR CAMADAS
-Atualização: perfil real Laird PAL90209H, integração openEMS e validação esperado x experimental
-
-Correções de equipamento
-------------------------
-- Antena utilizada: Laird PAL90209H (PAL = LHCP), 902-928 MHz, 9 dBic.
-- HPBW de azimute: 70 graus.
-- Relação frente-costas: 20 dB.
-- Dimensão máxima: 259,1 mm.
-- VSWR máximo: 1,3:1; razão axial típica: 1 dB.
-- Tag: modelo aproximado e paramétrico de 75 x 20 mm, pois o modelo/chip não foi identificado.
-
-Objetivo
---------
-Gerar um "raio X" operacional do portal/cabine RFID hospitalar, incluindo:
-- leitura de tags internas;
-- risco de vazamento externo;
-- zonas mortas;
-- comparação de materiais;
-- efeito de tecido/enxoval;
-- efeito equivalente da gaiola metálica;
-- forward link e reverse link separados;
-- modo de potência por EIRP, evitando dupla contagem do ganho da antena;
-- presets físicos: referência 4 W EIRP, conservador e pior caso;
-- verificação aproximada de multipercurso por reflexões de primeira ordem em cabine metálica;
-- teste de robustez por deslocamento local das tags;
-- indicador geométrico de risco de VSWR/S11 por proximidade antena-metal.
-
-IMPORTANTE
-----------
-Este app NÃO é um solver eletromagnético full-wave. Ele é um simulador analítico
-calibrável de link budget RFID UHF passivo. A física é tratada por camadas:
-
-antena  -> fonte RF com diagrama angular
-ar      -> perda em espaço livre / Friis
-cabine  -> barreiras com perdas por material
-gaiola  -> grade metálica com transmitância equivalente
-sacos   -> volume atenuador por tecido/enxoval
-tag     -> receptor passivo + backscatter
-leitor  -> sensibilidade de recepção no retorno
-
-Assim, o STL visual pode conter todo o equipamento, mas o cálculo não trata
-qualquer triângulo como parede RF. Isso evita falsos bloqueios.
-"""
+"""Aplicação Streamlit para análise do enlace RFID UHF, usando modelo analítico e dados experimentais."""
 
 from __future__ import annotations
 
@@ -61,19 +17,14 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-# =============================================================================
 # CONSTANTES FÍSICAS
-# =============================================================================
+
 C0 = 299_792_458.0
 EPS = 1e-12
 
-# =============================================================================
 # PRESETS FÍSICOS DE REFERÊNCIA
-# =============================================================================
-# Valores pensados para pré-dimensionamento realista de portal RFID UHF passivo.
-# O modo recomendado usa 4 W EIRP = 36 dBm como potência irradiada efetiva
-# do conjunto leitor+cabo+antena. A potência conduzida do leitor é calculada por:
-# P_leitor = EIRP - G_antena + L_cabo.
+
+# Referência de potência: 4 W EIRP (36 dBm).
 RF_PRESETS = {
     "Referência 4 W EIRP — moderado": {
         "eirp_limit_dbm": 36.0,
@@ -128,9 +79,8 @@ def dbm_to_watts(dbm: float) -> float:
 def conducted_power_from_eirp(eirp_dbm: float, antenna_gain_dbi: float, cable_loss_db: float) -> float:
     return float(eirp_dbm) - float(antenna_gain_dbi) + float(cable_loss_db)
 
-# =============================================================================
-# CENA PADRÃO — usada se o JSON gerado pelo Blender não estiver disponível
-# =============================================================================
+# Cena padrão
+
 def default_scene() -> Dict[str, Any]:
     return {
         "schema": "rfid_hospitalar_physics_scene_v1",
@@ -240,12 +190,10 @@ def default_scene() -> Dict[str, Any]:
         ]
     }
 
-# =============================================================================
-# UTILITÁRIOS MATEMÁTICOS
-# =============================================================================
+# Cálculos auxiliares
+
 def arr(v: Any) -> np.ndarray:
     return np.array(v, dtype=float)
-
 
 def norm_vec(v: Any) -> np.ndarray:
     a = arr(v)
@@ -253,7 +201,6 @@ def norm_vec(v: Any) -> np.ndarray:
     if n < EPS:
         return a
     return a / n
-
 
 def lateral_normal(side: str, tilt_vertical_deg: float, yaw_deg: float) -> List[float]:
     """Normal das antenas laterais.
@@ -273,7 +220,6 @@ def lateral_normal(side: str, tilt_vertical_deg: float, yaw_deg: float) -> List[
     ], dtype=float)
     return norm_vec(v).tolist()
 
-
 def top_normal(tilt_x_deg: float, tilt_y_deg: float) -> List[float]:
     """Normal da antena superior.
 
@@ -285,7 +231,6 @@ def top_normal(tilt_x_deg: float, tilt_y_deg: float) -> List[float]:
     ty = math.radians(float(tilt_y_deg))
     v = np.array([math.sin(tx), math.sin(ty), -math.cos(tx) * math.cos(ty)], dtype=float)
     return norm_vec(v).tolist()
-
 
 def generate_stack_tags(
     n_random: int,
@@ -357,7 +302,6 @@ def generate_stack_tags(
 
     return tags
 
-
 def update_named_antenna(scene: Dict[str, Any], name: str, position: List[float], normal: List[float]) -> None:
     for ant in scene.get('antennas', []):
         if ant.get('name') == name:
@@ -373,24 +317,19 @@ def update_named_antenna(scene: Dict[str, Any], name: str, position: List[float]
         'polarization': 'LHCP',
     })
 
-
 def db_to_linear(db: float) -> float:
     return 10.0 ** (db / 10.0)
-
 
 def linear_to_db(x: float) -> float:
     return 10.0 * math.log10(max(x, EPS))
 
-
 def wavelength(freq_hz: float) -> float:
     return C0 / freq_hz
-
 
 def fraunhofer_distance(freq_hz: float, largest_dimension_m: float) -> float:
     """Distância de campo distante aproximada: 2D²/λ."""
     lam = wavelength(freq_hz)
     return 2.0 * largest_dimension_m * largest_dimension_m / lam
-
 
 def fspl_db(distance_m: float, freq_hz: float, min_distance_m: float) -> Tuple[float, bool]:
     """Perda em espaço livre.
@@ -403,7 +342,6 @@ def fspl_db(distance_m: float, freq_hz: float, min_distance_m: float) -> Tuple[f
     near_field = d_real < min_distance_m
     d_eff = max(d_real, min_distance_m)
     return 20.0 * math.log10(d_eff) + 20.0 * math.log10(freq_hz) - 147.55, near_field
-
 
 def antenna_pattern_gain_db(
     peak_gain_dbi: float,
@@ -420,7 +358,6 @@ def antenna_pattern_gain_db(
     hpbw_deg = max(float(hpbw_deg), 1.0)
     attenuation = min(12.0 * (angle_deg / hpbw_deg) ** 2, float(front_to_back_db))
     return float(peak_gain_dbi) - attenuation
-
 
 def segment_aabb_length(p0: np.ndarray, p1: np.ndarray, center: np.ndarray, size: np.ndarray) -> float:
     """Comprimento do segmento p0-p1 que passa dentro de uma caixa AABB."""
@@ -442,12 +379,10 @@ def segment_aabb_length(p0: np.ndarray, p1: np.ndarray, center: np.ndarray, size
                 return 0.0
     return max(0.0, tmax - tmin) * np.linalg.norm(d)
 
-
 def point_in_aabb(p: np.ndarray, center: np.ndarray, size: np.ndarray) -> bool:
     bmin = center - size / 2.0
     bmax = center + size / 2.0
     return bool(np.all(p >= bmin - 1e-9) and np.all(p <= bmax + 1e-9))
-
 
 def segment_intersects_aabb(p0: np.ndarray, p1: np.ndarray, center: np.ndarray, size: np.ndarray) -> Tuple[bool, float, float]:
     """Retorna se o segmento cruza a caixa e os parâmetros t de entrada/saída."""
@@ -468,7 +403,6 @@ def segment_intersects_aabb(p0: np.ndarray, p1: np.ndarray, center: np.ndarray, 
             if tmax < tmin:
                 return False, 0.0, 0.0
     return True, tmin, tmax
-
 
 def count_aabb_surface_crossings(p0: np.ndarray, p1: np.ndarray, center: np.ndarray, size: np.ndarray) -> int:
     """Conta cruzamentos de superfície de caixa para aproximar travessia de gaiola.
@@ -491,7 +425,6 @@ def count_aabb_surface_crossings(p0: np.ndarray, p1: np.ndarray, center: np.ndar
         return 2
     return 0
 
-
 def grid_equivalent_loss_db(pitch_a_m: float, pitch_b_m: float, bar_diameter_m: float, extra_loss_db: float) -> float:
     """Perda equivalente simplificada de uma grade metálica aberta.
 
@@ -504,7 +437,6 @@ def grid_equivalent_loss_db(pitch_a_m: float, pitch_b_m: float, bar_diameter_m: 
     cell_area = max(pitch_a_m * pitch_b_m, 1e-6)
     open_fraction = max(min((open_a * open_b) / cell_area, 1.0), 1e-4)
     return -10.0 * math.log10(open_fraction) + extra_loss_db
-
 
 def plane_crossing_loss(
     p0: np.ndarray,
@@ -547,13 +479,11 @@ def plane_crossing_loss(
             crossed.append(panel.get("name", mat_name))
     return loss, crossed
 
-# =============================================================================
 # CARREGAMENTO DA CENA
-# =============================================================================
+
 def load_scene_from_json(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
-
 
 def find_default_json() -> Optional[Path]:
     candidates = [
@@ -566,9 +496,8 @@ def find_default_json() -> Optional[Path]:
             return c
     return None
 
-# =============================================================================
 # CÁLCULO DE LINK BUDGET
-# =============================================================================
+
 def compute_path_effects(
     ant: Dict[str, Any],
     point: np.ndarray,
@@ -685,15 +614,11 @@ def compute_path_effects(
         "total_medium_loss_db": total_medium_loss,
     }
 
-
-
 def db_to_lin(db: float) -> float:
     return 10.0 ** (float(db) / 10.0)
 
-
 def lin_to_db(x: float) -> float:
     return 10.0 * math.log10(max(float(x), EPS))
-
 
 def is_reflective_panel(panel: Dict[str, Any], scene: Dict[str, Any], controls: Dict[str, float]) -> bool:
     """Decide se um painel deve entrar na verificação de reflexão de Inox/metal.
@@ -710,7 +635,6 @@ def is_reflective_panel(panel: Dict[str, Any], scene: Dict[str, Any], controls: 
         return True
     return loss >= 40.0
 
-
 def point_inside_panel_span(point: np.ndarray, panel: Dict[str, Any], tol: float = 1e-6) -> bool:
     plane = panel.get("plane")
     if plane == "x":
@@ -724,7 +648,6 @@ def point_inside_panel_span(point: np.ndarray, panel: Dict[str, Any], tol: float
         return sx[0]-tol <= point[0] <= sx[1]+tol and sy[0]-tol <= point[1] <= sy[1]+tol
     return False
 
-
 def reflect_point_across_panel(point: np.ndarray, panel: Dict[str, Any]) -> np.ndarray:
     q = np.array(point, dtype=float).copy()
     plane = panel.get("plane")
@@ -732,7 +655,6 @@ def reflect_point_across_panel(point: np.ndarray, panel: Dict[str, Any]) -> np.n
     idx = {"x": 0, "y": 1, "z": 2}.get(plane, 0)
     q[idx] = 2.0 * coord - q[idx]
     return q
-
 
 def line_intersection_with_panel_plane(p0: np.ndarray, p1: np.ndarray, panel: Dict[str, Any]) -> Optional[np.ndarray]:
     plane = panel.get("plane")
@@ -747,7 +669,6 @@ def line_intersection_with_panel_plane(p0: np.ndarray, p1: np.ndarray, panel: Di
     if t < -1e-9 or t > 1.0 + 1e-9:
         return None
     return p0 + t * (p1 - p0)
-
 
 def inox_first_order_multipath_delta_db(
     ant: Dict[str, Any],
@@ -826,7 +747,6 @@ def inox_first_order_multipath_delta_db(
         "inox_multipath_note": note,
     }
 
-
 def min_distance_to_reflective_panel(point: np.ndarray, scene: Dict[str, Any], controls: Dict[str, float]) -> Tuple[float, str]:
     best_d = float("inf")
     best_name = ""
@@ -845,7 +765,6 @@ def min_distance_to_reflective_panel(point: np.ndarray, scene: Dict[str, Any], c
     if not math.isfinite(best_d):
         return float("nan"), "sem_painel_refletivo_proximo"
     return best_d, best_name
-
 
 def vswr_risk_rows(scene: Dict[str, Any], controls: Dict[str, float]) -> pd.DataFrame:
     """Indicador geométrico de risco de VSWR/S11. Não calcula VSWR real."""
@@ -888,7 +807,6 @@ def vswr_risk_rows(scene: Dict[str, Any], controls: Dict[str, float]) -> pd.Data
         })
     return pd.DataFrame(rows)
 
-
 def multipath_tag_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     rows = []
     # Calcula duas vezes: sem aplicar e aplicando, para mostrar o impacto estimado.
@@ -913,7 +831,6 @@ def multipath_tag_rows(scene: Dict[str, Any], controls: Dict[str, float], reliab
             "observacao": "Aproximação por método das imagens; validar com bancada/openEMS. Não calcula modos completos de cavidade.",
         })
     return pd.DataFrame(rows)
-
 
 def robustness_jitter_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     """Testa se pequenas variações de posição geram queda brusca de margem.
@@ -1036,13 +953,11 @@ def compute_link_for_antenna(
         "read_ok": read_ok,
     }
 
-
 def compute_best_link(point: np.ndarray, scene: Dict[str, Any], controls: Dict[str, float]) -> Dict[str, Any]:
     results = [compute_link_for_antenna(ant, point, scene, controls) for ant in scene.get("antennas", [])]
     if not results:
         raise RuntimeError("Nenhuma antena definida na cena.")
     return max(results, key=lambda r: r["link_margin_db"])
-
 
 def classify_margin(margin_db: float, reliable_margin_db: float) -> str:
     if margin_db >= reliable_margin_db:
@@ -1051,10 +966,8 @@ def classify_margin(margin_db: float, reliable_margin_db: float) -> str:
         return "LEITURA MARGINAL"
     return "ZONA MORTA"
 
+# Diagnóstico e exportação
 
-# =============================================================================
-# RELATÓRIO DE DIAGNÓSTICO — EXPORTAÇÃO PARA BANCADA E AUDITORIA
-# =============================================================================
 def classify_link_bottleneck(link: Dict[str, Any], reliable_margin_db: float) -> str:
     """Classifica a causa imediata da falha pelo menor elo do link budget."""
     fm = float(link["forward_margin_db"])
@@ -1069,7 +982,6 @@ def classify_link_bottleneck(link: Dict[str, Any], reliable_margin_db: float) ->
     if lm < reliable_margin_db:
         return "LEITURA_MARGINAL_SEM_FOLGA"
     return "LEITURA_CONFIAVEL"
-
 
 def dominant_loss_terms(link: Dict[str, Any], controls: Dict[str, float], top_n: int = 4) -> str:
     """Retorna os termos de perda mais relevantes para explicar a margem."""
@@ -1089,7 +1001,6 @@ def dominant_loss_terms(link: Dict[str, Any], controls: Dict[str, float], top_n:
     # FSPL e backscatter quase sempre aparecem grandes; a intenção é mostrar peso, não culpar isoladamente.
     items = sorted(terms.items(), key=lambda kv: kv[1], reverse=True)[:top_n]
     return "; ".join([f"{k}: {v:.1f} dB" for k, v in items])
-
 
 def probable_action(link: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> str:
     """Sugere ação física ou calibração com base nos termos do link budget."""
@@ -1127,7 +1038,6 @@ def probable_action(link: Dict[str, Any], controls: Dict[str, float], reliable_m
     if controls.get("polarization_loss_db", 0) >= 3:
         suggestions.append("testar perda de polarização: antena CP × tag linear pode estar conservadora")
     return " | ".join(suggestions)
-
 
 def diagnostic_tag_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     """Tabela completa por tag/probe usando a melhor antena."""
@@ -1185,7 +1095,6 @@ def diagnostic_tag_rows(scene: Dict[str, Any], controls: Dict[str, float], relia
         })
     return pd.DataFrame(rows)
 
-
 def diagnostic_antenna_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     """Tabela tag × antena, útil para descobrir se o problema é geometria/ângulo."""
     rows = []
@@ -1217,7 +1126,6 @@ def diagnostic_antenna_rows(scene: Dict[str, Any], controls: Dict[str, float], r
                 "reflexoes_inox_primeira_ordem": int(r.get("inox_reflection_paths", 0)),
             })
     return pd.DataFrame(rows)
-
 
 def diagnostic_ablation_rows(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     """Testes de ablação: muda um parâmetro por vez para descobrir o termo suspeito."""
@@ -1267,7 +1175,6 @@ def diagnostic_ablation_rows(scene: Dict[str, Any], controls: Dict[str, float], 
             })
     return pd.DataFrame(rows)
 
-
 def diagnostic_summary_df(df_diag: pd.DataFrame, df_ablation: pd.DataFrame, controls: Dict[str, float], reliable_margin_db: float) -> pd.DataFrame:
     """Resumo executivo para interpretação rápida."""
     internal = df_diag[df_diag["esperada_interna"] == True]
@@ -1294,7 +1201,6 @@ def diagnostic_summary_df(df_diag: pd.DataFrame, df_ablation: pd.DataFrame, cont
     ]
     return pd.DataFrame(rows)
 
-
 def controls_df(controls: Dict[str, float], scene_source: str, reliable_margin_db: float) -> pd.DataFrame:
     items = []
     for k, v in controls.items():
@@ -1303,9 +1209,8 @@ def controls_df(controls: Dict[str, float], scene_source: str, reliable_margin_d
     items.append({"parametro": "reliable_margin_db", "valor": reliable_margin_db})
     return pd.DataFrame(items)
 
-
 def build_diagnostic_workbook_bytes(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float, scene_source: str) -> bytes:
-    """Gera XLSX com diagnóstico completo para enviar ao professor ou para auditoria."""
+    """Exporta o diagnóstico em XLSX."""
     df_diag = diagnostic_tag_rows(scene, controls, reliable_margin_db)
     df_ant = diagnostic_antenna_rows(scene, controls, reliable_margin_db)
     df_ablation = diagnostic_ablation_rows(scene, controls, reliable_margin_db)
@@ -1361,9 +1266,8 @@ def build_diagnostic_workbook_bytes(scene: Dict[str, Any], controls: Dict[str, f
     bio.seek(0)
     return bio.getvalue()
 
-
 def build_diagnostic_csv_zip_bytes(scene: Dict[str, Any], controls: Dict[str, float], reliable_margin_db: float, scene_source: str) -> bytes:
-    """Fallback em ZIP/CSV caso XLSXWriter não esteja disponível no ambiente."""
+    """Exporta ZIP/CSV quando XLSX não estiver disponível."""
     df_diag = diagnostic_tag_rows(scene, controls, reliable_margin_db)
     df_ant = diagnostic_antenna_rows(scene, controls, reliable_margin_db)
     df_ablation = diagnostic_ablation_rows(scene, controls, reliable_margin_db)
@@ -1388,9 +1292,8 @@ def build_diagnostic_csv_zip_bytes(scene: Dict[str, Any], controls: Dict[str, fl
     bio.seek(0)
     return bio.getvalue()
 
-# =============================================================================
-# STREAMLIT UI
-# =============================================================================
+# Interface
+
 st.set_page_config(page_title="Raio X RFID UHF Hospitalar", page_icon="📡", layout="wide")
 st.title("📡 Raio X Analítico — Portal RFID UHF Hospitalar v7")
 st.caption("Modelo físico por camadas com interface normal para apresentação e modo avançado para calibração.")
@@ -1470,9 +1373,8 @@ with st.sidebar:
             return float(preset[key])
         return float(rf.get(key, fallback))
 
-    # -------------------------------------------------------------------------
     # Valores base: no modo Normal ficam fixos/calculados; no Avançado ficam editáveis.
-    # -------------------------------------------------------------------------
+
     freq_mhz = float(rf.get("frequency_hz", 915e6)) / 1e6
     power_mode = "Limite por EIRP (recomendado)"
     reader_antenna_gain_dbi = rf_default("reader_antenna_gain_dbi", 9.0)
@@ -1565,9 +1467,8 @@ with st.sidebar:
     z_max_map = 1.95
     reliable_margin_db = float(preset.get("reliable_margin_db", rf.get("reliable_margin_db", 6.0)))
 
-    # -------------------------------------------------------------------------
     # Controles essenciais — visíveis no modo Normal.
-    # -------------------------------------------------------------------------
+
     st.subheader("Essenciais")
     selected_wall_material = st.selectbox(
         "Material da cabine",
@@ -1633,9 +1534,8 @@ with st.sidebar:
             """
         )
 
-    # -------------------------------------------------------------------------
     # Modo avançado — parâmetros de calibração e auditoria.
-    # -------------------------------------------------------------------------
+
     if show_advanced:
         st.markdown("---")
         st.subheader("Modo avançado")
@@ -1859,9 +1759,8 @@ with st.expander("📐 Modelo físico usado no cálculo"):
         """
     )
 
-# =============================================================================
-# AVALIAÇÃO DAS TAGS E PROBES
-# =============================================================================
+# Avaliação das etiquetas
+
 st.subheader("🏷️ Leitura das tags e probes")
 rows = []
 near_count = 0
@@ -1915,9 +1814,8 @@ if len(internal):
     c_mid.metric("Tags geradas/centrais", f"{len(low_internal)}")
     c_high.metric("Margem média interna", f"{internal['Margem final dB'].mean():.1f} dB")
 
-# =============================================================================
-# MAPA DE CALOR — RAIOS X DE VAZAMENTO E ZONAS MORTAS
-# =============================================================================
+# Mapa de calor
+
 st.subheader("🗺️ Raio X em corte horizontal")
 with st.spinner("Calculando mapa de margem de leitura..."):
     xs = np.linspace(-x_extent, x_extent, grid_n)
@@ -2100,9 +1998,8 @@ if show_vertical_map:
     )
     st.plotly_chart(vheat, use_container_width=True)
 
-# =============================================================================
 # MAPA 3D SIMPLIFICADO DE TAGS, ANTENAS E VOLUMES
-# =============================================================================
+
 st.subheader("📦 Cena física simplificada")
 fig3d = go.Figure()
 
@@ -2157,10 +2054,8 @@ fig3d.update_layout(
 )
 st.plotly_chart(fig3d, use_container_width=True)
 
-
-# =============================================================================
 # VERIFICAÇÕES ESPECÍFICAS PARA CABINE METÁLICA / INOX
-# =============================================================================
+
 st.subheader("🧲 Verificação de multipercurso no Inox e risco de VSWR")
 st.caption(
     "Esta seção não substitui openEMS nem medição com VNA. Ela adiciona verificações de engenharia: "
@@ -2226,9 +2121,8 @@ with st.expander("📋 Risco geométrico de VSWR/S11 por proximidade antena-meta
         mime="text/csv",
     )
 
-# =============================================================================
 # DIAGNÓSTICO E EXPORTAÇÃO DOS RESULTADOS
-# =============================================================================
+
 st.subheader("📊 Diagnóstico físico")
 colA, colB = st.columns(2)
 with colA:
@@ -2328,10 +2222,8 @@ st.caption(
     "Modelo analítico calibrável. Para validação final, medir RSSI/taxa de leitura no protótipo e ajustar: perda de tecido, perda da grade, ganho efetivo da tag, perda de orientação e parâmetros de material."
 )
 
-
-# =============================================================================
 # REFERÊNCIAS TÉCNICAS PARA DOCUMENTAÇÃO DO MODELO
-# =============================================================================
+
 with st.expander("📚 Referências técnicas que justificam os parâmetros"):
     st.markdown(
         """

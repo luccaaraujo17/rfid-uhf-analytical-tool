@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Núcleo físico-matemático do estudo RFID UHF.
+"""Funções do modelo físico-matemático usado no estudo RFID UHF."""
 
-Este módulo separa o modelo analítico do aplicativo da calibração experimental e
-mantém explícitas as hipóteses usadas no link budget.
-
-Princípios:
-- Friis e campo distante são o núcleo analítico;
-- a antena real é representada por perfil de ganho/HPBW/FTB;
-- a tag desconhecida é um modelo aproximado e paramétrico;
-- resultados experimentais não substituem constantes físicas;
-- toda comparação esperado x medido deve reportar bias, MAE e RMSE.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
@@ -21,49 +11,39 @@ import numpy as np
 C0 = 299_792_458.0
 EPS = 1e-15
 
-
 def dbm_to_watt(dbm: float) -> float:
     return 10.0 ** ((float(dbm) - 30.0) / 10.0)
-
 
 def watt_to_dbm(watt: float) -> float:
     return 10.0 * math.log10(max(float(watt), EPS) * 1000.0)
 
-
 def db_to_linear(db: float) -> float:
     return 10.0 ** (float(db) / 10.0)
-
 
 def linear_to_db(value: float) -> float:
     return 10.0 * math.log10(max(float(value), EPS))
 
-
 def wavelength_m(frequency_hz: float) -> float:
     return C0 / float(frequency_hz)
-
 
 def fraunhofer_distance_m(frequency_hz: float, largest_dimension_m: float) -> float:
     lam = wavelength_m(frequency_hz)
     return 2.0 * float(largest_dimension_m) ** 2 / lam
 
-
 def fspl_db(distance_m: float, frequency_hz: float) -> float:
     distance_m = max(float(distance_m), 1e-9)
     return 20.0 * math.log10(4.0 * math.pi * distance_m / wavelength_m(frequency_hz))
-
 
 def mismatch_loss_from_vswr_db(vswr: float) -> float:
     vswr = max(float(vswr), 1.0)
     gamma = (vswr - 1.0) / (vswr + 1.0)
     return -10.0 * math.log10(max(1.0 - gamma * gamma, EPS))
 
-
 def field_strength_far_v_per_m(tx_power_dbm: float, gain_dbi: float, distance_m: float) -> float:
     """Módulo de E em campo distante: sqrt(30 P G)/R."""
     p_w = dbm_to_watt(tx_power_dbm)
     g_lin = db_to_linear(gain_dbi)
     return math.sqrt(30.0 * p_w * g_lin) / max(float(distance_m), 1e-9)
-
 
 def angular_gain_dbi(
     peak_gain_dbi: float,
@@ -78,7 +58,6 @@ def angular_gain_dbi(
     )
     return float(peak_gain_dbi) - attenuation
 
-
 def normalize(v: Sequence[float]) -> np.ndarray:
     a = np.asarray(v, dtype=float)
     n = np.linalg.norm(a)
@@ -86,11 +65,9 @@ def normalize(v: Sequence[float]) -> np.ndarray:
         raise ValueError("Vetor de orientação não pode ser nulo.")
     return a / n
 
-
 def angle_deg(v1: Sequence[float], v2: Sequence[float]) -> float:
     a, b = normalize(v1), normalize(v2)
     return math.degrees(math.acos(float(np.clip(np.dot(a, b), -1.0, 1.0))))
-
 
 def tag_axis_orientation_loss_db(
     propagation_direction: Sequence[float],
@@ -109,7 +86,6 @@ def tag_axis_orientation_loss_db(
     transverse_power = max(1.0 - float(np.dot(u, k)) ** 2, 10.0 ** (-max_extra_loss_db / 10.0))
     return min(-10.0 * math.log10(transverse_power), float(max_extra_loss_db))
 
-
 @dataclass(frozen=True)
 class AntennaProfile:
     manufacturer: str = "Laird Technologies"
@@ -127,7 +103,6 @@ class AntennaProfile:
     largest_dimension_m: float = 0.2591
     size_m: tuple[float, float, float] = (0.2591, 0.2591, 0.0335)
 
-
 @dataclass(frozen=True)
 class TagProfile:
     description: str = "Etiqueta UHF passiva adesiva aproximada 75 x 20 mm"
@@ -142,7 +117,6 @@ class TagProfile:
     chip_c_pf_initial: float = 1.0
     model_status: str = "aproximado e paramétrico; fabricante/chip não identificados"
 
-
 @dataclass(frozen=True)
 class LinkBudgetInput:
     distance_m: float
@@ -156,7 +130,6 @@ class LinkBudgetInput:
     backscatter_equivalent_loss_db: float = 28.0
     reader_sensitivity_dbm: float = -90.0
     frequency_hz: float = 915e6
-
 
 @dataclass(frozen=True)
 class LinkBudgetResult:
@@ -177,7 +150,6 @@ class LinkBudgetResult:
 
     def as_dict(self) -> dict:
         return asdict(self)
-
 
 def compute_link_budget(
     inp: LinkBudgetInput,
@@ -251,7 +223,6 @@ def compute_link_budget(
         classification=cls,
     )
 
-
 def comparison_metrics(expected: Iterable[float], measured: Iterable[float]) -> dict:
     expected_a = np.asarray(list(expected), dtype=float)
     measured_a = np.asarray(list(measured), dtype=float)
@@ -266,7 +237,6 @@ def comparison_metrics(expected: Iterable[float], measured: Iterable[float]) -> 
         "std_error_db": float(np.std(error, ddof=1)) if error.size > 1 else 0.0,
     }
 
-
 def monte_carlo_link_budget(
     inp: LinkBudgetInput,
     antenna: AntennaProfile = AntennaProfile(),
@@ -279,7 +249,7 @@ def monte_carlo_link_budget(
     sigma_material_db: float = 1.5,
     sigma_backscatter_db: float = 3.0,
 ) -> dict:
-    """Propaga incertezas epistemológicas sem alterar o modelo nominal."""
+    """Propaga as incertezas dos parâmetros do modelo."""
     rng = np.random.default_rng(seed)
     margins = []
     p_rx = []

@@ -231,7 +231,7 @@ if files:
         data=pd.concat(dfs,ignore_index=True)
         summary=(data.groupby(["arquivo","distancia_cm","potencia_dbm","n_tags","n_antenas","orientacao","material","tag_curta"],dropna=False)
                  .agg(n=("RSSI","count"),rssi_medio=("RSSI","mean"),rssi_std=("RSSI","std"),rssi_min=("RSSI","min"),rssi_max=("RSSI","max")).reset_index())
-        # comparison only for 1 tag, frontal, no towel
+        # Comparação: uma etiqueta frontal, sem toalha
         cmp=summary[(summary.n_tags==1)&(summary.orientacao=="0° frontal")&(summary.material=="sem toalha")].copy()
         expected=[]
         for _,row in cmp.iterrows():

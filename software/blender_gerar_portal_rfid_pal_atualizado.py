@@ -41,9 +41,8 @@ from typing import Iterable, List
 import bpy
 from mathutils import Vector
 
-# =============================================================================
 # CONFIGURAÇÕES GERAIS
-# =============================================================================
+
 def resolver_diretorio_saida() -> Path:
     """
     Resolve um diretório seguro para exportar STL/JSON/BLEND.
@@ -66,30 +65,29 @@ def resolver_diretorio_saida() -> Path:
     else:
         base = Path(os.getcwd())
 
-    # Caso especial: algum componente do caminho é um arquivo/pasta com sufixo .blend.
+    # Trata caminhos terminados em .blend
     for p in [base] + list(base.parents):
         if p.suffix.lower() == ".blend":
             out = p.parent / f"{p.stem}_rfid_outputs"
             out.mkdir(parents=True, exist_ok=True)
             return out
 
-    # Se por algum motivo base for um arquivo, usa a pasta acima.
+    # Usa a pasta pai quando necessário
     if base.exists() and base.is_file():
         base = base.parent
 
     out = base / "rfid_outputs"
 
-    # Se já existir um arquivo com esse nome, usa alternativa segura.
+    # Evita sobrescrever arquivo existente
     if out.exists() and not out.is_dir():
         out = base / "rfid_outputs_dir"
 
     out.mkdir(parents=True, exist_ok=True)
     return out
 
-
 OUTPUT_DIR = resolver_diretorio_saida()
 
-# Dimensões reais aproximadas em metros
+# Dimensões em metros
 SCALE_W, SCALE_D, SCALE_H = 1.00, 1.00, 0.12
 RAMP_L, RAMP_W, RAMP_THICK = 0.95, 1.00, 0.025
 CABIN_W, CABIN_D, CABIN_H, WALL_T = 1.22, 1.18, 2.10, 0.06
@@ -107,9 +105,8 @@ TEXTILE_SIZE = (0.55, 0.62, 1.20)
 FPS = 24
 WAIT_SECONDS = 5
 
-# =============================================================================
 # LIMPEZA E SETUP
-# =============================================================================
+
 def clear_scene() -> None:
     if bpy.ops.object.mode_set.poll():
         try:
@@ -132,8 +129,7 @@ clear_scene()
 scene = bpy.context.scene
 scene.unit_settings.system = "METRIC"
 
-# O usuário relatou preferência por BLENDER_EEVEE. Mantemos isso como primeira tentativa
-# e caímos para EEVEE_NEXT em instalações que exigem o identificador novo.
+# Compatibilidade entre versões do Eevee
 try:
     scene.render.engine = "BLENDER_EEVEE"
 except Exception:
@@ -152,7 +148,7 @@ try:
 except Exception:
     pass
 
-# World volumétrico para visualizar feixes das antenas
+# Volume para visualizar os feixes
 world = scene.world or bpy.data.worlds.new("World")
 scene.world = world
 world.use_nodes = True
@@ -167,9 +163,8 @@ vol.inputs["Anisotropy"].default_value = 0.2
 tree.links.new(bg.outputs["Background"], out.inputs["Surface"])
 tree.links.new(vol.outputs["Volume"], out.inputs["Volume"])
 
-# =============================================================================
 # COLEÇÕES E MATERIAIS
-# =============================================================================
+
 def new_collection(name: str):
     col = bpy.data.collections.new(name)
     bpy.context.scene.collection.children.link(col)
@@ -182,7 +177,6 @@ COL_CAGE = new_collection("03_Gaiola_Visual")
 COL_ANT = new_collection("04_Antenas")
 COL_TAGS = new_collection("05_Tags_Probes")
 COL_HELP = new_collection("06_Cameras_Luzes")
-
 
 def make_mat(name, color, roughness=0.45, metallic=0.0, alpha=1.0):
     mat = bpy.data.materials.new(name)
@@ -209,21 +203,19 @@ MAT_TAG = make_mat("Tag RFID", (1.0, 0.78, 0.05, 1), 0.4, 0.0)
 MAT_ANT = make_mat("Antena Laird", (0.01, 0.01, 0.01, 1), 0.5, 0.0)
 MAT_ZONE = make_mat("Zona válida transparente", (0.0, 0.8, 1.0, 0.18), 0.3, 0.0, 0.18)
 
-# =============================================================================
 # FUNÇÕES DE OBJETOS
-# =============================================================================
+
 def link_to_collection(obj, collection, also_visual=True):
-    # Remove de coleções atuais e adiciona na coleção principal desejada.
+    # Move o objeto para a coleção escolhida
     for c in list(obj.users_collection):
         c.objects.unlink(obj)
     collection.objects.link(obj)
-    # Objetos também são ligados à coleção visual quando fizer sentido.
+    # Mantém os objetos visuais na coleção principal
     if also_visual and collection != COL_VIS:
         try:
             COL_VIS.objects.link(obj)
         except RuntimeError:
             pass
-
 
 def cube_obj(name, loc, scale, mat=None, collection=None, also_visual=True):
     bpy.ops.mesh.primitive_cube_add(size=1, location=loc)
@@ -236,7 +228,6 @@ def cube_obj(name, loc, scale, mat=None, collection=None, also_visual=True):
     if collection:
         link_to_collection(obj, collection, also_visual=also_visual)
     return obj
-
 
 def cyl_between(name, p1, p2, radius, mat=None, collection=None, vertices=24, also_visual=True):
     p1, p2 = Vector(p1), Vector(p2)
@@ -253,16 +244,14 @@ def cyl_between(name, p1, p2, radius, mat=None, collection=None, vertices=24, al
         link_to_collection(obj, collection, also_visual=also_visual)
     return obj
 
-
 def set_role(obj, role: str, material_physics: str = ""):
     obj["rf_role"] = role
     if material_physics:
         obj["rf_material"] = material_physics
     return obj
 
-# =============================================================================
 # CONSTRUÇÃO DA CENA VISUAL
-# =============================================================================
+
 # Piso, balança e rampa
 floor = set_role(cube_obj("Piso_visual", (0, -0.35, -0.012), (2.20, 3.20, 0.024), MAT_FLOOR, COL_VIS, also_visual=False), "reflector_visual", "concrete")
 scale_obj = set_role(cube_obj("BALANCA_metalica", (0, 0.0, SCALE_H / 2), (SCALE_W, SCALE_D, SCALE_H), MAT_SCALE, COL_VIS, also_visual=False), "reflector", "metal")
@@ -273,7 +262,7 @@ ramp_center_y = (ramp_start_y + ramp_end_y) / 2.0
 ramp = set_role(cube_obj("RAMPA_metalica", (0, ramp_center_y, SCALE_H / 2), (RAMP_W, RAMP_L, RAMP_THICK), MAT_RAMP, COL_VIS, also_visual=False), "reflector", "metal")
 ramp.rotation_euler[0] = math.atan2(SCALE_H, RAMP_L)
 
-# Cabine: painéis físicos RF separados em coleção própria
+# Painéis da cabine
 cab_z = CABIN_H / 2.0
 front_y = -CABIN_D / 2.0
 left_x = -CABIN_W / 2.0 + WALL_T / 2.0
@@ -287,16 +276,16 @@ cabin_objects.append(set_role(cube_obj("RF_Cabine_parede_dir", ( CABIN_W/2 - WAL
 cabin_objects.append(set_role(cube_obj("RF_Cabine_fundo", (0, CABIN_D/2 - WALL_T/2, cab_z), (CABIN_W, WALL_T, CABIN_H), MAT_CABIN, COL_CABIN_RF), "rf_barrier", "absorber"))
 cabin_objects.append(set_role(cube_obj("RF_Cabine_teto", (0, 0, CABIN_H - WALL_T/2), (CABIN_W, CABIN_D, WALL_T), MAT_CABIN, COL_CABIN_RF), "rf_barrier", "absorber"))
 
-# Aro frontal metálico: visual e possível refletor, mas NÃO entra como parede fechada no JSON.
+# Aro frontal metálico usado apenas como refletor
 set_role(cube_obj("Aro_frontal_superior_metal", (0, front_y, CABIN_H - WALL_T/2), (CABIN_W, WALL_T, WALL_T), MAT_METAL, COL_VIS, also_visual=False), "reflector", "metal")
 set_role(cube_obj("Aro_frontal_esq_metal", (-CABIN_W/2 + WALL_T/2, front_y, CABIN_H/2), (WALL_T, WALL_T, CABIN_H), MAT_METAL, COL_VIS, also_visual=False), "reflector", "metal")
 set_role(cube_obj("Aro_frontal_dir_metal", ( CABIN_W/2 - WALL_T/2, front_y, CABIN_H/2), (WALL_T, WALL_T, CABIN_H), MAT_METAL, COL_VIS, also_visual=False), "reflector", "metal")
 
-# Zona de leitura como volume transparente fechado
+# Zona de leitura
 read_zone = set_role(cube_obj("RF_Zona_Leitura_Operacional", READ_ZONE_CENTER, READ_ZONE_SIZE, MAT_ZONE, COL_READ_ZONE), "read_zone", "none")
 read_zone.display_type = "WIRE"
 
-# Gaiola visual completa — o app usa sua perda equivalente via JSON, não as faces do STL.
+# Gaiola visual; a perda é tratada no modelo
 bpy.ops.object.empty_add(type="PLAIN_AXES", location=(0, 0, 0))
 cage_ctrl = bpy.context.object
 cage_ctrl.name = "CTRL_GAIOLA_ANIMACAO"
@@ -320,7 +309,7 @@ for i in range(4):
     cage_objs.append(set_role(cyl_between(f"GAIOLA_base_tubo_{i+1}", corners_bottom[i], corners_bottom[j], ROD_R, MAT_METAL, COL_CAGE), "cage_bar", "metal"))
     cage_objs.append(set_role(cyl_between(f"GAIOLA_topo_tubo_{i+1}", corners_top[i], corners_top[j], ROD_R, MAT_METAL, COL_CAGE), "cage_bar", "metal"))
 
-# Grades horizontais a cada 15 cm
+# Grades horizontais
 z = z_bottom + 0.15
 level = 1
 while z < z_top - 0.05:
@@ -331,7 +320,7 @@ while z < z_top - 0.05:
     z += 0.15
     level += 1
 
-# Grades verticais: frente/fundo a cada 15 cm; laterais a cada 27 cm
+# Grades verticais
 x = x1 + 0.15
 idx = 1
 while x < x2 - 0.05:
@@ -363,7 +352,7 @@ for i, pos in enumerate(wheel_positions, start=1):
     set_role(wheel, "wheel_visual", "rubber")
     cage_objs.append(wheel)
 
-# Volume/enxoval visual — o app usa AABB de atenuação pelo JSON.
+# Volume do enxoval
 bag_specs = [
     (-0.13, -0.15, z_bottom+0.18, 0.18, 0.19, 0.12),
     ( 0.13, -0.14, z_bottom+0.19, 0.18, 0.18, 0.12),
@@ -380,7 +369,7 @@ for i, (dx, dy, dz, sx, sy, sz) in enumerate(bag_specs, start=1):
     set_role(bag, "textile_visual", "textile")
     cage_objs.append(bag)
 
-# Tags internas e probes externas
+# Etiquetas e pontos externos
 TAG_DEFS = [
     ("TAG_01", (-0.22, -0.18, 0.45), True),
     ("TAG_02", ( 0.21, -0.16, 0.65), True),
@@ -401,8 +390,7 @@ for name, pos, inside in TAG_DEFS:
     if inside:
         internal_tag_objs.append(obj)
 
-# A gaiola, os sacos e as tags internas se movem juntos no frame de leitura.
-# Probes externas não são parentadas, pois representam prateleiras/peças fora da cabine.
+# O conjunto interno se move junto; os pontos externos permanecem fixos
 for obj in cage_objs + internal_tag_objs:
     obj.parent = cage_ctrl
     obj.matrix_parent_inverse = cage_ctrl.matrix_world.inverted()
@@ -416,7 +404,7 @@ ant_left = set_role(cube_obj("LAIRD_PAL90209H_ESQ", (left_ant_x, -0.03, ANT_Z), 
 ant_right = set_role(cube_obj("LAIRD_PAL90209H_DIR", (right_ant_x, -0.03, ANT_Z), ANT_SIZE_SIDE, MAT_ANT, COL_ANT), "antenna", "source")
 ant_top = set_role(cube_obj("LAIRD_PAL90209H_TOPO", (0, -0.03, top_ant_z), ANT_SIZE_TOP, MAT_ANT, COL_ANT), "antenna", "source")
 
-# Feixes visuais via spots
+# Feixes das antenas
 
 def add_spot_light(name, loc, rot, power, color, angle_deg, col):
     bpy.ops.object.light_add(type="SPOT", location=loc, rotation=rot)
@@ -442,15 +430,14 @@ add_spot_light("SINAL_ESQ", (left_ant_x + 0.05, -0.03, ANT_Z), (0, math.radians(
 add_spot_light("SINAL_DIR", (right_ant_x - 0.05, -0.03, ANT_Z), (0, math.radians( 90), 0), 4500, (0.0, 1.0, 0.5), 65, COL_ANT)
 add_spot_light("SINAL_TOPO", (0, -0.03, top_ant_z - 0.05), (0, 0, 0), 5500, (0.0, 0.6, 1.0), 65, COL_ANT)
 
-# Animação simples de entrada e retorno da gaiola
+# Animação da gaiola
 scene.frame_start = 1
 scene.frame_end = 360
 scene.render.fps = FPS
 WAIT_FRAMES = FPS * WAIT_SECONDS
 FRAME_ON_SCALE = 120
 FRAME_OFF_SCALE = FRAME_ON_SCALE + WAIT_FRAMES
-# Para animar, deslocamos a gaiola para iniciar fora e entrar na cabine.
-# As coordenadas dos objetos estão centradas; o controlador move o conjunto.
+# Movimento controlado pelo objeto principal da gaiola
 keyframes = [
     (1, -2.05, 0.00),
     (45, -1.45, 0.00),
@@ -471,7 +458,7 @@ try:
                 kp.interpolation = "LINEAR"
 except Exception:
     pass
-# Coloca a gaiola no frame de leitura para exportação visual do momento de escaneamento.
+# Posição de leitura para exportação
 scene.frame_set(FRAME_ON_SCALE)
 READING_OFFSET = Vector((0.0, 0.0, SCALE_H))
 
@@ -496,9 +483,8 @@ if bpy.context.screen:
             if space and space.type == "VIEW_3D":
                 space.shading.type = "RENDERED"
 
-# =============================================================================
 # EXPORTAÇÕES
-# =============================================================================
+
 def select_only(objs: Iterable[bpy.types.Object]) -> None:
     bpy.ops.object.select_all(action="DESELECT")
     for obj in objs:
@@ -508,7 +494,6 @@ def select_only(objs: Iterable[bpy.types.Object]) -> None:
     if mesh_objs:
         bpy.context.view_layer.objects.active = mesh_objs[0]
 
-
 def export_selected_stl(filepath: Path) -> None:
     filepath = Path(filepath)
     filepath.parent.mkdir(parents=True, exist_ok=True)
@@ -517,7 +502,7 @@ def export_selected_stl(filepath: Path) -> None:
     except Exception:
         bpy.ops.export_mesh.stl(filepath=str(filepath), use_selection=True, use_mesh_modifiers=True)
 
-# Atualiza dependências antes de exportar o frame de leitura.
+# Atualiza a cena antes da exportação
 bpy.context.view_layer.update()
 
 visual_objs = [o for o in bpy.data.objects if o.type == "MESH" and any(c.name in {"00_Cena_Visual_Completa", "01_Cabine_RF_Paineis", "02_Zona_Leitura", "03_Gaiola_Visual", "04_Antenas", "05_Tags_Probes"} for c in o.users_collection)]
@@ -530,9 +515,8 @@ export_selected_stl(OUTPUT_DIR / "rfid_cabine_rf_paineis.stl")
 select_only([read_zone])
 export_selected_stl(OUTPUT_DIR / "rfid_zona_leitura.stl")
 
-# =============================================================================
-# METADADOS FÍSICOS PARA O APP RFID
-# =============================================================================
+# METADADOS PARA O APP
+
 metadata = {
     "schema": "rfid_hospitalar_physics_scene_v1",
     "units": "m",
@@ -633,7 +617,7 @@ metadata = {
 with open(OUTPUT_DIR / "rfid_scene_metadata.json", "w", encoding="utf-8") as f:
     json.dump(metadata, f, ensure_ascii=False, indent=2)
 
-# Salva o .blend também, para edição posterior.
+# Salva o arquivo Blender
 bpy.ops.wm.save_as_mainfile(filepath=str(OUTPUT_DIR / "rfid_portal_hospitalar.blend"))
 
 print("=== ARQUIVOS RFID GERADOS ===")

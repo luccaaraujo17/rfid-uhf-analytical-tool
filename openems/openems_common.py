@@ -75,13 +75,13 @@ def add_meander_tag(
     def add_segment(a, b):
         metal.AddBox(priority=20, start=a, stop=b)
 
-    # Frontal: plano YZ, propagação +X, eixo dipolar Y.
+    # Frontal: plano YZ
     if orientation == "frontal":
         x = cx
-        # braços principais com gap central
+        # Braços principais
         add_segment([x, cy-half_l, cz-strip/2], [x, cy-gap/2, cz+strip/2])
         add_segment([x, cy+gap/2, cz-strip/2], [x, cy+half_l, cz+strip/2])
-        # meandros laterais simplificados
+        # Meandros laterais
         for sign in (-1, 1):
             y0 = cy + sign*(gap/2 + 7)
             for i in range(5):
@@ -99,7 +99,7 @@ def add_meander_tag(
         load_dir = "y"
         mesh_edges = {"x":[x], "y":[cy-half_l,cy-gap/2,cy+gap/2,cy+half_l], "z":[cz-half_h,cz,cz+half_h]}
 
-    # Horizontal/deitada: plano XY, eixo dipolar Y.
+    # Horizontal: plano XY
     elif orientation == "horizontal":
         z = cz
         add_segment([cx-strip/2, cy-half_l, z], [cx+strip/2, cy-gap/2, z])
@@ -121,7 +121,7 @@ def add_meander_tag(
         load_dir = "y"
         mesh_edges = {"x":[cx-half_h,cx,cx+half_h], "y":[cy-half_l,cy-gap/2,cy+gap/2,cy+half_l], "z":[z]}
 
-    # Lateral/yaw: plano XZ, eixo dipolar X (quase paralelo à propagação).
+    # Lateral: plano XZ
     elif orientation == "lateral":
         y = cy
         add_segment([cx-half_l, y, cz-strip/2], [cx-gap/2, y, cz+strip/2])
@@ -220,10 +220,10 @@ def build_simulation(config: dict, scenario: dict, mesh_preset: str = "media", c
         z=float(t.get("offset_z_mm",0.0))
         if scenario.get("eps",False):
             z=-eps_size[2]/2 + float(t.get("height_mm",eps_size[2]/2))
-            # Metal na face incidente; substrato ocupa o espaço até a face do EPS.
+            # Metal na face incidente
             x=eps_front_x-float(tag_cfg.get("substrate_thickness_mm",0.2))
         elif scenario.get("towel",False):
-            # Configuração conservadora: a onda atravessa a espessura da toalha antes de chegar à tag.
+            # A onda atravessa a toalha antes da etiqueta
             x=towel_size[0]/2.0 + 0.05
             z=float(t.get("offset_z_mm",0.0))
         else:
@@ -238,7 +238,7 @@ def build_simulation(config: dict, scenario: dict, mesh_preset: str = "media", c
         add_box_lines(mesh,ax,vals)
     mesh.SmoothMeshLines("all", float(preset["local_mm"]), 1.35)
 
-    # Onda plana linear normalizada. A perda CP-LP é aplicada no app.
+    # Onda plana linear normalizada
     pw_cfg=config["plane_wave"]
     pw=CSX.AddExcitation("plane_wave",exc_type=10,exc_val=pw_cfg["electric_field_direction"])
     pw.SetPropagationDir(pw_cfg["propagation_direction"])
@@ -246,7 +246,7 @@ def build_simulation(config: dict, scenario: dict, mesh_preset: str = "media", c
     pwbox=np.asarray(config["plane_wave_box_mm"],dtype=float)
     pw.AddBox(-pwbox/2,pwbox/2)
 
-    # Dumps em domínio da frequência para inspeção no ParaView/h5py.
+    # Resultados em domínio da frequência
     dump_box = np.asarray(config.get("local_dump_box_mm", [180, 260, 260]), dtype=float)
     e_dump = CSX.AddDump("E_fd_915MHz", dump_type=10, file_type=1, frequency=[f0], dump_mode=2)
     e_dump.AddBox(priority=0, start=-dump_box/2, stop=dump_box/2)

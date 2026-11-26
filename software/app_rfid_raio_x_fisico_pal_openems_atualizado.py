@@ -2118,6 +2118,7 @@ with st.expander("Multipercurso aproximado por Inox — método das imagens"):
         data=mp_df.to_csv(index=False).encode("utf-8-sig"),
         file_name="05_multipercurso_inox.csv",
         mime="text/csv",
+        on_click="ignore",
     )
 
 with st.expander("Robustez por deslocamento local das tags"):
@@ -2131,6 +2132,7 @@ with st.expander("Robustez por deslocamento local das tags"):
         data=rob_df.to_csv(index=False).encode("utf-8-sig"),
         file_name="06_robustez_posicao.csv",
         mime="text/csv",
+        on_click="ignore",
     )
 
 with st.expander("Risco geométrico de VSWR/S11 por proximidade antena-metal"):
@@ -2144,6 +2146,7 @@ with st.expander("Risco geométrico de VSWR/S11 por proximidade antena-metal"):
         data=vswr_df.to_csv(index=False).encode("utf-8-sig"),
         file_name="07_risco_vswr.csv",
         mime="text/csv",
+        on_click="ignore",
     )
 
 # DIAGNÓSTICO E EXPORTAÇÃO DOS RESULTADOS
@@ -2190,6 +2193,7 @@ with tab_xlsx:
             data=diag_xlsx,
             file_name="diagnostico_link_budget_rfid_v8.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            on_click="ignore",
             use_container_width=True,
         )
     except Exception as exc:
@@ -2202,6 +2206,7 @@ with tab_csv:
         data=csv,
         file_name="resultado_tags_rfid.csv",
         mime="text/csv",
+        on_click="ignore",
         use_container_width=True,
     )
     diag_zip = build_diagnostic_csv_zip_bytes(scene, controls, reliable_margin_db, scene_source)
@@ -2210,6 +2215,7 @@ with tab_csv:
         data=diag_zip,
         file_name="diagnostico_link_budget_rfid_v8_csv.zip",
         mime="application/zip",
+        on_click="ignore",
         use_container_width=True,
     )
     st.caption("O ZIP inclui resumo, diagnóstico por tag, tag × antena, ablação, multipercurso, robustez e risco VSWR/S11.")
@@ -2221,6 +2227,7 @@ with tab_mapas:
         data=grid_df.to_csv().encode("utf-8-sig"),
         file_name="mapa_margem_rfid.csv",
         mime="text/csv",
+        on_click="ignore",
         use_container_width=True,
     )
     st.caption("Use este arquivo para auditar o mapa de calor mostrado no app.")
@@ -2235,9 +2242,10 @@ with tab_blender:
     )
     st.download_button(
         "⬇️ Pacote CSV para visualização",
-        data=build_diagnostic_csv_zip_bytes(scene, controls, reliable_margin_db, scene_source),
+        data=diag_zip,
         file_name="diagnostico_para_blender_rfid_v8.zip",
         mime="application/zip",
+        on_click="ignore",
         use_container_width=True,
     )
 

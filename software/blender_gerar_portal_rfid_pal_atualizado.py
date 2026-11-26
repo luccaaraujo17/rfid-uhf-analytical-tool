@@ -519,6 +519,7 @@ export_selected_stl(OUTPUT_DIR / "rfid_zona_leitura.stl")
 
 metadata = {
     "schema": "rfid_hospitalar_physics_scene_v1",
+    "scene_name": bpy.context.scene.name,
     "units": "m",
     "description": "Cena física por camadas gerada no Blender para simulação analítica RFID UHF hospitalar.",
     "generated_files": {

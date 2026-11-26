@@ -3,19 +3,24 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import math
 import os
 import io
 import zipfile
 from dataclasses import dataclass
+from html import escape
 from pathlib import Path
+from string import Template
 from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+
+from vista_cena import vista_da_cena
 
 # CONSTANTES FÍSICAS
 
@@ -1288,9 +1293,11 @@ def build_diagnostic_csv_zip_bytes(scene: Dict[str, Any], controls: Dict[str, fl
 
 # Interface
 
-st.set_page_config(page_title="Raio X RFID UHF Hospitalar", page_icon="📡", layout="wide")
-st.title("📡 Raio X Analítico — Portal RFID UHF Hospitalar v7")
-st.caption("Modelo físico por camadas com interface normal para apresentação e modo avançado para calibração.")
+def numero_br(value: float, decimals: int) -> str:
+    return f"{value:.{decimals}f}".replace(".", ",")
+
+
+st.set_page_config(page_title="Raio X Analítico v8 | Simulador RFID UHF", layout="wide")
 
 # Carregamento do JSON de cena
 scene_source = "Cena padrão interna"
@@ -1298,7 +1305,7 @@ scene = default_scene()
 json_default = find_default_json()
 
 with st.sidebar:
-    st.header("📁 Cena física")
+    st.header("Cena física")
     uploaded_json = st.file_uploader("Carregar rfid_scene_metadata.json", type=["json"])
     if uploaded_json is not None:
         scene = json.loads(uploaded_json.getvalue().decode("utf-8"))
@@ -1310,13 +1317,16 @@ with st.sidebar:
         except Exception as exc:
             st.warning(f"Falha ao ler JSON local: {exc}. Usando cena padrão.")
 
-st.info(f"Cena em uso: **{scene_source}**")
+# A geometria de origem é capturada antes dos ajustes da simulação.
+scene_view = vista_da_cena(scene)
+scene_name = scene.get("scene_name")
+scene_label = scene_name.strip() if isinstance(scene_name, str) and scene_name.strip() else Path(scene_source).name
 
 rf = scene.get("rf", default_scene()["rf"])
 materials = scene.get("materials", default_scene()["materials"])
 
 with st.sidebar:
-    st.header("⚙️ Modo de uso")
+    st.header("Modo de uso")
     interface_mode = st.radio(
         "Interface",
         ["Normal — apresentação", "Avançado — calibração"],
@@ -1337,7 +1347,7 @@ with st.sidebar:
         "A tag permanece aproximada e paramétrica (75 x 20 mm)."
     )
 
-    st.header("🎛️ Cenário de análise")
+    st.header("Cenário de análise")
     preset_name = st.selectbox(
         "Preset técnico",
         list(RF_PRESETS.keys()),
@@ -1512,7 +1522,7 @@ with st.sidebar:
     )
     robustness_jitter_radius_cm = st.slider("Robustez: deslocamento local das tags (cm)", 1.0, 10.0, robustness_jitter_radius_cm, 1.0)
 
-    with st.expander("📌 Valores fixos/calculados no modo Normal", expanded=False):
+    with st.expander("Valores fixos/calculados no modo Normal", expanded=False):
         st.markdown(
             f"""
             - Frequência de referência: **{freq_mhz:.1f} MHz**
@@ -1534,7 +1544,7 @@ with st.sidebar:
         st.markdown("---")
         st.subheader("Modo avançado")
 
-        with st.expander("⚡ RF, potência e tag", expanded=False):
+        with st.expander("RF, potência e tag", expanded=False):
             freq_mhz = st.number_input("Frequência (MHz)", 860.0, 960.0, freq_mhz, 1.0)
             power_mode = st.radio(
                 "Modo de potência",
@@ -1556,7 +1566,7 @@ with st.sidebar:
             tag_gain_dbi = st.slider("Ganho efetivo da tag costurada (dBi)", -8.0, 3.0, tag_gain_dbi, 0.5)
             backscatter_link_loss_db = st.slider("Perda de backscatter/modulação da tag (dB)", 20.0, 50.0, backscatter_link_loss_db, 1.0)
 
-        with st.expander("🧭 Antena, polarização e geometria", expanded=False):
+        with st.expander("Antena, polarização e geometria", expanded=False):
             polarization_loss_db = st.slider("Perda por polarização (dB)", 0.0, 10.0, polarization_loss_db, 0.5)
             tag_orientation_extra_loss_db = st.slider("Perda adicional por dobra/orientação da tag (dB)", 0.0, 15.0, tag_orientation_extra_loss_db, 0.5)
             antenna_hpbw_deg = st.slider("HPBW / abertura da antena (graus)", 30.0, 120.0, antenna_hpbw_deg, 1.0)
@@ -1581,7 +1591,7 @@ with st.sidebar:
                     lower_lateral_z = st.slider("Altura das laterais baixas Z (m)", 0.35, 1.20, lower_lateral_z, 0.05)
                     lower_lateral_tilt_deg = st.slider("Inclinação das laterais baixas (°; negativo aponta para baixo)", -55.0, 35.0, lower_lateral_tilt_deg, 1.0)
 
-        with st.expander("🏷️ Tags, pilha e volume do enxoval", expanded=False):
+        with st.expander("Tags, pilha e volume do enxoval", expanded=False):
             tag_seed = st.number_input("Semente aleatória das tags", 0, 999999, tag_seed, 1)
             tag_distribution = st.selectbox("Distribuição das tags", ["Aleatória uniforme", "Centro mais denso", "Camadas verticais"], index=["Aleatória uniforme", "Centro mais denso", "Camadas verticais"].index(tag_distribution))
             center_concentration = st.slider("Concentração no centro da pilha", 0.0, 1.0, center_concentration, 0.05)
@@ -1592,7 +1602,7 @@ with st.sidebar:
             stack_size_y = st.slider("Profundidade da pilha Y (m)", 0.10, 0.85, stack_size_y, 0.01)
             stack_size_z = st.slider("Altura da pilha Z (m)", 0.20, 1.60, stack_size_z, 0.02)
 
-        with st.expander("🧱 Materiais, gaiola e perdas calibráveis", expanded=False):
+        with st.expander("Materiais, gaiola e perdas calibráveis", expanded=False):
             override_wall_loss_db = st.slider("Perda por atravessar parede selecionada (dB)", 0.0, 100.0, override_wall_loss_db, 1.0)
             use_cage_loss = st.checkbox("Aplicar perda equivalente da gaiola metálica", value=use_cage_loss)
             cage_extra_diffraction_loss_db = st.slider("Perda extra da grade/difração (dB por cruzamento)", 0.0, 10.0, cage_extra_diffraction_loss_db, 0.5)
@@ -1608,7 +1618,7 @@ with st.sidebar:
             use_scale_multipath = st.checkbox("Aplicar penalidade de multipercurso da balança metálica", value=use_scale_multipath)
             scale_multipath_penalty_db = st.slider("Penalidade máx. próxima à balança (dB)", 0.0, 12.0, scale_multipath_penalty_db, 0.5)
 
-        with st.expander("🧲 Inox: multipercurso, robustez e VSWR", expanded=False):
+        with st.expander("Inox: multipercurso, robustez e VSWR", expanded=False):
             use_inox_multipath = st.checkbox("Verificar multipercurso de primeira ordem no Inox", value=use_inox_multipath)
             apply_inox_multipath_to_link = st.checkbox("Aplicar correção aproximada de multipercurso no cálculo principal", value=apply_inox_multipath_to_link)
             inox_reflection_coeff_mag = st.slider("Coeficiente de reflexão |Γ| do Inox (aprox.)", 0.0, 1.0, inox_reflection_coeff_mag, 0.05)
@@ -1617,7 +1627,7 @@ with st.sidebar:
             inox_multipath_max_null_db = st.slider("Limite de vale/cancelamento por multipercurso (-dB)", 0.0, 40.0, inox_multipath_max_null_db, 1.0)
             robustness_grid_per_axis = st.slider("Teste de robustez: pontos por eixo", 3, 5, robustness_grid_per_axis, 1)
 
-        with st.expander("🗺️ Mapas e visualização", expanded=False):
+        with st.expander("Mapas e visualização", expanded=False):
             z_slice = st.slider("Altura do corte Z (m)", 0.05, 2.05, z_slice, 0.05)
             grid_n = st.slider("Resolução do mapa", 25, 100, grid_n, 5)
             x_extent = st.slider("Extensão X do mapa (±m)", 0.8, 3.0, x_extent, 0.1)
@@ -1724,38 +1734,59 @@ lam = wavelength(controls["frequency_hz"])
 d_far = fraunhofer_distance(controls["frequency_hz"], controls["antenna_largest_dimension_m"])
 eirp_dbm = reader_tx_power_dbm - cable_loss_db + reader_antenna_gain_dbi
 
-c1, c2, c3, c4, c5 = st.columns(5)
-c1.metric("Comprimento de onda", f"{lam:.3f} m")
-c2.metric("Campo distante aprox.", f"{d_far:.2f} m")
-c3.metric("P leitor", f"{reader_tx_power_dbm:.1f} dBm")
-c4.metric("EIRP", f"{eirp_dbm:.1f} dBm", f"{dbm_to_watts(eirp_dbm):.2f} W")
-c5.metric("Material cabine", selected_wall_material)
-
+interface_dir = Path(__file__).resolve().parent / "interface"
+abertura = Template((interface_dir / "abertura.html").read_text(encoding="utf-8"))
+ufcg_png = (interface_dir / "ufcg_horizontal.png").read_bytes()
+field_note = ""
 if d_far > 0.25:
-    st.warning(
-        "Friis é aproximação de campo distante. Pontos muito próximos da antena ficam sinalizados como campo próximo; "
-        "para máxima fidelidade nessa região, seria necessário solver EM full-wave."
+    field_note = (
+        '<p class="rf-note"><strong>Validade do modelo.</strong> A equação de Friis estima a '
+        'propagação em campo distante. O simulador sinaliza os pontos em campo próximo.</p>'
     )
+st.html(abertura.substitute(
+    scene=escape(scene_label),
+    material_info=(f"<div><dt>Material da cabine</dt><dd>{escape(selected_wall_material)}</dd></div>"
+                   if scene.get("cabin") else ""),
+    scene_view=scene_view,
+    ufcg_logo=base64.b64encode(ufcg_png).decode("ascii"),
+    wavelength=numero_br(lam, 3),
+    far_field=numero_br(d_far, 2),
+    reader_power=numero_br(reader_tx_power_dbm, 1),
+    eirp=numero_br(eirp_dbm, 1),
+    watts=numero_br(dbm_to_watts(eirp_dbm), 2),
+    field_note=field_note,
+))
 
-with st.expander("📐 Modelo físico usado no cálculo"):
+with st.expander("Como a leitura é calculada", expanded=False):
     st.markdown(
         f"""
-        **Potência irradiada:**  
-        `EIRP = P_leitor - L_cabo + G_antena = {reader_tx_power_dbm:.1f} - {cable_loss_db:.1f} + {reader_antenna_gain_dbi:.1f} = {eirp_dbm:.1f} dBm`
+        **Potência irradiada (EIRP)**
 
-        **Forward link — leitor → tag:** a tag liga se `P_tag ≥ {tag_activation_dbm:.1f} dBm`.
+        Potência do leitor − perda no cabo + ganho da antena
 
-        **Reverse link — tag → leitor:** o leitor detecta se `P_rx ≥ {reader_sensitivity_dbm:.1f} dBm`.  
-        Aqui `P_rx dBm` é o **RSSI reverso estimado**.
+        `{numero_br(reader_tx_power_dbm, 1)} dBm − {numero_br(cable_loss_db, 1)} dB + {numero_br(reader_antenna_gain_dbi, 1)} dBi = {numero_br(eirp_dbm, 1)} dBm`
 
-        **Perdas separadas:** espaço livre, padrão angular da antena, cabo, ganho da tag, polarização circular-linear, orientação/dobra, tecido, gaiola, cabine e backscatter.  
-        A perda de backscatter usada aqui é somente a perda adicional de modulação/retroespalhamento; ela não deve incluir novamente FSPL, tecido ou polarização.
+        **Ida · leitor → etiqueta**
+
+        A etiqueta é ativada quando a potência recebida atinge `{numero_br(tag_activation_dbm, 1)} dBm`.
+
+        **Retorno · etiqueta → leitor**
+
+        O leitor detecta a resposta quando o RSSI reverso estimado atinge `{numero_br(reader_sensitivity_dbm, 1)} dBm`.
+
+        **Ganhos e perdas do enlace**
+
+        O cálculo considera espaço livre, padrão angular da antena, cabo, ganho da etiqueta, polarização,
+        orientação ou dobra, tecido, gaiola e cabine. A parcela de retroespalhamento representa a perda
+        adicional de modulação da etiqueta.
+
+        Para caracterizar o campo próximo em detalhe, é necessária uma simulação eletromagnética de onda completa.
         """
     )
 
 # Avaliação das etiquetas
 
-st.subheader("🏷️ Leitura das tags e probes")
+st.subheader("Leitura das etiquetas e pontos de teste")
 rows = []
 near_count = 0
 for tag in scene.get("tags", []):
@@ -1810,7 +1841,7 @@ if len(internal):
 
 # Mapa de calor
 
-st.subheader("🗺️ Raio X em corte horizontal")
+st.subheader("Raio X em corte horizontal")
 with st.spinner("Calculando mapa de margem de leitura..."):
     xs = np.linspace(-x_extent, x_extent, grid_n)
     ys = np.linspace(y_min, y_max, grid_n)
@@ -1891,7 +1922,7 @@ st.plotly_chart(heat, use_container_width=True)
 
 # Corte vertical da pilha
 if show_vertical_map:
-    st.subheader("🧬 Corte vertical do miolo — tags soterradas")
+    st.subheader("Corte vertical do miolo — tags soterradas")
     with st.spinner("Calculando mapa vertical de margem..."):
         z_vals = np.linspace(z_min_map, z_max_map, grid_n)
         if vertical_plane == "X-Z com Y fixo":
@@ -1994,7 +2025,7 @@ if show_vertical_map:
 
 # MAPA 3D
 
-st.subheader("📦 Cena física simplificada")
+st.subheader("Cena física simplificada")
 fig3d = go.Figure()
 
 # Etiquetas e pontos externos
@@ -2050,7 +2081,7 @@ st.plotly_chart(fig3d, use_container_width=True)
 
 # MULTIPERCURSO E VSWR
 
-st.subheader("🧲 Verificação de multipercurso no Inox e risco de VSWR")
+st.subheader("Verificação de multipercurso no Inox e risco de VSWR")
 st.caption(
     "Esta seção não substitui openEMS nem medição com VNA. Ela adiciona verificações de engenharia: "
     "reflexões de primeira ordem por método das imagens, robustez por deslocamento local e risco geométrico de S11/VSWR."
@@ -2076,7 +2107,7 @@ else:
     high_risk = 0
 mcol4.metric("Tags com robustez crítica", high_risk)
 
-with st.expander("📋 Multipercurso aproximado por Inox — método das imagens"):
+with st.expander("Multipercurso aproximado por Inox — método das imagens"):
     st.write(
         "O delta positivo indica possível pico por soma construtiva. Delta negativo indica possível vale/cancelamento. "
         "O cálculo é de primeira ordem e não resolve modos completos de cavidade."
@@ -2089,7 +2120,7 @@ with st.expander("📋 Multipercurso aproximado por Inox — método das imagens
         mime="text/csv",
     )
 
-with st.expander("📋 Robustez por deslocamento local das tags"):
+with st.expander("Robustez por deslocamento local das tags"):
     st.write(
         "Para cada tag interna, o app desloca a posição em uma vizinhança local. "
         "Se pequenas mudanças criam falha, a região é sensível a zonas mortas, multipercurso ou geometria de antena."
@@ -2102,7 +2133,7 @@ with st.expander("📋 Robustez por deslocamento local das tags"):
         mime="text/csv",
     )
 
-with st.expander("📋 Risco geométrico de VSWR/S11 por proximidade antena-metal"):
+with st.expander("Risco geométrico de VSWR/S11 por proximidade antena-metal"):
     st.warning(
         "O app NÃO calcula VSWR real. Ele só aponta risco geométrico. "
         "A validação de VSWR/S11 deve ser feita com VNA, medidor de potência refletida ou telemetria do leitor, com a antena instalada na cabine."
@@ -2117,7 +2148,7 @@ with st.expander("📋 Risco geométrico de VSWR/S11 por proximidade antena-meta
 
 # DIAGNÓSTICO E EXPORTAÇÃO DOS RESULTADOS
 
-st.subheader("📊 Diagnóstico físico")
+st.subheader("Diagnóstico físico")
 colA, colB = st.columns(2)
 with colA:
     grid_loss_preview = 0.0
@@ -2138,7 +2169,7 @@ with colB:
         "**Zona morta:** margem final < 0 dB dentro da zona operacional."
     )
 
-st.markdown("### 📦 Central de exportação de dados")
+st.markdown("### Central de exportação de dados")
 st.caption(
     "Exportação dos resultados em planilha e CSV. "
 )
@@ -2157,7 +2188,7 @@ with tab_xlsx:
         st.download_button(
             "⬇️ Baixar planilha completa de diagnóstico (XLSX)",
             data=diag_xlsx,
-            file_name="diagnostico_link_budget_rfid_v7.xlsx",
+            file_name="diagnostico_link_budget_rfid_v8.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True,
         )
@@ -2177,7 +2208,7 @@ with tab_csv:
     st.download_button(
         "⬇️ Diagnóstico completo em CSV/ZIP",
         data=diag_zip,
-        file_name="diagnostico_link_budget_rfid_v7_csv.zip",
+        file_name="diagnostico_link_budget_rfid_v8_csv.zip",
         mime="application/zip",
         use_container_width=True,
     )
@@ -2205,7 +2236,7 @@ with tab_blender:
     st.download_button(
         "⬇️ Pacote CSV para visualização",
         data=build_diagnostic_csv_zip_bytes(scene, controls, reliable_margin_db, scene_source),
-        file_name="diagnostico_para_blender_rfid_v7.zip",
+        file_name="diagnostico_para_blender_rfid_v8.zip",
         mime="application/zip",
         use_container_width=True,
     )
@@ -2217,7 +2248,7 @@ st.caption(
 
 # REFERÊNCIAS TÉCNICAS
 
-with st.expander("📚 Referências técnicas que justificam os parâmetros"):
+with st.expander("Referências técnicas que justificam os parâmetros"):
     st.markdown(
         """
         - **Friis / FSPL:** modelo de propagação em espaço livre para estimar perda de percurso.  

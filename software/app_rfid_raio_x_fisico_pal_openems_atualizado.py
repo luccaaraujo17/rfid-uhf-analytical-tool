@@ -20,6 +20,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+from vista_cena import vista_da_cena
+
 # CONSTANTES FÍSICAS
 
 C0 = 299_792_458.0
@@ -1295,7 +1297,7 @@ def numero_br(value: float, decimals: int) -> str:
     return f"{value:.{decimals}f}".replace(".", ",")
 
 
-st.set_page_config(page_title="Raio X Analítico | Portal RFID UHF hospitalar", layout="wide")
+st.set_page_config(page_title="Raio X Analítico v8 | Simulador RFID UHF", layout="wide")
 
 # Carregamento do JSON de cena
 scene_source = "Cena padrão interna"
@@ -1314,6 +1316,11 @@ with st.sidebar:
             scene_source = str(json_default)
         except Exception as exc:
             st.warning(f"Falha ao ler JSON local: {exc}. Usando cena padrão.")
+
+# A geometria de origem é capturada antes dos ajustes da simulação.
+scene_view = vista_da_cena(scene)
+scene_name = scene.get("scene_name")
+scene_label = scene_name.strip() if isinstance(scene_name, str) and scene_name.strip() else Path(scene_source).name
 
 rf = scene.get("rf", default_scene()["rf"])
 materials = scene.get("materials", default_scene()["materials"])
@@ -1729,7 +1736,7 @@ eirp_dbm = reader_tx_power_dbm - cable_loss_db + reader_antenna_gain_dbi
 
 interface_dir = Path(__file__).resolve().parent / "interface"
 abertura = Template((interface_dir / "abertura.html").read_text(encoding="utf-8"))
-cabine_png = (interface_dir / "cabine_referencia.png").read_bytes()
+ufcg_png = (interface_dir / "ufcg_horizontal.png").read_bytes()
 field_note = ""
 if d_far > 0.25:
     field_note = (
@@ -1737,9 +1744,11 @@ if d_far > 0.25:
         'propagação em campo distante. O simulador sinaliza os pontos em campo próximo.</p>'
     )
 st.html(abertura.substitute(
-    scene=escape(scene_source),
-    material=escape(selected_wall_material),
-    drawing=base64.b64encode(cabine_png).decode("ascii"),
+    scene=escape(scene_label),
+    material_info=(f"<div><dt>Material da cabine</dt><dd>{escape(selected_wall_material)}</dd></div>"
+                   if scene.get("cabin") else ""),
+    scene_view=scene_view,
+    ufcg_logo=base64.b64encode(ufcg_png).decode("ascii"),
     wavelength=numero_br(lam, 3),
     far_field=numero_br(d_far, 2),
     reader_power=numero_br(reader_tx_power_dbm, 1),
@@ -2179,7 +2188,7 @@ with tab_xlsx:
         st.download_button(
             "⬇️ Baixar planilha completa de diagnóstico (XLSX)",
             data=diag_xlsx,
-            file_name="diagnostico_link_budget_rfid_v7.xlsx",
+            file_name="diagnostico_link_budget_rfid_v8.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True,
         )
@@ -2199,7 +2208,7 @@ with tab_csv:
     st.download_button(
         "⬇️ Diagnóstico completo em CSV/ZIP",
         data=diag_zip,
-        file_name="diagnostico_link_budget_rfid_v7_csv.zip",
+        file_name="diagnostico_link_budget_rfid_v8_csv.zip",
         mime="application/zip",
         use_container_width=True,
     )
@@ -2227,7 +2236,7 @@ with tab_blender:
     st.download_button(
         "⬇️ Pacote CSV para visualização",
         data=build_diagnostic_csv_zip_bytes(scene, controls, reliable_margin_db, scene_source),
-        file_name="diagnostico_para_blender_rfid_v7.zip",
+        file_name="diagnostico_para_blender_rfid_v8.zip",
         mime="application/zip",
         use_container_width=True,
     )

@@ -9,7 +9,7 @@
   .rf-overview * { box-sizing: border-box; }
   .rf-banner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 27%);
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 30%);
     align-items: center;
     gap: 1.5rem;
     padding: 1.6rem clamp(1.25rem, 3.5cqw, 3rem);
@@ -17,20 +17,27 @@
     background: linear-gradient(105deg, #132631, #163342);
     color: #f4f9f8;
   }
-  .rf-brand {
+  .rf-masthead {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: .75rem;
-    color: #b6e5db;
-    font-size: .75rem;
-    letter-spacing: .13em;
-    font-weight: 650;
-    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: .5rem 1rem;
+    padding: .45rem 1rem .65rem;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid #dae3e8;
+    background: #fff;
+    color: #234257;
   }
-  .rf-brand::before { content: ""; width: 1.8rem; height: 2px; background: #72cbb9; }
-  .rf-brand span { color: #c2cccf; border-left: 1px solid #527078; padding-left: .75rem; letter-spacing: .04em; }
+  .rf-masthead img { display: block; width: clamp(122px, 19cqw, 170px); height: auto; }
+  .rf-brand {
+    display: flex; align-items: center; gap: .6rem;
+    font-size: .78rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase;
+  }
+  .rf-brand span { border-left: 1px solid #a4b3bd; padding-left: .6rem; }
+  .rf-banner { border-radius: 0 0 12px 12px; }
   .rf-banner h1 {
-    margin: .7rem 0 .45rem;
+    margin: 0 0 .45rem;
     padding: 0;
     font-family: inherit;
     font-weight: 650;
@@ -46,9 +53,20 @@
   .rf-context div, .rf-stats div { min-width: 0; }
   .rf-context dt { font-size: .76rem; color: #a7bdc5; margin: 0 0 .15rem; }
   .rf-context dd { margin: 0; font-size: .95rem; font-weight: 600; overflow-wrap: anywhere; }
-  .rf-overview figure { margin: 0; justify-self: center; text-align: center; }
-  .rf-overview figure img { width: 100%; max-width: 14rem; height: auto; display: block; }
-  .rf-overview figcaption { font-size: .72rem; letter-spacing: .045em; line-height: 1.3; color: #b4cbd1; }
+  .rf-overview figure { margin: 0; text-align: center; min-width: 0; }
+  .rf-view {
+    display: grid;
+    place-items: center;
+    min-height: 5rem;
+    border: 1px solid #385363;
+    border-radius: 6px;
+    background-color: #142e3e;
+    background-image: radial-gradient(#375466 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+  .rf-view img { width: 100%; max-width: 18rem; height: auto; display: block; }
+  .rf-no-geometry { color: #d2dfe6; padding: 1rem; font-size: .8rem; }
+  .rf-overview figcaption { margin-top: .3rem; font-size: .75rem; color: #c2d6df; }
   .rf-overview h2 {
     margin: 1.25rem 0 .65rem;
     padding: 0;
@@ -86,24 +104,31 @@
   }
   @container (max-width: 480px) {
     .rf-banner { grid-template-columns: 1fr; padding: 1.2rem; }
-    .rf-banner figure { display: none; }
+    .rf-banner figure { width: 100%; }
+    .rf-view img { max-height: 8rem; }
+    .rf-masthead { padding: .55rem .75rem; }
+    .rf-brand { font-size: .66rem; gap: .4rem; }
     .rf-context { margin-top: 1rem; gap: .65rem 1.4rem; }
   }
 </style>
 <section class="rf-overview" lang="pt-BR" aria-labelledby="rf-title">
+  <div class="rf-masthead">
+    <!-- Marca horizontal oficial do CDSA/UFCG: https://cdsa.ufcg.edu.br/index.php/logomarcas -->
+    <img src="data:image/png;base64,$ufcg_logo" width="560" height="176" alt="Universidade Federal de Campina Grande (UFCG)">
+    <div class="rf-brand">Raio X Analítico <span>v8</span></div>
+  </div>
   <header class="rf-banner">
     <div>
-      <div class="rf-brand">Raio X Analítico <span>v7</span></div>
-      <h1 id="rf-title">Portal RFID UHF hospitalar</h1>
-      <p class="rf-description">Simulação da leitura de etiquetas RFID em enxovais hospitalares.</p>
+      <h1 id="rf-title">Simulador RFID UHF</h1>
+      <p class="rf-description">Análise da propagação do sinal e da leitura de etiquetas RFID.</p>
       <dl class="rf-context">
         <div><dt>Cena em uso</dt><dd>$scene</dd></div>
-        <div><dt>Material da cabine</dt><dd>$material</dd></div>
+        $material_info
       </dl>
     </div>
     <figure>
-      <img src="data:image/png;base64,$drawing" width="320" height="245" alt="Vista em perspectiva da cabine de referência, com abertura frontal e altura de 2,10 m.">
-      <figcaption>Cabine de referência</figcaption>
+      <div class="rf-view">$scene_view</div>
+      <figcaption>Geometria da cena de origem</figcaption>
     </figure>
   </header>
   <h2>Parâmetros do enlace</h2>
